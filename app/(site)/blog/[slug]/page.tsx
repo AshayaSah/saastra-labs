@@ -37,13 +37,14 @@ export default async function BlogPostPage({
   const related = await getRelatedBlogPosts(slug)
 
   return (
-    <div className="bg-sl-bg font-sans text-sl-text overflow-x-hidden antialiased">
+    <div className="bg-sl-bg font-sans text-sl-text antialiased">
       {/* ── ARTICLE AREA ────────────────────────────────────────── */}
       <div className="sl-container sl-page-top pb-section-end">
-
         {/* Breadcrumb */}
         <div className="mb-10 flex items-center gap-2 font-mono text-[11px] tracking-[0.1em] text-sl-subtle uppercase">
-          <a href="/blog" className="text-sl-subtle no-underline">Blog</a>
+          <a href="/blog" className="text-sl-subtle no-underline">
+            Blog
+          </a>
           <span>/</span>
           <span className="text-sl-muted">{post.category}</span>
           <span>/</span>
@@ -60,11 +61,15 @@ export default async function BlogPostPage({
             <div className="flex items-center gap-2.5">
               <div
                 className="h-[34px] w-[34px] shrink-0 rounded-full"
-                style={{ background: "linear-gradient(140deg,#c9c6bf,#a8a59d)" }}
+                style={{
+                  background: "linear-gradient(140deg,#c9c6bf,#a8a59d)",
+                }}
               />
               <div className="leading-[1.3]">
                 <div className="text-meta font-semibold">{post.author}</div>
-                <div className="text-[12px] text-sl-subtle">{post.date} · {post.readTime}</div>
+                <div className="text-[12px] text-sl-subtle">
+                  {post.date} · {post.readTime}
+                </div>
               </div>
             </div>
           </div>
@@ -76,7 +81,10 @@ export default async function BlogPostPage({
           >
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.08) 100%)" }}
+              style={{
+                background:
+                  "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.08) 100%)",
+              }}
             />
           </div>
         </div>
@@ -90,7 +98,7 @@ export default async function BlogPostPage({
           <aside className="sticky top-22 self-start">
             <div className="sl-mono-label mb-3.5">On this page</div>
             <nav>
-              {post.toc.map(item => (
+              {post.toc.map((item) => (
                 <a key={item.id} href={`#${item.id}`} className="sl-toc-link">
                   {item.label}
                 </a>
@@ -99,11 +107,12 @@ export default async function BlogPostPage({
 
             {/* Sidebar CTA */}
             <div className="mt-9 rounded-card border border-white/[0.06] bg-sl-surface-dark px-[18px] py-5">
-              <h3 className="mb-[9px] text-[14.5px] font-semibold leading-[1.35] text-sl-text-inv">
+              <h3 className="mb-[9px] text-[14.5px] leading-[1.35] font-semibold text-sl-text-inv">
                 Need a fast-moving engineering team?
               </h3>
               <p className="mb-4 text-[12.5px] leading-[1.55] text-sl-subtle-inv">
-                Book a call and we&apos;ll map out a plan tailored to your roadmap.
+                Book a call and we&apos;ll map out a plan tailored to your
+                roadmap.
               </p>
               <ChatButton href="/contact" />
             </div>
@@ -121,12 +130,22 @@ export default async function BlogPostPage({
                   {section.heading}
                 </h2>
                 {section.content.split("\n\n").map((para, i) => (
-                  <p key={i} className="mb-3.5 text-[15.5px] leading-[1.72] text-sl-body">{para}</p>
+                  <p
+                    key={i}
+                    className="mb-3.5 text-[15.5px] leading-[1.72] text-sl-body"
+                  >
+                    {para}
+                  </p>
                 ))}
                 {section.list && (
                   <ul className="mt-1.5 list-disc pl-[18px]">
                     {section.list.map((item, i) => (
-                      <li key={i} className="mb-1.5 text-body leading-[1.65] text-sl-body">{item}</li>
+                      <li
+                        key={i}
+                        className="mb-1.5 text-body leading-[1.65] text-sl-body"
+                      >
+                        {item}
+                      </li>
                     ))}
                   </ul>
                 )}
@@ -135,7 +154,7 @@ export default async function BlogPostPage({
 
             {/* Tags */}
             <div className="mt-2 flex flex-wrap gap-2">
-              {post.tags.map(tag => (
+              {post.tags.map((tag) => (
                 <span
                   key={tag}
                   className="rounded-pill border border-sl-border bg-sl-surface-2 px-[13px] py-1 text-[12px] font-medium text-sl-muted"
@@ -149,7 +168,9 @@ export default async function BlogPostPage({
 
         {/* Related posts */}
         <div className="mb-24">
-          <h2 className="mb-7 text-[24px] font-bold tracking-[-0.025em] text-sl-text">Related posts</h2>
+          <h2 className="mb-7 text-[24px] font-bold tracking-[-0.025em] text-sl-text">
+            Related posts
+          </h2>
           <div className="grid grid-cols-3 gap-5">
             {related.map((rel, i) => (
               <a
@@ -161,11 +182,15 @@ export default async function BlogPostPage({
                   <div className="h-40" style={{ background: rel.gradient }} />
                   <div className="px-[18px] pt-4 pb-5">
                     <span className="sl-mono-label">{rel.category}</span>
-                    <h3 className="mt-2 mb-1.5 text-[15px] font-semibold leading-[1.25] text-sl-text">
+                    <h3 className="mt-2 mb-1.5 text-[15px] leading-[1.25] font-semibold text-sl-text">
                       {rel.title}
                     </h3>
-                    <div className="text-[11.5px] text-sl-subtle">{rel.author} · {rel.readTime}</div>
-                    <span className="sl-read-more mt-3">Read post <span>→</span></span>
+                    <div className="text-[11.5px] text-sl-subtle">
+                      {rel.author} · {rel.readTime}
+                    </div>
+                    <span className="sl-read-more mt-3">
+                      Read post <span>→</span>
+                    </span>
                   </div>
                 </article>
               </a>
