@@ -4,6 +4,21 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-sl-bg: #e9e7e2;
+  --color-sl-dark: #060606;
+  --color-sl-card: #ffffff;
+  --color-sl-card-dark: #0b0b0b;
+  --color-sl-accent: #f5c518;
+  --color-sl-text: #0c0c0c;
+  --color-sl-muted: #6b6862;
+  --color-sl-subtle: #8a877f;
+  --color-sl-border: #e6e4df;
+  --color-sl-border-dark: #1c1c1c;
+  --color-sl-green: #1f9d57;
+  --color-sl-green-light: #eafaef;
+}
+
 @theme inline {
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);
@@ -331,3 +346,30 @@
   transition: color 0.15s;
 }
 .sl-toc-link:hover { color: #0c0c0c; }
+
+@layer components {
+  /* Container */
+  .sl-container { @apply max-w-[1100px] mx-auto px-7; }
+
+  /* Cards */
+  .sl-card { @apply bg-sl-card border border-sl-border rounded-[18px] p-6 flex flex-col; }
+  .sl-card-dark { @apply bg-sl-card-dark border border-sl-border-dark rounded-[18px] p-6 flex flex-col; }
+
+  /* Typography */
+  .sl-section-heading { @apply text-[30px] font-semibold tracking-[-0.025em] text-sl-text mb-6; }
+
+  /* Buttons */
+  .sl-btn { @apply bg-sl-accent text-[#0a0a0a] text-[13px] font-semibold px-4 py-[11px] rounded-[10px] no-underline inline-block text-center transition-opacity hover:opacity-90; }
+  .sl-btn-wide { @apply bg-sl-accent text-[#0a0a0a] text-[13px] font-semibold px-[22px] py-[11px] rounded-[10px] no-underline inline-block text-center transition-opacity hover:opacity-90; }
+
+  /* Badges */
+  .sl-badge-green { @apply bg-sl-green-light text-sl-green text-[10px] font-semibold px-2 py-[3px] rounded-full; }
+  .sl-badge-yellow { @apply bg-[rgba(245,197,24,0.16)] text-sl-accent text-[10px] font-semibold px-2 py-[3px] rounded-full; }
+
+  /* Feature rows */
+  .sl-feature-row { @apply flex items-center gap-[9px] text-[13px] py-[7px] border-t border-sl-border; }
+  .sl-feature-row-dark { @apply flex items-center gap-[9px] text-[13px] py-[7px] border-t border-sl-border-dark; }
+
+  /* Mono label */
+  .sl-mono-label { @apply font-mono text-[10px] tracking-[0.12em] text-sl-subtle uppercase; }
+}
