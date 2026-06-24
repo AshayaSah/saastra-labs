@@ -9,7 +9,7 @@ export function FounderSection() {
         }}
       />
       <div className="sl-container sl-section relative">
-        <h2 className="text-h2 text-white m-0 mb-8">The founder&apos;s desk</h2>
+        <h2 className="text-h2 text-white m-0 mb-8">SAASTRA&apos;s Team Desk</h2>
         <div className="grid gap-10 items-start" style={{ gridTemplateColumns: "300px 1fr" }}>
           {/* Founder photo placeholder */}
           <div
@@ -18,7 +18,7 @@ export function FounderSection() {
               background: "repeating-linear-gradient(45deg,#1a1a1a,#1a1a1a 12px,#161616 12px,#161616 24px)",
             }}
           >
-            <span className="font-mono text-[11px] text-[#555]">[ founder photo ]</span>
+            <span className="font-mono text-[11px] text-[#555]">[ team photo ]</span>
           </div>
 
           <div>
@@ -31,8 +31,8 @@ export function FounderSection() {
             <p className="text-[15px] leading-[1.7] text-sl-muted-inv mt-0 mb-[22px]">
               If you&apos;re looking for a team that moves quickly and cares deeply, we&apos;d love to build with you.
             </p>
-            <div className="font-mono text-[18px] text-white mb-1 italic">Ashaya Sah</div>
-            <div className="text-[12.5px] text-sl-subtle-inv">Founder &amp; CEO, Saastra Labs, Nepal</div>
+            <div className="font-mono text-[18px] text-white mb-1 italic">The Saastra Labs Team</div>
+            <div className="text-[12.5px] text-sl-subtle-inv">Engineering &amp; Design · Kathmandu, Nepal</div>
           </div>
         </div>
       </div>
