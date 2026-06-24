@@ -1,7 +1,9 @@
 import { BentoCard } from "@/components/ui/bento-card"
-import { PRODUCTS } from "@/lib/constants"
+import { getProducts } from "@/lib/db/queries"
 
-export function ProductsGrid() {
+export async function ProductsGrid() {
+  const PRODUCTS = await getProducts()
+
   return (
     <section className="relative sl-container sl-section">
       {/* Watermark heading — shared .sl-display primitive */}

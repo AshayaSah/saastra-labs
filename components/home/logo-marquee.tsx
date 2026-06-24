@@ -1,7 +1,8 @@
-import { LOGO_MARQUEE } from "@/lib/constants"
+import { getMarquee } from "@/lib/db/queries"
 
-export function LogoMarquee() {
-  const marqueeLogos = [...LOGO_MARQUEE, ...LOGO_MARQUEE]
+export async function LogoMarquee() {
+  const logos = await getMarquee("logo")
+  const marqueeLogos = [...logos, ...logos]
 
   return (
     <section className="pt-16 pb-4">

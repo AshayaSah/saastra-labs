@@ -1,10 +1,11 @@
-import { PRICING_PLANS } from "@/lib/constants"
+import { getPricingPlans } from "@/lib/db/queries"
 import { BentoCard } from "@/components/ui/bento-card"
 
-export function HomePricing() {
-  const composable = PRICING_PLANS.find((p) => p.id === "composable")!
-  const scale = PRICING_PLANS.find((p) => p.id === "scale")!
-  const multiPage = PRICING_PLANS.find((p) => p.id === "multi-pages")!
+export async function HomePricing() {
+  const plans = await getPricingPlans()
+  const [composable, scale, multiPage] = plans
+
+  if (!composable || !scale || !multiPage) return null
 
   return (
     <section>

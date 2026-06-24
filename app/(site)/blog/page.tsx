@@ -1,6 +1,8 @@
-import { posts } from "@/lib/blog"
+import { getBlogPosts } from "@/lib/db/queries"
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getBlogPosts()
+
   return (
     <div className="overflow-x-hidden bg-sl-bg font-sans text-sl-text antialiased">
       {/* ── BLOG LISTING ────────────────────────────────────────── */}

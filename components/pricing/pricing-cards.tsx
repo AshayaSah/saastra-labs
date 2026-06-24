@@ -1,10 +1,11 @@
-import { PRICING_PLANS, TECH_LOGOS } from "@/lib/constants"
+import { getPricingPlans, getMarquee } from "@/lib/db/queries"
 import { BentoCard } from "@/components/ui/bento-card"
 
-export function PricingCards() {
-  const composable = PRICING_PLANS.find((p) => p.id === "composable")!
-  const scale = PRICING_PLANS.find((p) => p.id === "scale")!
-  const multiPage = PRICING_PLANS.find((p) => p.id === "multi-pages")!
+export async function PricingCards() {
+  const [plans, TECH_LOGOS] = await Promise.all([getPricingPlans(), getMarquee("tech")])
+  const [composable, scale, multiPage] = plans
+
+  if (!composable || !scale || !multiPage) return null
 
   return (
     <>

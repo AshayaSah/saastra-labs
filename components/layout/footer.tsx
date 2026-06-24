@@ -1,8 +1,10 @@
 import Image from "next/image"
 import { ChatButton } from "@/components/chat-button"
-import { FOOTER_COLUMNS } from "@/lib/constants"
+import { getFooterColumns } from "@/lib/db/queries"
 
-export function Footer() {
+export async function Footer() {
+  const FOOTER_COLUMNS = await getFooterColumns()
+
   return (
     <footer className="bg-sl-dark text-white relative overflow-hidden">
       {/* Orange glow */}

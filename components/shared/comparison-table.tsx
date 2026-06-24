@@ -1,6 +1,11 @@
-import { COMP_ROWS, BENEFIT_CARDS } from "@/lib/constants"
+import { getComparisonRows, getBenefitCards } from "@/lib/db/queries"
 
-export function ComparisonTable() {
+export async function ComparisonTable() {
+  const [COMP_ROWS, BENEFIT_CARDS] = await Promise.all([
+    getComparisonRows(),
+    getBenefitCards(),
+  ])
+
   return (
     <section>
       <div className="sl-container sl-section">

@@ -3,9 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
-import { Navbar } from "@/components/layout/navbar"
-import { Footer } from "@/components/layout/footer"
-import { ScrollRevealProvider } from "@/components/ui/scroll-reveal"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -26,13 +23,7 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
     >
       <body>
-        <ThemeProvider>
-          <Navbar />
-          <ScrollRevealProvider>
-            <main>{children}</main>
-          </ScrollRevealProvider>
-          <Footer />
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )

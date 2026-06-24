@@ -1,10 +1,6 @@
 import { notFound } from "next/navigation"
 import { ChatButton } from "@/components/chat-button"
-import { getPost, getRelatedPosts, posts } from "@/lib/blog"
-
-export function generateStaticParams() {
-  return posts.map(p => ({ slug: p.slug }))
-}
+import { getBlogPost, getRelatedBlogPosts } from "@/lib/db/queries"
 
 export default async function BlogPostPage({
   params,
@@ -12,10 +8,10 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const post = getPost(slug)
-  if (!post) notFound()
+  const post = await getBlogPost(slug)
+  if (!post || !post.published) notFound()
 
-  const related = getRelatedPosts(slug)
+  const related = await getRelatedBlogPosts(slug)
 
   return (
     <div className="bg-sl-bg font-sans text-sl-text overflow-x-hidden antialiased">

@@ -24,7 +24,7 @@ export function ChatButton({
       className={`group relative flex w-fit cursor-pointer items-center gap-2 rounded-lg border border-white/20 bg-black py-2 pr-4 pl-11 tracking-tight no-underline ${className}`}
     >
       {/* Morphing box: dot-matrix that slides + flips into the logo */}
-      <div className="bg-sl-accent absolute inset-y-0 left-1 z-40 my-auto flex size-8 flex-col items-center justify-center gap-px rounded-[5px] transition-all duration-[400ms] ease-out group-hover:left-[calc(100%-2.3rem)] group-hover:rotate-180 group-hover:bg-white">
+      <div className="absolute inset-y-0 left-1 z-40 my-auto flex size-8 flex-col items-center justify-center gap-px rounded-[5px] bg-sl-accent transition-all duration-[400ms] ease-out group-hover:left-[calc(100%-2.3rem)] group-hover:rotate-180 group-hover:bg-white">
         <div className="flex flex-col gap-px group-hover:hidden">
           {CHAT_DOTS.map((row, r) => (
             <div key={r} className="flex gap-px">
@@ -39,7 +39,7 @@ export function ChatButton({
         </div>
         <Image
           src="/logo.png"
-          alt="Saastra Labs"
+          alt="SAASTRA Logo"
           width={32}
           height={32}
           className="hidden size-8 rotate-180 rounded-[5px] object-cover blur-sm transition-all duration-[400ms] ease-out group-hover:block group-hover:blur-none"
