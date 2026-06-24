@@ -7,6 +7,9 @@
 export function HeroHorizon() {
   return (
     <div aria-hidden className="hero-horizon pointer-events-none absolute inset-0 overflow-hidden">
+      {/* Faint blueprint grid, fading out toward the horizon */}
+      <div className="hero-grid-lines" />
+
       {/* Starfield (two parallax depths) */}
       <div className="hero-stars hero-stars-far" />
       <div className="hero-stars hero-stars-near" />
