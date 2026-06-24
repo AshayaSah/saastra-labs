@@ -56,7 +56,7 @@ export function Navbar({ activePath }: { activePath?: string }) {
           ))}
         </div>
 
-        <ChatButton label="Get in touch" href="#" />
+        <ChatButton href="#" />
       </nav>
     </header>
   )
