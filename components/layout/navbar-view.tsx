@@ -87,7 +87,7 @@ export function NavbarView({
             ))}
           </div>
 
-          <ChatButton href="#" />
+          <ChatButton href="/contact" />
         </div>
       </nav>
     </header>

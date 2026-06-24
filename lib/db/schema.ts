@@ -127,3 +127,16 @@ export const marqueeItems = pgTable("marquee_items", {
   label: text("label").notNull().default(""),
   sortOrder: integer("sort_order").notNull().default(0),
 })
+
+// ── Contact form submissions ─────────────────────────────────
+export const contactSubmissions = pgTable("contact_submissions", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  company: text("company").notNull().default(""),
+  phone: text("phone").notNull().default(""),
+  topic: text("topic").notNull().default(""),
+  message: text("message").notNull(),
+  handled: boolean("handled").notNull().default(false),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+})

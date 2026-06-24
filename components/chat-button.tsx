@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 // Dot-matrix glyph shown inside the button (morphs to the logo on hover)
 const CHAT_DOTS = [
@@ -11,7 +12,7 @@ const CHAT_DOTS = [
 
 export function ChatButton({
   label = "Chat with SAASTRA",
-  href = "#",
+  href = "/contact",
   className = "",
 }: {
   label?: string
@@ -19,7 +20,7 @@ export function ChatButton({
   className?: string
 }) {
   return (
-    <a
+    <Link
       href={href}
       className={`group relative flex w-fit cursor-pointer items-center gap-2 rounded-lg border border-white/20 bg-black py-2 pr-4 pl-11 tracking-tight no-underline ${className}`}
     >
@@ -52,6 +53,6 @@ export function ChatButton({
       <span className="inline-block text-white transition-transform duration-[400ms] group-hover:-translate-x-8">
         {label}
       </span>
-    </a>
+    </Link>
   )
 }

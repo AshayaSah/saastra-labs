@@ -27,7 +27,7 @@ export async function Footer() {
         </h2>
 
         <div className="mb-16">
-          <ChatButton href="#" />
+          <ChatButton href="/contact" />
         </div>
 
         {/* Footer columns */}

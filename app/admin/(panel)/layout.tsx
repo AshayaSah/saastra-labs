@@ -18,6 +18,15 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
           </Link>
 
           <nav className="flex flex-col gap-0.5">
+            <Link
+              href="/admin/contact"
+              className="rounded-control px-3 py-2 text-[13.5px] font-medium text-sl-text transition-colors hover:bg-sl-surface"
+            >
+              Messages
+            </Link>
+
+            <div className="my-2 border-t border-sl-border" />
+
             {RESOURCES.map((r) => (
               <Link
                 key={r.key}

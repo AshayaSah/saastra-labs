@@ -264,6 +264,13 @@
   opacity: 1;
   transform: translateY(0);
 }
+/* Failsafe: if JS can't run at all, never leave content hidden. */
+@media (scripting: none) {
+  .sl-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
 .sl-d1 {
   transition-delay: 0.06s;
 }

@@ -28,7 +28,7 @@ export default async function BlogPostPage({
         </div>
 
         {/* Hero — two columns */}
-        <div className="mb-13 grid grid-cols-2 items-start gap-13">
+        <div className="sl-reveal mb-13 grid grid-cols-2 items-start gap-13">
           {/* Left: title + author */}
           <div>
             <span className="sl-mono-label mb-3.5 block">{post.category}</span>
@@ -82,14 +82,18 @@ export default async function BlogPostPage({
               <p className="mb-4 text-[12.5px] leading-[1.55] text-sl-subtle-inv">
                 Book a call and we&apos;ll map out a plan tailored to your roadmap.
               </p>
-              <ChatButton href="#" />
+              <ChatButton href="/contact" />
             </div>
           </aside>
 
           {/* Article body */}
           <article>
-            {post.sections.map(section => (
-              <section key={section.id} id={section.id} className="mb-11">
+            {post.sections.map((section, i) => (
+              <section
+                key={section.id}
+                id={section.id}
+                className={`sl-reveal sl-d${(i % 3) + 1} mb-11`}
+              >
                 <h2 className="mb-3.5 text-[clamp(19px,2vw,23px)] font-bold tracking-[-0.02em] text-sl-text">
                   {section.heading}
                 </h2>
@@ -124,8 +128,12 @@ export default async function BlogPostPage({
         <div className="mb-24">
           <h2 className="mb-7 text-[24px] font-bold tracking-[-0.025em] text-sl-text">Related posts</h2>
           <div className="grid grid-cols-3 gap-5">
-            {related.map(rel => (
-              <a key={rel.slug} href={`/blog/${rel.slug}`} className="sl-blog-card-link">
+            {related.map((rel, i) => (
+              <a
+                key={rel.slug}
+                href={`/blog/${rel.slug}`}
+                className={`sl-blog-card-link sl-reveal sl-d${(i % 3) + 1}`}
+              >
                 <article className="sl-blog-card">
                   <div className="h-40" style={{ background: rel.gradient }} />
                   <div className="px-[18px] pt-4 pb-5">

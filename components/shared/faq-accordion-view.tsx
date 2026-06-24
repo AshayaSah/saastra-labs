@@ -28,7 +28,7 @@ export function FAQAccordionView({ items }: { items: FaqRow[] }) {
               <p className="mt-0 mb-[18px] text-[13px] leading-[1.5] text-[#9a9a9a]">
                 Book an intro call and we&apos;ll map out a plan tailored to your roadmap.
               </p>
-              <ChatButton href="#" />
+              <ChatButton href="/contact" />
             </div>
           </div>
 

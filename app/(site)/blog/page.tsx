@@ -12,11 +12,11 @@ export default async function BlogPage() {
         </div>
 
         <div className="grid grid-cols-3 gap-6">
-          {posts.map((post) => (
+          {posts.map((post, i) => (
             <a
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="sl-blog-card-link"
+              className={`sl-blog-card-link sl-reveal sl-d${(i % 3) + 1}`}
             >
               <article className="sl-blog-card flex h-full flex-col">
                 {/* Cover image */}
