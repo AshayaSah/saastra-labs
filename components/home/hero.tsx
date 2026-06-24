@@ -49,7 +49,7 @@ export function HeroSection() {
 
       {/* Content column */}
       <div className="sl-container relative z-10 flex flex-1 flex-col justify-between">
-        <div className="pt-32 md:pt-42 lg:pt-56">
+        <div className="flex flex-1 flex-col justify-center pt-32 md:pt-42 lg:pt-56">
           {/* Badge pill */}
           <a
             href="#"

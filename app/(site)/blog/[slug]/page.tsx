@@ -1,6 +1,29 @@
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { ChatButton } from "@/components/chat-button"
 import { getBlogPost, getRelatedBlogPosts } from "@/lib/db/queries"
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const post = await getBlogPost(slug)
+  if (!post || !post.published) return { title: "Post not found" }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      url: `/blog/${post.slug}`,
+    },
+  }
+}
 
 export default async function BlogPostPage({
   params,
