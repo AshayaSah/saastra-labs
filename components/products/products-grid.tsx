@@ -3,21 +3,10 @@ import { PRODUCTS } from "@/lib/constants"
 
 export function ProductsGrid() {
   return (
-    <section className="relative max-w-[1100px] mx-auto px-7 py-[88px]">
-      {/* Watermark heading — same style as /work */}
-      <div className="leading-[0.76] mb-[-4px] overflow-hidden">
-        <span
-          className="block whitespace-nowrap font-extrabold tracking-[-0.035em] select-none"
-          style={{
-            fontSize: "clamp(120px,19vw,232px)",
-            background: "linear-gradient(180deg,#dad7d0 32%,rgba(218,215,208,0) 92%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          Products
-        </span>
+    <section className="relative sl-container sl-section">
+      {/* Watermark heading — shared .sl-display primitive */}
+      <div className="sl-display">
+        <span className="sl-display-title">Products</span>
       </div>
 
       {/* Product list */}

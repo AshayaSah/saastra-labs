@@ -3,7 +3,7 @@ import { BentoCard } from "@/components/ui/bento-card"
 export function ScalingBento() {
   return (
     <section>
-      <div className="sl-container pt-[148px] pb-24">
+      <div className="sl-container sl-section">
         <h2 className="sl-reveal sl-section-heading">Scaling successful companies</h2>
 
         <div className="grid gap-[14px]" style={{ gridTemplateColumns: "1fr 1fr 1.1fr" }}>

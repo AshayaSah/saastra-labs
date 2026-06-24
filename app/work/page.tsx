@@ -6,9 +6,7 @@ import { FAQAccordion } from "@/components/shared/faq-accordion"
 export default function WorkPage() {
   return (
     <div className="overflow-x-hidden bg-sl-bg font-sans antialiased">
-      <div className="pt-[62px]">
-        <ProjectsGrid />
-      </div>
+      <ProjectsGrid />
       <ServicesBento />
       <InsightsCarousel />
       <FAQAccordion />

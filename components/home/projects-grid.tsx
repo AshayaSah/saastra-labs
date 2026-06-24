@@ -1,20 +1,9 @@
 export function ProjectsGrid() {
   return (
-    <section className="relative max-w-[1100px] mx-auto px-7 py-[88px]">
+    <section className="relative sl-container sl-section">
       {/* Watermark heading */}
-      <div className="leading-[0.76] mb-[-4px] overflow-hidden">
-        <span
-          className="block whitespace-nowrap font-extrabold tracking-[-0.035em] select-none"
-          style={{
-            fontSize: "clamp(120px,19vw,232px)",
-            background: "linear-gradient(180deg,#dad7d0 32%,rgba(218,215,208,0) 92%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          Projects
-        </span>
+      <div className="sl-display">
+        <span className="sl-display-title">Projects</span>
       </div>
 
       {/* Row 1 */}

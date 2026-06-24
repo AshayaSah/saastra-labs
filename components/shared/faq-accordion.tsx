@@ -9,7 +9,7 @@ export function FAQAccordion() {
 
   return (
     <section>
-      <div className="sl-container pt-[148px] pb-[120px]">
+      <div className="sl-container sl-section">
         <div className="grid gap-12 items-start" style={{ gridTemplateColumns: "0.9fr 1.2fr" }}>
           {/* Left: heading + CTA card */}
           <div>
@@ -28,7 +28,7 @@ export function FAQAccordion() {
               <p className="mt-0 mb-[18px] text-[13px] leading-[1.5] text-[#9a9a9a]">
                 Book an intro call and we&apos;ll map out a plan tailored to your roadmap.
               </p>
-              <ChatButton label="Chat with us" href="#" />
+              <ChatButton href="#" />
             </div>
           </div>
 

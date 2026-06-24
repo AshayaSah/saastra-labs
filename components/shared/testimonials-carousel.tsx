@@ -12,8 +12,8 @@ export function TestimonialsCarousel() {
   }, [activeIndex])
 
   return (
-    <section className="pt-[140px] pb-8 overflow-hidden">
-      <h2 className="sl-reveal sl-section-heading max-w-[1100px] mx-auto px-7">
+    <section className="pt-section pb-8 overflow-hidden">
+      <h2 className="sl-reveal sl-section-heading sl-container">
         What people have been saying
       </h2>
 
@@ -30,12 +30,12 @@ export function TestimonialsCarousel() {
         {TESTIMONIALS.map((t, i) => (
           <div
             key={i}
-            className="flex-[0_0_360px] bg-sl-card-dark border border-sl-border-dark rounded-[18px] p-6 text-white min-h-[220px] flex flex-col justify-between"
+            className="flex-[0_0_360px] bg-sl-surface-dark border border-sl-border-dark rounded-card p-6 text-white min-h-[220px] flex flex-col justify-between"
             style={{ scrollSnapAlign: "start" }}
           >
             <div>
               <div className="text-[16px] font-bold mb-4 text-white">{t.company}</div>
-              <p className="m-0 text-[14px] leading-[1.6] text-[#cfcfcf]">{t.quote}</p>
+              <p className="m-0 text-[14px] leading-[1.6] text-sl-muted-inv">{t.quote}</p>
             </div>
             <div className="flex items-center gap-[10px] mt-5">
               <div
@@ -44,7 +44,7 @@ export function TestimonialsCarousel() {
               />
               <div className="leading-[1.25]">
                 <div className="text-[13px] font-semibold">{t.name}</div>
-                <div className="text-[11.5px] text-[#888]">{t.role}</div>
+                <div className="text-[11.5px] text-sl-subtle-inv">{t.role}</div>
               </div>
             </div>
           </div>

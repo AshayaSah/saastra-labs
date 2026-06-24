@@ -8,7 +8,7 @@ export function HomePricing() {
 
   return (
     <section>
-      <div className="sl-container pt-[148px] pb-[104px]">
+      <div className="sl-container sl-section">
         <h2 className="sl-reveal sl-section-heading">Extensive pricing plans</h2>
 
         {/* Row 1: Composable + Scale */}
@@ -27,7 +27,7 @@ export function HomePricing() {
             </div>
             <a href="#" className="block text-center sl-btn mb-[18px]">Select plan</a>
             {composable.features.map((f, i) => (
-              <div key={i} className="sl-feature-row text-[#3a382f]">
+              <div key={i} className="sl-feature-row text-sl-body">
                 <span className="text-sl-green">✓</span>{f}
               </div>
             ))}
@@ -47,14 +47,14 @@ export function HomePricing() {
               <span className="sl-badge-yellow">{scale.badge}</span>
             </div>
             <h3 className="relative m-0 mb-[2px] text-[19px] font-semibold tracking-[-0.01em]">{scale.tagline}</h3>
-            <p className="relative mt-0 mb-[18px] text-[13px] text-[#9a9a9a]">{scale.description}</p>
+            <p className="relative mt-0 mb-[18px] text-[13px] text-sl-muted-inv">{scale.description}</p>
             <div className="relative flex items-baseline gap-1 mb-[18px]">
               <span className="text-[34px] font-bold tracking-[-0.03em]">${scale.monthlyPrice.toLocaleString()}</span>
-              <span className="text-[13px] text-[#9a9a9a]">/mo</span>
+              <span className="text-[13px] text-sl-muted-inv">/mo</span>
             </div>
             <a href="#" className="relative block text-center sl-btn mb-[18px]">Select plan</a>
             {scale.features.map((f, i) => (
-              <div key={i} className="sl-feature-row-dark relative text-[#cfcfcf]">
+              <div key={i} className="sl-feature-row-dark relative text-sl-muted-inv">
                 <span className="text-sl-accent">✓</span>{f}
               </div>
             ))}
@@ -81,7 +81,7 @@ export function HomePricing() {
           </div>
           <div className="grid grid-cols-2 gap-x-[18px] gap-y-2">
             {multiPage.features.map((f, i) => (
-              <div key={i} className="flex items-center gap-[9px] text-[13px] text-[#3a382f] py-[6px]">
+              <div key={i} className="flex items-center gap-[9px] text-[13px] text-sl-body py-[6px]">
                 <span className="text-sl-green">✓</span>{f}
               </div>
             ))}

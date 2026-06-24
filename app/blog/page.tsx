@@ -4,20 +4,9 @@ export default function BlogPage() {
   return (
     <div className="overflow-x-hidden bg-sl-bg font-sans text-sl-text antialiased">
       {/* ── BLOG LISTING ────────────────────────────────────────── */}
-      <div className="mx-auto max-w-[1100px] px-7 pt-[150px] pb-[108px]">
-        <div className="leading-[0.76] mb-[-4px] overflow-hidden">
-          <span
-            className="block whitespace-nowrap font-extrabold tracking-[-0.035em] select-none"
-            style={{
-              fontSize: "clamp(120px,19vw,232px)",
-              background: "linear-gradient(180deg,#dad7d0 32%,rgba(218,215,208,0) 92%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            Blog
-          </span>
+      <div className="sl-container sl-page-top pb-section-end">
+        <div className="sl-display">
+          <span className="sl-display-title">Blog</span>
         </div>
 
         <div className="grid grid-cols-3 gap-6">

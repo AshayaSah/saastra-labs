@@ -3,7 +3,7 @@ import { COMP_ROWS, BENEFIT_CARDS } from "@/lib/constants"
 export function ComparisonTable() {
   return (
     <section>
-      <div className="sl-container pt-[148px] pb-24">
+      <div className="sl-container sl-section">
         <h2 className="sl-reveal sl-section-heading">
           Saastra Labs vs traditional service providers
         </h2>
@@ -69,7 +69,7 @@ export function ComparisonTable() {
               key={i}
               className={`sl-reveal sl-d${i + 1} sl-card p-5`}
             >
-              <div className="w-[34px] h-[34px] rounded-[9px] bg-[#f3f1ec] flex items-center justify-center text-[15px] mb-3">
+              <div className="w-[34px] h-[34px] rounded-[9px] bg-sl-surface-2 flex items-center justify-center text-[15px] mb-3">
                 {card.icon}
               </div>
               <h3 className="m-0 mb-[6px] text-[15px] font-semibold">{card.title}</h3>

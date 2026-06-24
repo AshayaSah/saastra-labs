@@ -48,26 +48,31 @@ All static content lives in `lib/constants.ts` (typed by `lib/types.ts`). When a
 
 ## Design system
 
-Custom Tailwind tokens (all prefixed `sl-`) are declared in `globals.css` under `@theme`:
+**`design.md` (repo root) is the master spec — read it before touching styles.** Every design token (color, spacing, radius, shadow, type scale) is declared once in `globals.css` under `@theme` and consumed as a Tailwind v4 utility. **Never hardcode color/spacing/radius values in a component** — reference the token, and change the token in `globals.css` to restyle globally.
 
-| Token | Value | Use |
+Token → utility mapping:
+
+| Group | Token (in `@theme`) | Utility |
 |---|---|---|
-| `sl-bg` | `#e9e7e2` | Page background |
-| `sl-dark` | `#060606` | Dark cards/navbar |
-| `sl-accent` | `#f5c518` | Yellow CTA colour |
-| `sl-text` | `#0c0c0c` | Primary text |
-| `sl-muted` | `#6b6862` | Secondary text |
-| `sl-border` | `#e6e4df` | Light card borders |
-| `sl-border-dark` | `#1c1c1c` | Dark card borders |
+| Color | `--color-sl-*` | `text-sl-muted`, `bg-sl-surface`, `border-sl-border` |
+| Spacing | `--spacing-section`, `--spacing-page-top` | `pt-section`, `py-section`, `pt-page-top` |
+| Radius | `--radius-card`, `--radius-control`, `--radius-pill` | `rounded-card`, `rounded-control`, `rounded-pill` |
+| Shadow | `--shadow-card`, `--shadow-pop` | `shadow-card`, `shadow-pop` |
+| Type | `--text-h2`, `--text-body`, `--text-eyebrow` … | `text-h2`, `text-body`, `text-eyebrow` |
 
-Utility classes also defined in `globals.css` (under `@layer components`):
+Color roles: text uses a 4-step ramp per surface — light: `sl-text` → `sl-body` → `sl-muted` → `sl-subtle`; dark: `sl-text-inv` → `sl-muted-inv` → `sl-subtle-inv`. Surfaces (`sl-surface*`) are a separate scale from page backgrounds (`sl-bg`/`sl-dark`). Accent is `sl-accent` (yellow) with `sl-accent-ink` on top.
 
-- `.sl-container` — max-width 1100 px, centred, padded
-- `.sl-card` / `.sl-card-dark` — standard light/dark card styles
-- `.sl-section-heading` — section title typography
+Semantic classes (in `globals.css` `@layer components`) wrap repeated compound patterns — reuse these instead of re-typing utilities:
+
+- `.sl-container` — max-width 1100 px column, centred, gutter padding
+- `.sl-section` / `.sl-section-sm` — standard section vertical rhythm (one place controls every section gap)
+- `.sl-page-top` — first-block offset that clears the fixed navbar on inner pages
+- `.sl-display` / `.sl-display-title` — the oversized watermark page title (Projects / Pricing / Blog)
+- `.sl-card` / `.sl-card-dark` — light/dark card surfaces
+- `.sl-section-heading` — section title (= `text-h2`)
 - `.sl-btn` / `.sl-btn-wide` — yellow CTA button
 - `.sl-badge-green` / `.sl-badge-yellow` — status badges
-- `.sl-mono-label` — monospace uppercase label (10 px, tracked)
+- `.sl-mono-label` — monospace uppercase eyebrow
 - `.sl-cta-btn` / `.sl-chat-btn` — animated hero buttons (CSS-only shimmer/glow)
 
 ### Scroll reveal

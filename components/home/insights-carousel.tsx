@@ -12,8 +12,8 @@ export function InsightsCarousel() {
   }, [activeIndex])
 
   return (
-    <section className="pt-[140px] pb-8 overflow-hidden">
-      <h2 className="sl-reveal sl-section-heading max-w-[1100px] mx-auto px-7">
+    <section className="pt-section pb-8 overflow-hidden">
+      <h2 className="sl-reveal sl-section-heading sl-container">
         See insights straight from our clients
       </h2>
 

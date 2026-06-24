@@ -25,7 +25,7 @@ export function Footer() {
         </h2>
 
         <div className="mb-16">
-          <ChatButton label="Book a free call →" href="#" />
+          <ChatButton href="#" />
         </div>
 
         {/* Footer columns */}
@@ -45,7 +45,7 @@ export function Footer() {
               />
               <span className="text-white font-semibold text-[16px]">Saastra Labs</span>
             </div>
-            <p className="text-[13px] leading-[1.6] text-[#8a8a8a] m-0 max-w-[240px]">
+            <p className="text-[13px] leading-[1.6] text-sl-subtle-inv m-0 max-w-[240px]">
               Design and engineering studio from Kathmandu, Nepal — building for the world.
             </p>
           </div>
@@ -58,7 +58,7 @@ export function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="block text-[13.5px] text-[#cfcfcf] no-underline py-[5px] transition-colors hover:text-white"
+                  className="block text-[13.5px] text-sl-muted-inv no-underline py-[5px] transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -69,12 +69,12 @@ export function Footer() {
 
         {/* Bottom row */}
         <div className="flex items-center justify-between py-5">
-          <span className="text-[12px] text-[#6a6a6a]">
+          <span className="text-[12px] text-sl-subtle-inv">
             © 2025 Saastra Labs Pvt. Ltd., Kathmandu, Nepal. All rights reserved.
           </span>
           <div className="flex gap-[14px]">
             {["X", "in", "GH"].map((s) => (
-              <span key={s} className="text-[12px] text-[#9a9a9a] cursor-pointer">
+              <span key={s} className="text-[12px] text-sl-subtle-inv cursor-pointer">
                 {s}
               </span>
             ))}

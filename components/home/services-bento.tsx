@@ -3,7 +3,7 @@ import { BentoCard } from "@/components/ui/bento-card"
 export function ServicesBento() {
   return (
     <section>
-      <div className="sl-container py-[148px] pb-24">
+      <div className="sl-container sl-section">
         <h2 className="sl-reveal sl-section-heading">Replace your Engineering Team</h2>
 
         {/* Row 1 */}
@@ -61,7 +61,7 @@ export function ServicesBento() {
             </div>
             <div>
               <h3 className="m-0 mb-[6px] text-[16px] font-semibold">Hosting, Deployment &amp; Maintenance</h3>
-              <p className="m-0 text-[13px] leading-[1.5] text-[#9a9a9a]">We keep it fast, secure and online.</p>
+              <p className="m-0 text-[13px] leading-[1.5] text-sl-muted-inv">We keep it fast, secure and online.</p>
             </div>
           </BentoCard>
         </div>
