@@ -9,6 +9,11 @@ import type {
   TestimonialItem,
   FAQItem,
   FooterColumn,
+  PageSection,
+  CompanyStat,
+  CompanyValue,
+  TeamMember,
+  JobOpening,
 } from "./types"
 
 export const NAV_LINKS: NavLink[] = [
@@ -294,10 +299,10 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "COMPANY",
     links: [
-      { label: "About",   href: "#" },
-      { label: "Team",    href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Contact", href: "#" },
+      { label: "About",   href: "/about" },
+      { label: "Team",    href: "/team" },
+      { label: "Careers", href: "/careers" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
@@ -307,5 +312,90 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Terms",   href: "#" },
       { label: "Cookies", href: "#" },
     ],
+  },
+]
+
+export const PAGE_SECTIONS: PageSection[] = [
+  // About
+  {
+    page: "about",
+    eyebrow: "Who we are",
+    heading: "We build digital products that earn their place on the screen.",
+    body: "Saastra Labs is a design and engineering studio based in Kathmandu, working with founders and teams around the world. We pair product thinking with senior engineering so the thing we ship is the thing people actually use.",
+  },
+  {
+    page: "about",
+    eyebrow: "How we started",
+    heading: "Started small, shipped relentlessly.",
+    body: "We began as two people taking on the projects bigger agencies passed over. The work compounded. Today we're a small, deliberate team that still measures itself by what makes it to production — not what makes it into a deck.",
+  },
+  {
+    page: "about",
+    eyebrow: "How we work",
+    heading: "Design and engineering in the same room.",
+    body: "No hand-offs across silos, no telephone game between teams. The people designing a screen are the people building it, which is why our work holds together from the first pixel to the last deploy.",
+  },
+  // Team
+  {
+    page: "team",
+    eyebrow: "The people",
+    heading: "A small team that ships like a big one.",
+    body: "Designers, engineers and product folks who care about the details most people never notice — and the ones everyone feels.",
+  },
+  // Careers
+  {
+    page: "careers",
+    eyebrow: "Join us",
+    heading: "Do the best work of your career.",
+    body: "We hire slowly and trust deeply. If you want ownership, sharp teammates and work that ships, you'll feel at home here.",
+  },
+]
+
+export const COMPANY_STATS: CompanyStat[] = [
+  { value: "100+",  label: "Projects delivered" },
+  { value: "8",     label: "Countries served" },
+  { value: "2018",  label: "Founded" },
+  { value: "12",    label: "People on the team" },
+]
+
+export const COMPANY_VALUES: CompanyValue[] = [
+  { icon: "◆", title: "Craft is the point",  description: "We sweat the details because the details are what people remember. Good enough is where we start, not where we stop." },
+  { icon: "⚡", title: "Ship, then refine",   description: "Momentum beats perfection. We get real work in front of real users early, then sharpen it with what we learn." },
+  { icon: "◎", title: "Clear over clever",   description: "Plain language, honest timelines, no jargon games. The best collaboration is the one where nobody is guessing." },
+]
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  { name: "Ashaya Sah",     role: "Founder & Engineer",     bio: "Sets the technical direction and still reviews the pull requests that matter most." },
+  { name: "Maya Gurung",    role: "Design Lead",            bio: "Turns rough briefs into interfaces that feel obvious in hindsight." },
+  { name: "Rohan Thapa",    role: "Senior Engineer",        bio: "Lives in the place where performance budgets meet product deadlines." },
+  { name: "Sara Lehmann",   role: "Product Manager",        bio: "Keeps scope honest and the roadmap moving without the drama." },
+  { name: "Bibek Shrestha", role: "Frontend Engineer",      bio: "Cares about the 16ms frame and the keyboard user nobody else tests for." },
+  { name: "Nina Acharya",   role: "Brand & Motion",         bio: "Gives every project a personality it couldn't be mistaken for." },
+]
+
+export const JOB_OPENINGS: JobOpening[] = [
+  {
+    title: "Senior Product Designer",
+    department: "Design",
+    location: "Kathmandu / Remote",
+    type: "Full-time",
+    description: "Own end-to-end design for client products — from first concept through production handoff alongside engineering.",
+    applyHref: "/contact",
+  },
+  {
+    title: "Full-stack Engineer",
+    department: "Engineering",
+    location: "Remote",
+    type: "Full-time",
+    description: "Build and ship modern web apps with Next.js, TypeScript and Postgres. You'll touch the whole stack, not a slice of it.",
+    applyHref: "/contact",
+  },
+  {
+    title: "Frontend Engineer (React)",
+    department: "Engineering",
+    location: "Remote",
+    type: "Contract",
+    description: "Translate polished designs into fast, accessible interfaces. Strong eye for motion and detail required.",
+    applyHref: "/contact",
   },
 ]

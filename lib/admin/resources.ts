@@ -13,6 +13,11 @@ import {
   navLinks,
   footerLinks,
   marqueeItems,
+  pageSections,
+  companyStats,
+  companyValues,
+  teamMembers,
+  jobOpenings,
 } from "@/lib/db/schema"
 import { TAGS } from "@/lib/db/queries"
 
@@ -30,6 +35,11 @@ export const RESOURCE_TABLES: Record<string, PgTable> = {
   nav: navLinks,
   footer: footerLinks,
   marquee: marqueeItems,
+  pages: pageSections,
+  stats: companyStats,
+  values: companyValues,
+  team: teamMembers,
+  jobs: jobOpenings,
 }
 
 export const RESOURCE_TAGS: Record<string, string> = {
@@ -45,4 +55,9 @@ export const RESOURCE_TAGS: Record<string, string> = {
   nav: TAGS.nav,
   footer: TAGS.footer,
   marquee: TAGS.marquee,
+  pages: TAGS.pages,
+  stats: TAGS.stats,
+  values: TAGS.values,
+  team: TAGS.team,
+  jobs: TAGS.jobs,
 }

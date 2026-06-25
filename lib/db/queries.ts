@@ -14,6 +14,11 @@ import {
   navLinks,
   footerLinks,
   marqueeItems,
+  pageSections,
+  companyStats,
+  companyValues,
+  teamMembers,
+  jobOpenings,
 } from "./schema"
 
 // Cache tags — revalidated from admin server actions on save.
@@ -30,6 +35,11 @@ export const TAGS = {
   nav: "nav",
   footer: "footer",
   marquee: "marquee",
+  pages: "pages",
+  stats: "stats",
+  values: "values",
+  team: "team",
+  jobs: "jobs",
 } as const
 
 // Inferred row types, re-exported for components.
@@ -45,6 +55,11 @@ export type ComparisonRowRow = typeof comparisonRows.$inferSelect
 export type NavLinkRow = typeof navLinks.$inferSelect
 export type FooterLinkRow = typeof footerLinks.$inferSelect
 export type MarqueeItemRow = typeof marqueeItems.$inferSelect
+export type PageSectionRow = typeof pageSections.$inferSelect
+export type CompanyStatRow = typeof companyStats.$inferSelect
+export type CompanyValueRow = typeof companyValues.$inferSelect
+export type TeamMemberRow = typeof teamMembers.$inferSelect
+export type JobOpeningRow = typeof jobOpenings.$inferSelect
 
 export type FooterColumnData = {
   title: string
@@ -169,6 +184,50 @@ export const getFooterColumns = unstable_cache(
   },
   ["footer-columns"],
   { tags: [TAGS.footer] },
+)
+
+export const getPageSections = unstable_cache(
+  async (page: "about" | "team" | "careers"): Promise<PageSectionRow[]> => {
+    return db
+      .select()
+      .from(pageSections)
+      .where(eq(pageSections.page, page))
+      .orderBy(asc(pageSections.sortOrder))
+  },
+  ["page-sections"],
+  { tags: [TAGS.pages] },
+)
+
+export const getCompanyStats = unstable_cache(
+  async (): Promise<CompanyStatRow[]> => {
+    return db.select().from(companyStats).orderBy(asc(companyStats.sortOrder))
+  },
+  ["company-stats"],
+  { tags: [TAGS.stats] },
+)
+
+export const getCompanyValues = unstable_cache(
+  async (): Promise<CompanyValueRow[]> => {
+    return db.select().from(companyValues).orderBy(asc(companyValues.sortOrder))
+  },
+  ["company-values"],
+  { tags: [TAGS.values] },
+)
+
+export const getTeamMembers = unstable_cache(
+  async (): Promise<TeamMemberRow[]> => {
+    return db.select().from(teamMembers).orderBy(asc(teamMembers.sortOrder))
+  },
+  ["team-members"],
+  { tags: [TAGS.team] },
+)
+
+export const getJobOpenings = unstable_cache(
+  async (): Promise<JobOpeningRow[]> => {
+    return db.select().from(jobOpenings).orderBy(asc(jobOpenings.sortOrder))
+  },
+  ["job-openings"],
+  { tags: [TAGS.jobs] },
 )
 
 export const getMarquee = unstable_cache(

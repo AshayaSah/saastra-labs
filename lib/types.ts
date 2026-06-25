@@ -79,3 +79,37 @@ export interface FooterColumn {
   title: string
   links: { label: string; href: string }[]
 }
+
+export interface PageSection {
+  page: "about" | "team" | "careers"
+  eyebrow: string
+  heading: string
+  body: string
+}
+
+export interface CompanyStat {
+  value: string
+  label: string
+}
+
+export interface CompanyValue {
+  icon: string
+  title: string
+  description: string
+}
+
+export interface TeamMember {
+  name: string
+  role: string
+  bio: string
+  avatar?: string
+}
+
+export interface JobOpening {
+  title: string
+  department: string
+  location: string
+  type: string
+  description: string
+  applyHref: string
+}
