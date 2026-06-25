@@ -42,6 +42,22 @@ export const products = pgTable("products", {
   sortOrder: integer("sort_order").notNull().default(0),
 })
 
+// ── Projects (homepage work grid) ────────────────────────────
+export const projects = pgTable("projects", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull().default(""),
+  tag: text("tag").notNull().default(""),
+  meta: text("meta").notNull().default(""),
+  description: text("description").notNull().default(""),
+  image: text("image").notNull().default(""),
+  preview: text("preview").notNull().default(""),
+  href: text("href").notNull().default("#"),
+  dark: boolean("dark").notNull().default(false),
+  colSpan: integer("col_span").notNull().default(2),
+  rowSpan: integer("row_span").notNull().default(2),
+  sortOrder: integer("sort_order").notNull().default(0),
+})
+
 // ── Pricing plans ────────────────────────────────────────────
 export const pricingPlans = pgTable("pricing_plans", {
   id: serial("id").primaryKey(),

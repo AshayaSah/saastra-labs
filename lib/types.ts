@@ -13,6 +13,22 @@ export interface Product {
   dark?: boolean
 }
 
+export interface ProjectItem {
+  id: string
+  title: string
+  tag: string
+  meta: string
+  description: string
+  image?: string
+  preview: string
+  href: string
+  dark?: boolean
+  /** Columns the card spans in the 6-col bento (1–6). */
+  colSpan: number
+  /** Rows the card spans — controls height (1–3). */
+  rowSpan: number
+}
+
 export interface InsightItem {
   tag: string
   text: string
