@@ -9,6 +9,7 @@ export type FieldType =
   | "select"
   | "tags"
   | "json"
+  | "image"
 
 export type Field = {
   /** Must match the drizzle column property name (camelCase). */
@@ -48,7 +49,8 @@ export const RESOURCES: ResourceMeta[] = [
       { name: "readTime", label: "Read time", type: "text", placeholder: "5 min read" },
       { name: "published", label: "Published", type: "boolean" },
       { name: "excerpt", label: "Excerpt", type: "textarea" },
-      { name: "gradient", label: "Cover gradient (CSS)", type: "text", full: true },
+      { name: "coverImage", label: "Cover image", type: "image", full: true },
+      { name: "gradient", label: "Cover gradient (fallback if no image)", type: "text", full: true },
       { name: "tags", label: "Tags", type: "tags" },
       { name: "toc", label: "Table of contents (JSON)", type: "json" },
       { name: "sections", label: "Sections (JSON)", type: "json" },
@@ -62,11 +64,13 @@ export const RESOURCES: ResourceMeta[] = [
     titleField: "name",
     fields: [
       { name: "name", label: "Name", type: "text" },
-      { name: "badge", label: "Badge", type: "text" },
-      { name: "previewLabel", label: "Preview label", type: "text" },
-      { name: "preview", label: "Preview", type: "text" },
+      { name: "badge", label: "Category", type: "text", placeholder: "Web app" },
+      { name: "href", label: "Visit link", type: "text", placeholder: "https://… or #" },
+      { name: "ctaLabel", label: "Button label", type: "text", placeholder: "Visit" },
       { name: "dark", label: "Dark card", type: "boolean" },
-      { name: "description", label: "Description", type: "textarea" },
+      { name: "image", label: "Image (optional)", type: "image", full: true },
+      { name: "preview", label: "Preview gradient (fallback if no image)", type: "text", full: true },
+      { name: "description", label: "Description (shown on hover)", type: "textarea" },
     ],
   },
   {
@@ -83,7 +87,7 @@ export const RESOURCES: ResourceMeta[] = [
       { name: "colSpan", label: "Width — columns (1–6)", type: "number", placeholder: "3" },
       { name: "rowSpan", label: "Height — rows (1–3)", type: "number", placeholder: "2" },
       { name: "dark", label: "Stronger overlay", type: "boolean" },
-      { name: "image", label: "Image URL (optional)", type: "text", full: true, placeholder: "https://…" },
+      { name: "image", label: "Image (shown on the card)", type: "image", full: true },
       { name: "preview", label: "Fallback gradient (CSS)", type: "text", full: true, placeholder: "linear-gradient(160deg,#1d3a30,#0c1c17)" },
       { name: "description", label: "Description", type: "textarea" },
     ],

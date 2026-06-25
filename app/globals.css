@@ -942,6 +942,167 @@
   }
 }
 
+/* ── Products bento — full-bleed cards, title at rest, hover reveal ── */
+.sl-prod {
+  position: relative;
+  height: 340px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--color-sl-border);
+  background: var(--color-sl-surface-2);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+.sl-prod:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-pop);
+  border-color: var(--color-sl-border-strong);
+}
+.sl-prod-link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.sl-prod-media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.sl-prod:hover .sl-prod-media,
+.sl-prod-link:focus-visible .sl-prod-media {
+  transform: scale(1.06);
+}
+/* persistent scrim — keeps the resting title legible over any image */
+.sl-prod-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 6, 6, 0.82) 0%,
+    rgba(6, 6, 6, 0.3) 32%,
+    rgba(6, 6, 6, 0) 62%
+  );
+}
+/* frosted wash — appears only on hover */
+.sl-prod-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 8, 0.4);
+  backdrop-filter: blur(9px) saturate(120%);
+  -webkit-backdrop-filter: blur(9px) saturate(120%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.sl-prod--strong .sl-prod-overlay {
+  background: rgba(6, 6, 6, 0.56);
+}
+.sl-prod:hover .sl-prod-overlay,
+.sl-prod-link:focus-visible .sl-prod-overlay {
+  opacity: 1;
+}
+.sl-prod-body {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  padding: 24px;
+}
+.sl-prod-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 238, 234, 0.66);
+}
+.sl-prod-title {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #f5f3ef;
+}
+/* description + visit button pop in on hover */
+.sl-prod-reveal {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  overflow: hidden;
+  transition:
+    max-height 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 0.4s ease,
+    transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.sl-prod:hover .sl-prod-reveal,
+.sl-prod-link:focus-visible .sl-prod-reveal {
+  max-height: 220px;
+  opacity: 1;
+  transform: translateY(0);
+}
+.sl-prod-desc {
+  margin: 10px 0 16px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(240, 238, 234, 0.82);
+  max-width: 42ch;
+}
+.sl-prod-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--color-sl-accent);
+  color: var(--color-sl-accent-ink);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 9px 15px;
+  border-radius: var(--radius-pill);
+}
+.sl-prod-visit svg {
+  transition: transform 0.2s ease;
+}
+.sl-prod:hover .sl-prod-visit svg {
+  transform: translateX(3px);
+}
+/* Touch / no-hover devices: surface details by default */
+@media (hover: none) {
+  .sl-prod-overlay {
+    opacity: 1;
+  }
+  .sl-prod-reveal {
+    max-height: 220px;
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sl-prod,
+  .sl-prod-media,
+  .sl-prod-overlay,
+  .sl-prod-reveal,
+  .sl-prod-visit svg {
+    transition: none;
+  }
+  .sl-prod:hover {
+    transform: none;
+  }
+  .sl-prod:hover .sl-prod-media {
+    transform: none;
+  }
+}
+@media (max-width: 560px) {
+  .sl-prod {
+    height: 300px;
+  }
+}
+
 @layer components {
   /* ── Layout ─────────────────────────────────────────────────── */
   /* Centered content column with standard side gutters */

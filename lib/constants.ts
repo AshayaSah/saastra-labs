@@ -26,7 +26,8 @@ export const PRODUCTS: Product[] = [
     description:
       "A natural-language interface where you describe the app you want — Acebuilder ships production-ready code in minutes.",
     preview: "linear-gradient(160deg,#eef1f6,#d4ddee)",
-    previewLabel: "[ describe → ship ]",
+    href: "#",
+    ctaLabel: "Visit",
   },
   {
     id: "acebuilder-ui",
@@ -35,7 +36,8 @@ export const PRODUCTS: Product[] = [
     description:
       "A composable component library and design system — drop-in ready for any modern React or Next.js stack.",
     preview: "linear-gradient(160deg,#1a1a1a,#343434)",
-    previewLabel: "[ 120+ components ]",
+    href: "#",
+    ctaLabel: "Browse components",
     dark: true,
   },
   {
@@ -45,7 +47,8 @@ export const PRODUCTS: Product[] = [
     description:
       "One-click deploys, edge caching and zero-config scaling for everything you build — fast and global by default.",
     preview: "radial-gradient(120% 120% at 30% 20%,#2a1c10,#0b0b0b)",
-    previewLabel: "▲ deployed · 12 regions",
+    href: "#",
+    ctaLabel: "Deploy now",
     dark: true,
   },
   {
@@ -55,7 +58,8 @@ export const PRODUCTS: Product[] = [
     description:
       "Privacy-first product analytics with real-time dashboards, funnels and cohort retention out of the box.",
     preview: "linear-gradient(160deg,#1d3a30,#0c1c17)",
-    previewLabel: "[ live dashboards ]",
+    href: "#",
+    ctaLabel: "See it live",
     dark: true,
   },
 ]

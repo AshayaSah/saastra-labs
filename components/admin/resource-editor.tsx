@@ -4,6 +4,7 @@ import { useState, useTransition } from "react"
 import type { Field, ResourceMeta } from "@/lib/admin/fields"
 import { emptyRow } from "@/lib/admin/fields"
 import { saveResource, type SaveState } from "@/app/admin/actions"
+import { ImageUploader } from "@/components/admin/image-uploader"
 
 type Row = Record<string, unknown>
 
@@ -209,7 +210,9 @@ function FieldInput({
   return (
     <div className={wrap}>
       <label className={labelCls}>{field.label}</label>
-      {field.type === "textarea" || field.type === "json" ? (
+      {field.type === "image" ? (
+        <ImageUploader value={String(value ?? "")} onChange={onChange} />
+      ) : field.type === "textarea" || field.type === "json" ? (
         <textarea
           value={String(value ?? "")}
           onChange={(e) => onChange(e.target.value)}

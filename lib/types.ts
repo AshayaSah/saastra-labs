@@ -8,8 +8,10 @@ export interface Product {
   name: string
   badge: string
   description: string
+  image?: string
   preview: string
-  previewLabel: string
+  href: string
+  ctaLabel: string
   dark?: boolean
 }
 
