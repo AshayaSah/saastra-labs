@@ -83,6 +83,7 @@ export const testimonials = pgTable("testimonials", {
   quote: text("quote").notNull().default(""),
   name: text("name").notNull().default(""),
   role: text("role").notNull().default(""),
+  avatar: text("avatar").notNull().default(""),
   sortOrder: integer("sort_order").notNull().default(0),
 })
 
@@ -101,6 +102,7 @@ export const insights = pgTable("insights", {
   text: text("text").notNull().default(""),
   name: text("name").notNull().default(""),
   role: text("role").notNull().default(""),
+  avatar: text("avatar").notNull().default(""),
   sortOrder: integer("sort_order").notNull().default(0),
 })
 
