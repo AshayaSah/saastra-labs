@@ -15,6 +15,41 @@
       "when": 1782321453157,
       "tag": "0001_dusty_piledriver",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1782362316872,
+      "tag": "0002_brainy_dragon_lord",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1782363924654,
+      "tag": "0003_even_hannibal_king",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1782368081158,
+      "tag": "0004_fearless_bullseye",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1782369114360,
+      "tag": "0005_first_squadron_sinister",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1782369925951,
+      "tag": "0006_aromatic_mastermind",
+      "breakpoints": true
     }
   ]
 }

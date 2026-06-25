@@ -1,5 +1,5 @@
-import { BentoCard } from "@/components/ui/bento-card"
 import { getProducts } from "@/lib/db/queries"
+import { coverStyle } from "@/lib/utils"
 
 export async function ProductsGrid() {
   const PRODUCTS = await getProducts()
@@ -11,49 +11,54 @@ export async function ProductsGrid() {
         <span className="sl-display-title">Products</span>
       </div>
 
-      {/* Product list */}
-      <div className="grid gap-[14px]" style={{ gridTemplateColumns: "1fr 1fr" }}>
+      <div className="grid grid-cols-1 gap-[14px] sm:grid-cols-2">
         {PRODUCTS.map((p, i) => (
-          <BentoCard
-            key={p.id}
-            dark={p.dark}
-            className={`sl-reveal sl-d${(i % 4) + 1} min-h-[300px] p-5 ${p.dark ? "text-white" : ""}`}
-          >
-            {/* Preview area */}
-            <div
-              className="relative flex-1 min-h-[180px] rounded-[12px] overflow-hidden mb-[18px]"
-              style={{ background: p.preview }}
-            >
-              <span
-                className={`absolute left-[14px] top-[12px] text-[10px] font-semibold px-2 py-[3px] rounded-full ${
-                  p.dark
-                    ? "bg-white/10 text-[#e6e6e6]"
-                    : "bg-black/[0.06] text-[#5a5752]"
-                }`}
+          <div key={p.id} className={`sl-reveal sl-d${(i % 4) + 1}`}>
+            <article className={`sl-prod ${p.dark ? "sl-prod--strong" : ""}`}>
+              <a
+                href={p.href || "#"}
+                className="sl-prod-link"
+                aria-label={`${p.ctaLabel || "Visit"} ${p.name}`}
               >
-                {p.badge}
-              </span>
-              <span
-                className={`absolute left-[14px] bottom-[12px] font-mono text-[11px] ${
-                  p.dark ? "text-[#7a7a7a]" : "text-[#9a978f]"
-                }`}
-              >
-                {p.previewLabel}
-              </span>
-            </div>
+                <span
+                  className="sl-prod-media"
+                  style={coverStyle(p.image, p.preview)}
+                  aria-hidden
+                />
+                <span className="sl-prod-scrim" aria-hidden />
+                <span className="sl-prod-overlay" aria-hidden />
 
-            {/* Title + description */}
-            <div>
-              <h3 className="m-0 mb-[6px] text-[16px] font-semibold">{p.name}</h3>
-              <p
-                className={`m-0 text-[13px] leading-[1.5] ${
-                  p.dark ? "text-[#9a9a9a]" : "text-sl-muted"
-                }`}
-              >
-                {p.description}
-              </p>
-            </div>
-          </BentoCard>
+                <div className="sl-prod-body">
+                  {p.badge && <span className="sl-prod-eyebrow">{p.badge}</span>}
+                  <h3 className="sl-prod-title">{p.name}</h3>
+
+                  <div className="sl-prod-reveal">
+                    {p.description && (
+                      <p className="sl-prod-desc">{p.description}</p>
+                    )}
+                    <span className="sl-prod-visit">
+                      {p.ctaLabel || "Visit"}
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        aria-hidden
+                      >
+                        <path
+                          d="M3 7h8M7 3l4 4-4 4"
+                          stroke="currentColor"
+                          strokeWidth="1.7"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
         ))}
       </div>
     </section>

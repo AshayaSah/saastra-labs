@@ -1,6 +1,7 @@
 import type {
   NavLink,
   Product,
+  ProjectItem,
   InsightItem,
   ComparisonRow,
   BenefitCard,
@@ -25,7 +26,8 @@ export const PRODUCTS: Product[] = [
     description:
       "A natural-language interface where you describe the app you want — Acebuilder ships production-ready code in minutes.",
     preview: "linear-gradient(160deg,#eef1f6,#d4ddee)",
-    previewLabel: "[ describe → ship ]",
+    href: "#",
+    ctaLabel: "Visit",
   },
   {
     id: "acebuilder-ui",
@@ -34,7 +36,8 @@ export const PRODUCTS: Product[] = [
     description:
       "A composable component library and design system — drop-in ready for any modern React or Next.js stack.",
     preview: "linear-gradient(160deg,#1a1a1a,#343434)",
-    previewLabel: "[ 120+ components ]",
+    href: "#",
+    ctaLabel: "Browse components",
     dark: true,
   },
   {
@@ -44,7 +47,8 @@ export const PRODUCTS: Product[] = [
     description:
       "One-click deploys, edge caching and zero-config scaling for everything you build — fast and global by default.",
     preview: "radial-gradient(120% 120% at 30% 20%,#2a1c10,#0b0b0b)",
-    previewLabel: "▲ deployed · 12 regions",
+    href: "#",
+    ctaLabel: "Deploy now",
     dark: true,
   },
   {
@@ -54,8 +58,87 @@ export const PRODUCTS: Product[] = [
     description:
       "Privacy-first product analytics with real-time dashboards, funnels and cohort retention out of the box.",
     preview: "linear-gradient(160deg,#1d3a30,#0c1c17)",
-    previewLabel: "[ live dashboards ]",
+    href: "#",
+    ctaLabel: "See it live",
     dark: true,
+  },
+]
+
+export const PROJECTS: ProjectItem[] = [
+  {
+    id: "ai-search",
+    title: "AI search landing page",
+    tag: "Landing page",
+    meta: "Figma Design · Next.js Development",
+    description:
+      "A conversion-focused landing page designed to explain a complex AI product in under 10 seconds.",
+    preview: "linear-gradient(155deg,#1c1c1c,#080808)",
+    href: "#",
+    dark: true,
+    colSpan: 4,
+    rowSpan: 2,
+  },
+  {
+    id: "hpa-app",
+    title: "HPA mobile app",
+    tag: "Mobile app",
+    meta: "Product Design · React Native",
+    description:
+      "A performance-tracking app for athletes, rebuilt around a single glanceable home screen.",
+    preview: "radial-gradient(120% 120% at 30% 20%,#2a1c10,#0b0b0b)",
+    href: "#",
+    dark: true,
+    colSpan: 2,
+    rowSpan: 2,
+  },
+  {
+    id: "north-dashboard",
+    title: "Analytics dashboard",
+    tag: "Web app",
+    meta: "Design System · Data Viz",
+    description:
+      "Privacy-first product analytics with real-time funnels and cohort retention out of the box.",
+    preview: "linear-gradient(160deg,#1d3a30,#0c1c17)",
+    href: "#",
+    colSpan: 2,
+    rowSpan: 1,
+  },
+  {
+    id: "vellum-brand",
+    title: "Vellum brand site",
+    tag: "Brand site",
+    meta: "Art Direction · Webflow",
+    description:
+      "An editorial brand site that lets a typography studio show off its own type at full volume.",
+    preview: "repeating-linear-gradient(45deg,#d8cbb8,#d8cbb8 14px,#e0d4c2 14px,#e0d4c2 28px)",
+    href: "#",
+    colSpan: 4,
+    rowSpan: 1,
+  },
+  {
+    id: "outpost-commerce",
+    title: "Commerce platform",
+    tag: "E-commerce",
+    meta: "Platform · Next.js · Stripe",
+    description:
+      "A commerce platform with a built-in framework for deep store customizations.",
+    preview: "linear-gradient(160deg,#e6ecf6,#cdd9ee)",
+    href: "#",
+    colSpan: 3,
+    rowSpan: 2,
+  },
+  {
+    id: "brink-campaign",
+    title: "Launch campaign",
+    tag: "Campaign",
+    meta: "Creative · Motion",
+    description:
+      "A multi-surface launch campaign tying a product reveal together across web, social and email.",
+    preview: "linear-gradient(160deg,#3a2a1a,#120c06)",
+    href: "#",
+    dark: true,
+    colSpan: 3,
+    rowSpan: 1,
   },
 ]
 

@@ -3,6 +3,7 @@ import { type PgTable } from "drizzle-orm/pg-core"
 import {
   blogPosts,
   products,
+  projects,
   pricingPlans,
   testimonials,
   faqs,
@@ -19,6 +20,7 @@ import { TAGS } from "@/lib/db/queries"
 export const RESOURCE_TABLES: Record<string, PgTable> = {
   blog: blogPosts,
   products,
+  projects,
   pricing: pricingPlans,
   testimonials,
   faqs,
@@ -33,6 +35,7 @@ export const RESOURCE_TABLES: Record<string, PgTable> = {
 export const RESOURCE_TAGS: Record<string, string> = {
   blog: TAGS.blog,
   products: TAGS.products,
+  projects: TAGS.projects,
   pricing: TAGS.pricing,
   testimonials: TAGS.testimonials,
   faqs: TAGS.faqs,

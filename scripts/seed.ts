@@ -7,6 +7,7 @@ import * as schema from "../lib/db/schema"
 import {
   NAV_LINKS,
   PRODUCTS,
+  PROJECTS,
   LOGO_MARQUEE,
   INSIGHTS,
   COMP_ROWS,
@@ -29,6 +30,7 @@ async function main() {
   await Promise.all([
     db.delete(schema.blogPosts),
     db.delete(schema.products),
+    db.delete(schema.projects),
     db.delete(schema.pricingPlans),
     db.delete(schema.testimonials),
     db.delete(schema.faqs),
@@ -63,9 +65,27 @@ async function main() {
       name: p.name,
       badge: p.badge,
       description: p.description,
+      image: p.image ?? "",
       preview: p.preview,
-      previewLabel: p.previewLabel,
+      href: p.href,
+      ctaLabel: p.ctaLabel,
       dark: p.dark ?? false,
+      sortOrder: i,
+    })),
+  )
+
+  await db.insert(schema.projects).values(
+    PROJECTS.map((p, i) => ({
+      title: p.title,
+      tag: p.tag,
+      meta: p.meta,
+      description: p.description,
+      image: p.image ?? "",
+      preview: p.preview,
+      href: p.href,
+      dark: p.dark ?? false,
+      colSpan: p.colSpan,
+      rowSpan: p.rowSpan,
       sortOrder: i,
     })),
   )

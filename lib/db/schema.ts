@@ -22,6 +22,7 @@ export const blogPosts = pgTable("blog_posts", {
   readTime: text("read_time").notNull().default(""),
   tags: jsonb("tags").$type<string[]>().notNull().default([]),
   gradient: text("gradient").notNull().default(""),
+  coverImage: text("cover_image").notNull().default(""),
   toc: jsonb("toc").$type<TocItem[]>().notNull().default([]),
   sections: jsonb("sections").$type<Section[]>().notNull().default([]),
   published: boolean("published").notNull().default(true),
@@ -36,9 +37,27 @@ export const products = pgTable("products", {
   name: text("name").notNull(),
   badge: text("badge").notNull().default(""),
   description: text("description").notNull().default(""),
+  image: text("image").notNull().default(""),
   preview: text("preview").notNull().default(""),
-  previewLabel: text("preview_label").notNull().default(""),
+  href: text("href").notNull().default("#"),
+  ctaLabel: text("cta_label").notNull().default("Visit"),
   dark: boolean("dark").notNull().default(false),
+  sortOrder: integer("sort_order").notNull().default(0),
+})
+
+// ── Projects (homepage work grid) ────────────────────────────
+export const projects = pgTable("projects", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull().default(""),
+  tag: text("tag").notNull().default(""),
+  meta: text("meta").notNull().default(""),
+  description: text("description").notNull().default(""),
+  image: text("image").notNull().default(""),
+  preview: text("preview").notNull().default(""),
+  href: text("href").notNull().default("#"),
+  dark: boolean("dark").notNull().default(false),
+  colSpan: integer("col_span").notNull().default(2),
+  rowSpan: integer("row_span").notNull().default(2),
   sortOrder: integer("sort_order").notNull().default(0),
 })
 
@@ -64,6 +83,7 @@ export const testimonials = pgTable("testimonials", {
   quote: text("quote").notNull().default(""),
   name: text("name").notNull().default(""),
   role: text("role").notNull().default(""),
+  avatar: text("avatar").notNull().default(""),
   sortOrder: integer("sort_order").notNull().default(0),
 })
 
@@ -82,6 +102,7 @@ export const insights = pgTable("insights", {
   text: text("text").notNull().default(""),
   name: text("name").notNull().default(""),
   role: text("role").notNull().default(""),
+  avatar: text("avatar").notNull().default(""),
   sortOrder: integer("sort_order").notNull().default(0),
 })
 

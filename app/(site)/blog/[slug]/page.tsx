@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { ChatButton } from "@/components/chat-button"
 import { getBlogPost, getRelatedBlogPosts } from "@/lib/db/queries"
+import { coverStyle } from "@/lib/utils"
 
 export async function generateMetadata({
   params,
@@ -77,7 +78,7 @@ export default async function BlogPostPage({
           {/* Right: cover image */}
           <div
             className="relative h-80 overflow-hidden rounded-card"
-            style={{ background: post.gradient }}
+            style={coverStyle(post.coverImage, post.gradient)}
           >
             <div
               className="absolute inset-0"
@@ -179,7 +180,10 @@ export default async function BlogPostPage({
                 className={`sl-blog-card-link sl-reveal sl-d${(i % 3) + 1}`}
               >
                 <article className="sl-blog-card">
-                  <div className="h-40" style={{ background: rel.gradient }} />
+                  <div
+                    className="h-40"
+                    style={coverStyle(rel.coverImage, rel.gradient)}
+                  />
                   <div className="px-[18px] pt-4 pb-5">
                     <span className="sl-mono-label">{rel.category}</span>
                     <h3 className="mt-2 mb-1.5 text-[15px] leading-[1.25] font-semibold text-sl-text">

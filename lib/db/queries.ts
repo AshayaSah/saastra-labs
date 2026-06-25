@@ -4,6 +4,7 @@ import { db } from "./index"
 import {
   blogPosts,
   products,
+  projects,
   pricingPlans,
   testimonials,
   faqs,
@@ -19,6 +20,7 @@ import {
 export const TAGS = {
   blog: "blog",
   products: "products",
+  projects: "projects",
   pricing: "pricing",
   testimonials: "testimonials",
   faqs: "faqs",
@@ -33,6 +35,7 @@ export const TAGS = {
 // Inferred row types, re-exported for components.
 export type BlogPostRow = typeof blogPosts.$inferSelect
 export type ProductRow = typeof products.$inferSelect
+export type ProjectRow = typeof projects.$inferSelect
 export type PricingPlanRow = typeof pricingPlans.$inferSelect
 export type TestimonialRow = typeof testimonials.$inferSelect
 export type FaqRow = typeof faqs.$inferSelect
@@ -88,6 +91,14 @@ export const getProducts = unstable_cache(
   },
   ["products"],
   { tags: [TAGS.products] },
+)
+
+export const getProjects = unstable_cache(
+  async (): Promise<ProjectRow[]> => {
+    return db.select().from(projects).orderBy(asc(projects.sortOrder))
+  },
+  ["projects"],
+  { tags: [TAGS.projects] },
 )
 
 export const getPricingPlans = unstable_cache(

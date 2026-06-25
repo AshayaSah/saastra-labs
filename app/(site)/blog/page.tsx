@@ -1,4 +1,5 @@
 import { getBlogPosts } from "@/lib/db/queries"
+import { coverStyle } from "@/lib/utils"
 
 export default async function BlogPage() {
   const posts = await getBlogPosts()
@@ -22,7 +23,7 @@ export default async function BlogPage() {
                 {/* Cover image */}
                 <div
                   className="relative h-[190px]"
-                  style={{ background: post.gradient }}
+                  style={coverStyle(post.coverImage, post.gradient)}
                 >
                   <div
                     className="absolute inset-0"
