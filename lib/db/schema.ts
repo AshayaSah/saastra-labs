@@ -149,6 +149,58 @@ export const marqueeItems = pgTable("marquee_items", {
   sortOrder: integer("sort_order").notNull().default(0),
 })
 
+// ── Company page sections (About / Team / Careers heroes + prose) ──
+export const pageSections = pgTable("page_sections", {
+  id: serial("id").primaryKey(),
+  page: text("page")
+    .$type<"about" | "team" | "careers">()
+    .notNull()
+    .default("about"),
+  eyebrow: text("eyebrow").notNull().default(""),
+  heading: text("heading").notNull().default(""),
+  body: text("body").notNull().default(""),
+  sortOrder: integer("sort_order").notNull().default(0),
+})
+
+// ── Company stats (About) ────────────────────────────────────
+export const companyStats = pgTable("company_stats", {
+  id: serial("id").primaryKey(),
+  value: text("value").notNull().default(""),
+  label: text("label").notNull().default(""),
+  sortOrder: integer("sort_order").notNull().default(0),
+})
+
+// ── Company values (About / Careers) ─────────────────────────
+export const companyValues = pgTable("company_values", {
+  id: serial("id").primaryKey(),
+  icon: text("icon").notNull().default(""),
+  title: text("title").notNull().default(""),
+  description: text("description").notNull().default(""),
+  sortOrder: integer("sort_order").notNull().default(0),
+})
+
+// ── Team members (Team) ──────────────────────────────────────
+export const teamMembers = pgTable("team_members", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull().default(""),
+  role: text("role").notNull().default(""),
+  bio: text("bio").notNull().default(""),
+  avatar: text("avatar").notNull().default(""),
+  sortOrder: integer("sort_order").notNull().default(0),
+})
+
+// ── Job openings (Careers) ───────────────────────────────────
+export const jobOpenings = pgTable("job_openings", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull().default(""),
+  department: text("department").notNull().default(""),
+  location: text("location").notNull().default(""),
+  type: text("type").notNull().default("Full-time"),
+  description: text("description").notNull().default(""),
+  applyHref: text("apply_href").notNull().default("#"),
+  sortOrder: integer("sort_order").notNull().default(0),
+})
+
 // ── Contact form submissions ─────────────────────────────────
 export const contactSubmissions = pgTable("contact_submissions", {
   id: serial("id").primaryKey(),

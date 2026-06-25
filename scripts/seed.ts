@@ -17,6 +17,11 @@ import {
   FAQS,
   TECH_LOGOS,
   FOOTER_COLUMNS,
+  PAGE_SECTIONS,
+  COMPANY_STATS,
+  COMPANY_VALUES,
+  TEAM_MEMBERS,
+  JOB_OPENINGS,
 } from "../lib/constants"
 import { posts } from "../lib/blog"
 
@@ -40,6 +45,11 @@ async function main() {
     db.delete(schema.navLinks),
     db.delete(schema.footerLinks),
     db.delete(schema.marqueeItems),
+    db.delete(schema.pageSections),
+    db.delete(schema.companyStats),
+    db.delete(schema.companyValues),
+    db.delete(schema.teamMembers),
+    db.delete(schema.jobOpenings),
   ])
 
   await db.insert(schema.blogPosts).values(
@@ -166,6 +176,51 @@ async function main() {
     ...TECH_LOGOS.map((label, i) => ({ kind: "tech" as const, label, sortOrder: i })),
   ]
   await db.insert(schema.marqueeItems).values(marqueeRows)
+
+  await db.insert(schema.pageSections).values(
+    PAGE_SECTIONS.map((s, i) => ({
+      page: s.page,
+      eyebrow: s.eyebrow,
+      heading: s.heading,
+      body: s.body,
+      sortOrder: i,
+    })),
+  )
+
+  await db.insert(schema.companyStats).values(
+    COMPANY_STATS.map((s, i) => ({ value: s.value, label: s.label, sortOrder: i })),
+  )
+
+  await db.insert(schema.companyValues).values(
+    COMPANY_VALUES.map((v, i) => ({
+      icon: v.icon,
+      title: v.title,
+      description: v.description,
+      sortOrder: i,
+    })),
+  )
+
+  await db.insert(schema.teamMembers).values(
+    TEAM_MEMBERS.map((m, i) => ({
+      name: m.name,
+      role: m.role,
+      bio: m.bio,
+      avatar: m.avatar ?? "",
+      sortOrder: i,
+    })),
+  )
+
+  await db.insert(schema.jobOpenings).values(
+    JOB_OPENINGS.map((j, i) => ({
+      title: j.title,
+      department: j.department,
+      location: j.location,
+      type: j.type,
+      description: j.description,
+      applyHref: j.applyHref,
+      sortOrder: i,
+    })),
+  )
 
   console.log("✓ Seed complete")
 }

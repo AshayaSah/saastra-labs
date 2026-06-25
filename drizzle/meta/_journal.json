@@ -50,6 +50,13 @@
       "when": 1782369925951,
       "tag": "0006_aromatic_mastermind",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1782372596275,
+      "tag": "0007_even_sabretooth",
+      "breakpoints": true
     }
   ]
 }
