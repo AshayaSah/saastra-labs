@@ -13,7 +13,7 @@ export async function HomePricing() {
         <h2 className="sl-reveal sl-section-heading">Extensive pricing plans</h2>
 
         {/* Row 1: Composable + Scale */}
-        <div className="grid grid-cols-2 gap-[14px] mb-[14px]">
+        <div className="grid grid-cols-1 gap-[14px] mb-[14px] md:grid-cols-2">
           {/* Composable — light */}
           <BentoCard className="sl-reveal sl-d1 p-[26px]">
             <div className="flex items-center gap-[10px] mb-[14px]">
@@ -63,10 +63,7 @@ export async function HomePricing() {
         </div>
 
         {/* Wide row: Multi Page */}
-        <BentoCard
-          className="sl-reveal p-[26px]"
-          style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 30, alignItems: "center" }}
-        >
+        <BentoCard className="sl-reveal grid grid-cols-1 items-center gap-[30px] p-[26px] md:grid-cols-[1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-[10px] mb-[14px]">
               <span className="text-[13px] font-semibold">{multiPage.name}</span>

@@ -10,7 +10,7 @@ export function FounderSection() {
       />
       <div className="sl-container sl-section relative">
         <h2 className="text-h2 text-white m-0 mb-8">SAASTRA&apos;s Team Desk</h2>
-        <div className="grid gap-10 items-start" style={{ gridTemplateColumns: "300px 1fr" }}>
+        <div className="grid grid-cols-1 gap-8 items-start md:gap-10 md:grid-cols-[300px_1fr]">
           {/* Founder photo placeholder */}
           <div
             className="h-[300px] rounded-card flex items-center justify-center"

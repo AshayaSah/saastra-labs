@@ -3,7 +3,7 @@ import { HeroHorizon } from "@/components/home/hero-horizon"
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen flex-col overflow-hidden bg-sl-dark">
+    <section className="relative flex min-h-dvh flex-col overflow-hidden bg-sl-dark">
       {/* Sunrise-over-horizon backdrop with starfield */}
       <HeroHorizon />
 

@@ -20,7 +20,7 @@ export default function ContactPage() {
           <span className="sl-display-title">Contact</span>
         </div>
 
-        <div className="grid grid-cols-[0.9fr_1.1fr] items-start gap-13">
+        <div className="grid grid-cols-1 items-start gap-9 md:grid-cols-[0.9fr_1.1fr] md:gap-13">
           {/* Left — intro + details */}
           <div className="sl-reveal pt-2">
             <span className="sl-mono-label mb-3.5 block">Let&apos;s talk</span>

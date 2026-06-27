@@ -10,7 +10,7 @@ export function FAQAccordionView({ items }: { items: FaqRow[] }) {
   return (
     <section>
       <div className="sl-container sl-section">
-        <div className="grid gap-12 items-start" style={{ gridTemplateColumns: "0.9fr 1.2fr" }}>
+        <div className="grid grid-cols-1 gap-8 items-start md:gap-12 md:grid-cols-[0.9fr_1.2fr]">
           {/* Left: heading + CTA card */}
           <div>
             <h2 className="sl-reveal sl-section-heading mb-3">
