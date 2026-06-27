@@ -20,7 +20,7 @@ export async function Footer() {
         }}
       />
 
-      <div className="sl-container relative text-center pt-28">
+      <div className="sl-container relative text-center pt-20 sm:pt-28">
         {/* CTA heading */}
         <h2 className="text-[clamp(34px,5.5vw,46px)] font-semibold tracking-[-0.03em] leading-[1.05] mx-auto mb-[26px] max-w-[560px]">
           Make your website a sales machine
@@ -31,12 +31,9 @@ export async function Footer() {
         </div>
 
         {/* Footer columns */}
-        <div
-          className="text-left grid gap-8 pb-10 border-b border-[#1a1a1a]"
-          style={{ gridTemplateColumns: "2fr 1fr 1fr 1fr" }}
-        >
+        <div className="grid grid-cols-2 gap-8 border-b border-[#1a1a1a] pb-10 text-left md:grid-cols-[2fr_1fr_1fr_1fr]">
           {/* Brand */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-[9px] mb-3">
               <Image
                 src="/logo.png"
@@ -70,7 +67,7 @@ export async function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="flex items-center justify-between py-5">
+        <div className="flex flex-col items-center gap-3 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
           <span className="text-[12px] text-sl-subtle-inv">
             © 2025 Saastra Labs Pvt. Ltd., Kathmandu, Nepal. All rights reserved.
           </span>
@@ -86,7 +83,7 @@ export async function Footer() {
         {/* SAASTRA watermark */}
         <div className="overflow-hidden leading-[0.72] mt-[6px]">
           <span
-            className="text-[210px] font-extrabold tracking-[-0.045em] inline-block translate-y-[30%] select-none"
+            className="inline-block translate-y-[30%] text-[clamp(64px,22vw,210px)] font-extrabold tracking-[-0.045em] select-none"
             style={{
               background: "linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,0))",
               WebkitBackgroundClip: "text",

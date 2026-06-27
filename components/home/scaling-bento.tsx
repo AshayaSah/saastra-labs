@@ -6,7 +6,7 @@ export function ScalingBento() {
       <div className="sl-container sl-section">
         <h2 className="sl-reveal sl-section-heading">Scaling successful companies</h2>
 
-        <div className="grid gap-[14px]" style={{ gridTemplateColumns: "1fr 1fr 1.1fr" }}>
+        <div className="grid grid-cols-1 gap-[14px] sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1.1fr]">
           {/* Team */}
           <BentoCard className="sl-reveal sl-d1 min-h-[250px]">
             <div className="relative flex-1 mb-[14px]">

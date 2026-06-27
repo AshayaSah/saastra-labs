@@ -7,7 +7,7 @@ export function ServicesBento() {
         <h2 className="sl-reveal sl-section-heading">Replace your Engineering Team</h2>
 
         {/* Row 1 */}
-        <div className="grid gap-[14px] mb-[14px]" style={{ gridTemplateColumns: "1.4fr 1fr 1.1fr" }}>
+        <div className="grid grid-cols-1 gap-[14px] mb-[14px] sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.1fr]">
           {/* Design & Dev */}
           <BentoCard className="sl-reveal sl-d1 min-h-[240px]">
             <div
@@ -67,7 +67,7 @@ export function ServicesBento() {
         </div>
 
         {/* Row 2 */}
-        <div className="grid gap-[14px]" style={{ gridTemplateColumns: "1.1fr 1.4fr" }}>
+        <div className="grid grid-cols-1 gap-[14px] md:grid-cols-[1.1fr_1.4fr]">
           {/* SEO */}
           <BentoCard className="sl-reveal sl-d1 min-h-[200px]">
             <div className="border border-[#ececec] rounded-[12px] p-[14px] mb-4">

@@ -13,8 +13,9 @@ export async function ComparisonTable() {
           Saastra Labs vs traditional service providers
         </h2>
 
-        {/* Table */}
-        <div className="bg-white border border-sl-border rounded-[20px] overflow-hidden">
+        {/* Table — scrolls horizontally on small screens to keep columns aligned */}
+        <div className="-mx-gutter overflow-x-auto px-gutter sm:mx-0 sm:px-0">
+        <div className="min-w-[600px] bg-white border border-sl-border rounded-[20px] overflow-hidden">
           {/* Header */}
           <div
             className="grid bg-[#f6f5f2] border-b border-[#ececea] text-[12.5px] font-semibold text-[#5a574f]"
@@ -66,9 +67,10 @@ export async function ComparisonTable() {
             </div>
           </div>
         </div>
+        </div>
 
         {/* Benefit cards */}
-        <div className="grid grid-cols-3 gap-[14px] mt-[14px]">
+        <div className="grid grid-cols-1 gap-[14px] mt-[14px] sm:grid-cols-3">
           {BENEFIT_CARDS.map((card, i) => (
             <div
               key={i}

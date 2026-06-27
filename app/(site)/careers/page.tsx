@@ -1,10 +1,5 @@
 import { BentoCard } from "@/components/ui/bento-card"
-import { CompanyHero } from "@/components/company/company-hero"
-import {
-  getPageSections,
-  getCompanyValues,
-  getJobOpenings,
-} from "@/lib/db/queries"
+import { getCompanyValues, getJobOpenings } from "@/lib/db/queries"
 
 export const metadata = {
   title: "Careers",
@@ -13,8 +8,7 @@ export const metadata = {
 }
 
 export default async function CareersPage() {
-  const [sections, values, jobs] = await Promise.all([
-    getPageSections("careers"),
+  const [values, jobs] = await Promise.all([
     getCompanyValues(),
     getJobOpenings(),
   ])

@@ -53,7 +53,7 @@ export default async function BlogPostPage({
         </div>
 
         {/* Hero — two columns */}
-        <div className="sl-reveal mb-13 grid grid-cols-2 items-start gap-13">
+        <div className="sl-reveal mb-13 grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-13">
           {/* Left: title + author */}
           <div>
             <span className="sl-mono-label mb-3.5 block">{post.category}</span>
@@ -94,9 +94,9 @@ export default async function BlogPostPage({
         <div className="mb-13 border-t border-sl-border-strong" />
 
         {/* Body — sidebar + content */}
-        <div className="mb-24 grid grid-cols-[210px_1fr] gap-13">
+        <div className="mb-24 grid grid-cols-1 gap-10 md:grid-cols-[210px_1fr] md:gap-13">
           {/* Sidebar */}
-          <aside className="sticky top-22 self-start">
+          <aside className="self-start md:sticky md:top-22">
             <div className="sl-mono-label mb-3.5">On this page</div>
             <nav>
               {post.toc.map((item) => (
@@ -172,7 +172,7 @@ export default async function BlogPostPage({
           <h2 className="mb-7 text-[24px] font-bold tracking-[-0.025em] text-sl-text">
             Related posts
           </h2>
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((rel, i) => (
               <a
                 key={rel.slug}

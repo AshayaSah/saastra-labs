@@ -63,7 +63,7 @@
     0 16px 24px -8px rgba(0, 0, 0, 0.06);
 
   /* ── Type scale (size / line-height / tracking / weight) ────── */
-  --text-display: clamp(120px, 19vw, 232px);
+  --text-display: clamp(76px, 19vw, 232px);
   --text-display--line-height: 0.76;
   --text-display--letter-spacing: -0.035em;
   --text-display--font-weight: 800;
@@ -216,6 +216,27 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* Responsive spacing — tighten section rhythm + gutters on smaller screens.
+   Overriding the tokens here cascades to every .sl-section / .sl-container /
+   pt-section utility, so each page scales down together. */
+@media (max-width: 1024px) {
+  :root {
+    --spacing-section: 104px;
+    --spacing-section-sm: 72px;
+    --spacing-section-end: 72px;
+    --spacing-page-top: 128px;
+  }
+}
+@media (max-width: 640px) {
+  :root {
+    --spacing-section: 76px;
+    --spacing-section-sm: 52px;
+    --spacing-section-end: 52px;
+    --spacing-page-top: 100px;
+    --spacing-gutter: 20px;
+  }
 }
 
 @layer base {

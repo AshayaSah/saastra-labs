@@ -21,14 +21,14 @@ export function InsightsCarouselView({ items }: { items: InsightRow[] }) {
         onScroll={onScroll}
         className="sl-no-sb flex gap-6 overflow-x-auto pb-2 pr-7"
         style={{
-          paddingLeft: "max(28px,calc(50vw - 522px))",
+          paddingLeft: "max(var(--spacing-gutter),calc(50vw - 522px))",
           scrollSnapType: "x mandatory",
         }}
       >
         {items.map((t, i) => (
           <div
             key={i}
-            className="flex min-h-[185px] flex-[0_0_320px] flex-col justify-between rounded-[18px] border border-[#efedea] bg-white p-[22px]"
+            className="flex min-h-[185px] flex-[0_0_min(320px,86vw)] flex-col justify-between rounded-[18px] border border-[#efedea] bg-white p-[22px]"
             style={{ scrollSnapAlign: "start" }}
           >
             <div>

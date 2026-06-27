@@ -21,14 +21,14 @@ export function TestimonialsCarouselView({ items }: { items: TestimonialRow[] })
         onScroll={onScroll}
         className="sl-no-sb flex gap-6 overflow-x-auto pb-2 pr-7"
         style={{
-          paddingLeft: "max(28px,calc(50vw - 522px))",
+          paddingLeft: "max(var(--spacing-gutter),calc(50vw - 522px))",
           scrollSnapType: "x mandatory",
         }}
       >
         {items.map((t, i) => (
           <div
             key={i}
-            className="flex min-h-[220px] flex-[0_0_360px] flex-col justify-between rounded-card border border-sl-border-dark bg-sl-surface-dark p-6 text-white"
+            className="flex min-h-[220px] flex-[0_0_min(360px,86vw)] flex-col justify-between rounded-card border border-sl-border-dark bg-sl-surface-dark p-6 text-white"
             style={{ scrollSnapAlign: "start" }}
           >
             <div>

@@ -10,7 +10,7 @@ export async function PricingCards() {
   return (
     <>
       {/* Row 1: Composable + Scale */}
-      <div className="grid grid-cols-2 gap-[14px] mb-[14px] mt-[14px]">
+      <div className="grid grid-cols-1 gap-[14px] mb-[14px] mt-[14px] md:grid-cols-2">
         {/* Composable — light */}
         <BentoCard className="sl-reveal sl-d1 p-[26px]">
           <div>
@@ -68,10 +68,7 @@ export async function PricingCards() {
       </div>
 
       {/* Row 2: Multi Page — wide */}
-      <BentoCard
-        className="sl-reveal p-[26px] mb-[14px]"
-        style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 32, alignItems: "center" }}
-      >
+      <BentoCard className="sl-reveal grid grid-cols-1 items-center gap-8 p-[26px] mb-[14px] md:grid-cols-[1fr_1.2fr]">
         <div>
           <div className="flex items-center gap-[10px] mb-[14px]">
             <span className="text-[13px] font-semibold">{multiPage.name}</span>

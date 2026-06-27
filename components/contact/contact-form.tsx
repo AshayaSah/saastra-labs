@@ -44,7 +44,7 @@ export function ContactForm() {
 
   return (
     <form action={formAction} className="sl-card gap-5 p-7">
-      <div className="grid grid-cols-2 gap-x-5 gap-y-5">
+      <div className="grid grid-cols-1 gap-x-5 gap-y-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelCls}>
             Name <span className="text-sl-accent">*</span>
