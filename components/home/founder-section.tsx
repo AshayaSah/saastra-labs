@@ -1,15 +1,15 @@
 export function FounderSection() {
   return (
-    <section className="bg-sl-dark text-white relative overflow-hidden">
+    <section className="bg-sl-dark text-sl-text-inv relative overflow-hidden">
       <div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none top-[-200px] right-[-100px] h-[500px] w-[600px]"
         style={{
-          top: -200, right: -100, width: 600, height: 500,
-          background: "radial-gradient(50% 50% at 50% 50%, rgba(255,140,50,.18), transparent 70%)",
+          background:
+            "radial-gradient(50% 50% at 50% 50%, rgb(var(--sl-glow-rgb) / 0.18), transparent 70%)",
         }}
       />
       <div className="sl-container sl-section relative">
-        <h2 className="text-h2 text-white m-0 mb-8">SAASTRA&apos;s Team Desk</h2>
+        <h2 className="text-h2 text-sl-text-inv m-0 mb-8">SAASTRA&apos;s Team Desk</h2>
         <div className="grid grid-cols-1 gap-8 items-start md:gap-10 md:grid-cols-[300px_1fr]">
           {/* Founder photo placeholder */}
           <div
@@ -31,7 +31,7 @@ export function FounderSection() {
             <p className="text-[15px] leading-[1.7] text-sl-muted-inv mt-0 mb-[22px]">
               If you&apos;re looking for a team that moves quickly and cares deeply, we&apos;d love to build with you.
             </p>
-            <div className="font-mono text-[18px] text-white mb-1 italic">The Saastra Labs Team</div>
+            <div className="font-mono text-[18px] text-sl-text-inv mb-1 italic">The Saastra Labs Team</div>
             <div className="text-[12.5px] text-sl-subtle-inv">Engineering &amp; Design · Kathmandu, Nepal</div>
           </div>
         </div>

@@ -17,7 +17,7 @@ export default async function BlogPage() {
             <a
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className={`sl-blog-card-link sl-reveal sl-d${(i % 3) + 1}`}
+              className={`sl-focus-ring sl-blog-card-link sl-reveal sl-d${(i % 3) + 1}`}
             >
               <article className="sl-blog-card flex h-full flex-col">
                 {/* Cover image */}
@@ -29,16 +29,16 @@ export default async function BlogPage() {
                     className="absolute inset-0"
                     style={{
                       background:
-                        "linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.06) 100%)",
+                        "linear-gradient(to bottom, transparent 55%, rgb(var(--sl-dark-rgb) / 0.06) 100%)",
                     }}
                   />
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-1 flex-col px-[22px] pt-5 pb-[18px]">
+                <div className="flex flex-1 flex-col px-5.5 pt-5 pb-4.5">
                   <span className="sl-mono-label">{post.category}</span>
 
-                  <h2 className="mt-[10px] mb-2 text-[17px] leading-[1.28] font-semibold tracking-[-0.012em] text-sl-text">
+                  <h2 className="mt-2.5 mb-2 text-[17px] leading-[1.28] font-semibold tracking-[-0.012em] text-sl-text">
                     {post.title}
                   </h2>
 
@@ -54,7 +54,7 @@ export default async function BlogPage() {
                   </p>
 
                   {/* Read more + read time */}
-                  <div className="mt-auto flex items-center justify-between border-t border-sl-border pt-[14px]">
+                  <div className="mt-auto flex items-center justify-between border-t border-sl-border pt-3.5">
                     <span className="sl-read-more">
                       Read post <span>→</span>
                     </span>

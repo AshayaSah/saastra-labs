@@ -6,17 +6,13 @@ export async function Footer() {
   const FOOTER_COLUMNS = await getFooterColumns()
 
   return (
-    <footer className="bg-sl-dark text-white relative overflow-hidden">
+    <footer className="bg-sl-dark text-sl-text-inv relative overflow-hidden">
       {/* Orange glow */}
       <div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none top-[-160px] left-1/2 h-[600px] w-[900px] -translate-x-1/2"
         style={{
-          top: -160,
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: 900,
-          height: 600,
-          background: "radial-gradient(50% 50% at 50% 50%, rgba(255,150,60,.22), transparent 65%)",
+          background:
+            "radial-gradient(50% 50% at 50% 50%, rgb(var(--sl-glow-rgb) / 0.22), transparent 65%)",
         }}
       />
 
@@ -31,7 +27,7 @@ export async function Footer() {
         </div>
 
         {/* Footer columns */}
-        <div className="grid grid-cols-2 gap-8 border-b border-[#1a1a1a] pb-10 text-left md:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div className="grid grid-cols-2 gap-8 border-b border-sl-border-dark pb-10 text-left md:grid-cols-[2fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-[9px] mb-3">
@@ -42,7 +38,7 @@ export async function Footer() {
                 height={28}
                 className="rounded-full"
               />
-              <span className="text-white font-semibold text-[16px]">Saastra Labs</span>
+              <span className="text-sl-text-inv font-semibold text-[16px]">Saastra Labs</span>
             </div>
             <p className="text-[13px] leading-[1.6] text-sl-subtle-inv m-0 max-w-[240px]">
               Design and engineering studio from Kathmandu, Nepal — building for the world.
@@ -57,7 +53,7 @@ export async function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="block text-[13.5px] text-sl-muted-inv no-underline py-[5px] transition-colors hover:text-white"
+                  className="sl-focus-ring block rounded-control text-[13.5px] text-sl-muted-inv no-underline py-[5px] transition-colors hover:text-sl-text-inv"
                 >
                   {link.label}
                 </a>

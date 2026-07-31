@@ -59,17 +59,17 @@ export function ResourceEditor({
       {/* Header */}
       <div className="flex items-end justify-between gap-4">
         <div>
-          <h1 className="m-0 text-[22px] font-semibold tracking-[-0.01em] text-sl-text">
+          <h1 className="m-0 text-title text-sl-text">
             {meta.label}
           </h1>
           <p className="mt-1 mb-0 text-[13.5px] text-sl-muted">{meta.description}</p>
         </div>
         <div className="flex items-center gap-3">
           {state.error && (
-            <span className="text-[13px] text-red-600">{state.error}</span>
+            <span className="text-[13px] text-sl-danger">{state.error}</span>
           )}
           {!state.error && state.savedAt && !dirty && (
-            <span className="text-[13px] text-green-700">Saved</span>
+            <span className="text-[13px] text-sl-green">Saved</span>
           )}
           {dirty && !pending && (
             <span className="text-[13px] text-sl-subtle">Unsaved changes</span>
@@ -78,7 +78,7 @@ export function ResourceEditor({
             type="button"
             onClick={save}
             disabled={pending}
-            className="h-10 rounded-control bg-sl-text px-5 text-[13.5px] font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+            className="sl-focus-ring h-10 rounded-control bg-sl-text px-5 text-[13.5px] font-semibold text-sl-text-inv transition-opacity hover:opacity-90 disabled:opacity-60"
           >
             {pending ? "Saving…" : "Save changes"}
           </button>
@@ -96,7 +96,7 @@ export function ResourceEditor({
         {rows.map((row, i) => (
           <div
             key={i}
-            className="rounded-card border border-sl-border bg-white p-5 shadow-card"
+            className="rounded-card border border-sl-border bg-sl-surface p-5 shadow-card"
           >
             <div className="mb-4 flex items-center justify-between gap-3">
               <span className="text-[12px] font-medium tracking-wide text-sl-subtle uppercase">
@@ -137,7 +137,7 @@ export function ResourceEditor({
         <button
           type="button"
           onClick={addRow}
-          className="h-10 rounded-control border border-sl-border bg-sl-surface px-5 text-[13.5px] font-medium text-sl-body transition-colors hover:border-sl-text"
+          className="sl-focus-ring h-10 rounded-control border border-sl-border bg-sl-surface px-5 text-[13.5px] font-medium text-sl-body transition-colors hover:border-sl-text"
         >
           + Add {meta.singular}
         </button>
@@ -166,9 +166,9 @@ function IconBtn({
       disabled={disabled}
       aria-label={label}
       title={label}
-      className={`flex h-7 w-7 items-center justify-center rounded-control border border-sl-border text-[13px] transition-colors disabled:opacity-30 ${
+      className={`sl-focus-ring flex h-7 w-7 items-center justify-center rounded-control border border-sl-border text-[13px] transition-colors disabled:opacity-30 ${
         danger
-          ? "text-red-600 hover:border-red-300 hover:bg-red-50"
+          ? "text-sl-danger hover:border-sl-danger-border hover:bg-sl-danger-light"
           : "text-sl-muted hover:border-sl-text"
       }`}
     >
@@ -177,9 +177,9 @@ function IconBtn({
   )
 }
 
-const labelCls = "mb-1.5 block text-[12px] font-medium text-sl-body"
+const labelCls = "mb-1.5 block text-label text-sl-body"
 const inputCls =
-  "h-10 w-full rounded-control border border-sl-border bg-white px-3 text-[13.5px] text-sl-text outline-none transition-colors focus:border-sl-text"
+  "sl-focus-ring h-10 w-full rounded-control border border-sl-border bg-sl-surface px-3 text-[13.5px] text-sl-text outline-none transition-colors focus:border-sl-text"
 
 function FieldInput({
   field,

@@ -22,7 +22,7 @@ export default async function AdminDashboard() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="m-0 text-[22px] font-semibold tracking-[-0.01em] text-sl-text">
+        <h1 className="m-0 text-title text-sl-text">
           Content
         </h1>
         <p className="mt-1 mb-0 text-[13.5px] text-sl-muted">
@@ -35,7 +35,7 @@ export default async function AdminDashboard() {
           <Link
             key={r.key}
             href={`/admin/${r.key}`}
-            className="rounded-card border border-sl-border bg-white p-5 shadow-card transition-colors hover:border-sl-text"
+            className="sl-focus-ring rounded-card border border-sl-border bg-sl-surface p-5 shadow-card transition-colors hover:border-sl-text"
           >
             <div className="flex items-baseline justify-between gap-2">
               <span className="text-[15px] font-semibold text-sl-text">{r.label}</span>

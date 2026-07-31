@@ -28,20 +28,20 @@ export function TestimonialsCarouselView({ items }: { items: TestimonialRow[] })
         {items.map((t, i) => (
           <div
             key={i}
-            className="flex min-h-[220px] flex-[0_0_min(360px,86vw)] flex-col justify-between rounded-card border border-sl-border-dark bg-sl-surface-dark p-6 text-white"
+            className="flex min-h-[220px] flex-[0_0_min(360px,86vw)] flex-col justify-between rounded-card border border-sl-border-dark bg-sl-surface-dark p-6 text-sl-text-inv"
             style={{ scrollSnapAlign: "start" }}
           >
             <div>
-              <div className="mb-4 text-[16px] font-bold text-white">
+              <div className="mb-4 text-[16px] font-bold text-sl-text-inv">
                 {t.company}
               </div>
               <p className="m-0 text-[14px] leading-[1.6] text-sl-muted-inv">
                 {t.quote}
               </p>
             </div>
-            <div className="mt-5 flex items-center gap-[10px]">
+            <div className="mt-5 flex items-center gap-2.5">
               <div
-                className="h-[34px] w-[34px] flex-shrink-0 rounded-full"
+                className="h-8.5 w-8.5 flex-shrink-0 rounded-full"
                 style={coverStyle(t.avatar, "linear-gradient(140deg,#444,#222)")}
               />
               <div className="leading-[1.25]">
@@ -55,18 +55,18 @@ export function TestimonialsCarouselView({ items }: { items: TestimonialRow[] })
 
       {/* Dots — one per bunch */}
       {pageCount > 1 && (
-        <div className="mt-[2px] flex justify-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white px-[13px] py-[9px]">
+        <div className="mt-0.5 flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-sl-surface px-3.5 py-2.5">
             {Array.from({ length: pageCount }).map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}
                 aria-label={`Go to testimonials ${i + 1}`}
                 aria-current={i === page}
-                className="h-[7px] cursor-pointer rounded-full border-none p-0 transition-all duration-300"
+                className="sl-focus-ring h-[7px] cursor-pointer rounded-full border-none p-0 transition-all duration-300"
                 style={{
                   width: i === page ? "22px" : "7px",
-                  background: i === page ? "#0c0c0c" : "#cdcac2",
+                  background: i === page ? "var(--color-sl-text)" : "var(--color-sl-border-strong)",
                 }}
               />
             ))}

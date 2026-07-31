@@ -14,9 +14,9 @@ const TOPICS = [
 ]
 
 const fieldCls =
-  "h-11 w-full rounded-control border border-sl-border bg-white px-4 text-[14px] text-sl-text outline-none transition-colors placeholder:text-sl-subtle focus:border-sl-text"
+  "sl-focus-ring h-11 w-full rounded-control border border-sl-border bg-sl-surface px-4 text-[14px] text-sl-text outline-none transition-colors placeholder:text-sl-subtle focus:border-sl-text"
 const labelCls = "mb-2 block text-[13px] font-medium text-sl-body"
-const errCls = "mt-1.5 text-[12.5px] text-red-600"
+const errCls = "mt-1.5 text-[12.5px] text-sl-danger"
 
 export function ContactForm() {
   const [state, formAction, pending] = useActionState(submitContact, initial)
@@ -32,7 +32,7 @@ export function ContactForm() {
         <button
           type="button"
           onClick={() => window.location.reload()}
-          className="mt-1 text-[13.5px] font-medium text-sl-text underline underline-offset-4 transition-opacity hover:opacity-70"
+          className="sl-focus-ring rounded-control mt-1 text-[13.5px] font-medium text-sl-text underline underline-offset-4 transition-opacity hover:opacity-70"
         >
           Send another message
         </button>
@@ -124,13 +124,13 @@ export function ContactForm() {
       </div>
 
       {state.status === "error" && state.message && (
-        <p className="m-0 text-[13px] text-red-600">{state.message}</p>
+        <p className="m-0 text-[13px] text-sl-danger">{state.message}</p>
       )}
 
       <button
         type="submit"
         disabled={pending}
-        className="mt-1 h-12 rounded-control bg-sl-text text-[14px] font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+        className="sl-focus-ring mt-1 h-12 rounded-control bg-sl-text text-[14px] font-semibold text-sl-text-inv transition-opacity hover:opacity-90 disabled:opacity-60"
       >
         {pending ? "Sending…" : "Send message"}
       </button>

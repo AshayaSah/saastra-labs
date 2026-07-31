@@ -22,10 +22,10 @@ export function ChatButton({
   return (
     <Link
       href={href}
-      className={`group relative flex w-fit cursor-pointer items-center gap-2 rounded-lg border border-white/20 bg-black py-2 pr-4 pl-11 tracking-tight no-underline ${className}`}
+      className={`sl-focus-ring group relative flex w-fit cursor-pointer items-center gap-2 rounded-lg border border-sl-text-inv/20 bg-sl-dark py-2 pr-4 pl-11 tracking-tight no-underline ${className}`}
     >
       {/* Morphing box: dot-matrix that slides + flips into the logo */}
-      <div className="absolute inset-y-0 left-1 z-40 my-auto flex size-8 flex-col items-center justify-center gap-px rounded-[5px] bg-sl-accent transition-all duration-[400ms] ease-out group-hover:left-[calc(100%-2.3rem)] group-hover:rotate-180 group-hover:bg-white">
+      <div className="absolute inset-y-0 left-1 z-[var(--z-fixed)] my-auto flex size-8 flex-col items-center justify-center gap-px rounded-[5px] bg-sl-accent transition-all duration-[400ms] ease-out group-hover:left-[calc(100%-2.3rem)] group-hover:rotate-180 group-hover:bg-sl-text-inv">
         <div className="flex flex-col gap-px group-hover:hidden">
           {CHAT_DOTS.map((row, r) => (
             <div key={r} className="flex gap-px">
@@ -48,9 +48,9 @@ export function ChatButton({
       </div>
 
       {/* Clip-path reveal bar */}
-      <div className="absolute -inset-px rounded-lg bg-white/20 transition-[clip-path] duration-[400ms] ease-out [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0%_0_0)]" />
+      <div className="absolute -inset-px rounded-lg bg-sl-text-inv/20 transition-[clip-path] duration-[400ms] ease-out [clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0_0%_0_0)]" />
 
-      <span className="inline-block text-white transition-transform duration-[400ms] group-hover:-translate-x-8">
+      <span className="inline-block text-sl-text-inv transition-transform duration-[400ms] group-hover:-translate-x-8">
         {label}
       </span>
     </Link>
