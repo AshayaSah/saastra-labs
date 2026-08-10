@@ -20,7 +20,7 @@ export default async function ContactInboxPage() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="m-0 text-[22px] font-semibold tracking-[-0.01em] text-sl-text">
+        <h1 className="m-0 text-title text-sl-text">
           Messages
         </h1>
         <p className="mt-1 mb-0 text-[13.5px] text-sl-muted">
@@ -37,7 +37,7 @@ export default async function ContactInboxPage() {
           {rows.map((r) => (
             <div
               key={r.id}
-              className="rounded-card border border-sl-border bg-white p-5 shadow-card"
+              className="rounded-card border border-sl-border bg-sl-surface p-5 shadow-card"
             >
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <span className="text-[15px] font-semibold text-sl-text">{r.name}</span>
@@ -49,14 +49,14 @@ export default async function ContactInboxPage() {
               <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-sl-muted">
                 <a
                   href={`mailto:${r.email}`}
-                  className="underline underline-offset-2 hover:text-sl-text"
+                  className="sl-focus-ring rounded-control underline underline-offset-2 hover:text-sl-text"
                 >
                   {r.email}
                 </a>
                 {r.company && <span>· {r.company}</span>}
                 {r.phone && <span>· {r.phone}</span>}
                 {r.topic && (
-                  <span className="rounded-pill bg-sl-surface-2 px-2 py-[2px] text-[11px] font-medium text-sl-body">
+                  <span className="rounded-pill bg-sl-surface-2 px-2 py-0.5 text-[11px] font-medium text-sl-body">
                     {r.topic}
                   </span>
                 )}

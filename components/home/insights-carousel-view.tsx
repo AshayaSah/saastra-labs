@@ -28,18 +28,18 @@ export function InsightsCarouselView({ items }: { items: InsightRow[] }) {
         {items.map((t, i) => (
           <div
             key={i}
-            className="flex min-h-[185px] flex-[0_0_min(320px,86vw)] flex-col justify-between rounded-[18px] border border-[#efedea] bg-white p-[22px]"
+            className="flex min-h-[185px] flex-[0_0_min(320px,86vw)] flex-col justify-between rounded-card border border-sl-border bg-sl-surface p-5.5"
             style={{ scrollSnapAlign: "start" }}
           >
             <div>
               <span className="sl-mono-label">{t.tag}</span>
-              <p className="mt-3 mb-0 text-[14px] leading-[1.55] text-[#27251f]">
+              <p className="mt-3 mb-0 text-copy text-sl-body">
                 {t.text}
               </p>
             </div>
-            <div className="mt-[18px] flex items-center gap-[10px]">
+            <div className="mt-4.5 flex items-center gap-2.5">
               <div
-                className="h-[34px] w-[34px] flex-shrink-0 rounded-full"
+                className="h-8.5 w-8.5 flex-shrink-0 rounded-full"
                 style={coverStyle(t.avatar, "linear-gradient(140deg,#c9c6bf,#a8a59d)")}
               />
               <div className="leading-[1.25]">
@@ -53,18 +53,18 @@ export function InsightsCarouselView({ items }: { items: InsightRow[] }) {
 
       {/* Dots — one per bunch */}
       {pageCount > 1 && (
-        <div className="mt-[2px] flex justify-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white px-[13px] py-[9px]">
+        <div className="mt-0.5 flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-sl-surface px-3.5 py-2.5">
             {Array.from({ length: pageCount }).map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}
                 aria-label={`Go to insights ${i + 1}`}
                 aria-current={i === page}
-                className="h-[7px] cursor-pointer rounded-full border-none p-0 transition-all duration-300"
+                className="sl-focus-ring h-[7px] cursor-pointer rounded-full border-none p-0 transition-all duration-300"
                 style={{
                   width: i === page ? "22px" : "7px",
-                  background: i === page ? "#0c0c0c" : "#cdcac2",
+                  background: i === page ? "var(--color-sl-text)" : "var(--color-sl-border-strong)",
                 }}
               />
             ))}

@@ -80,7 +80,7 @@ export function ImageUploader({
               type="button"
               onClick={() => inputRef.current?.click()}
               disabled={uploading}
-              className="h-9 rounded-control border border-sl-border bg-white px-3.5 text-[13px] font-medium text-sl-body transition-colors hover:border-sl-text disabled:opacity-60"
+              className="sl-focus-ring h-9 rounded-control border border-sl-border bg-sl-surface px-3.5 text-[13px] font-medium text-sl-body transition-colors hover:border-sl-text disabled:opacity-60"
             >
               {uploading ? "Uploading…" : "Replace"}
             </button>
@@ -88,7 +88,7 @@ export function ImageUploader({
               type="button"
               onClick={() => onChange("")}
               disabled={uploading}
-              className="h-9 rounded-control border border-sl-border px-3.5 text-[13px] font-medium text-red-600 transition-colors hover:border-red-300 hover:bg-red-50 disabled:opacity-60"
+              className="sl-focus-ring h-9 rounded-control border border-sl-border px-3.5 text-[13px] font-medium text-sl-danger transition-colors hover:border-sl-danger-border hover:bg-sl-danger-light disabled:opacity-60"
             >
               Remove
             </button>
@@ -99,7 +99,7 @@ export function ImageUploader({
           type="button"
           onClick={() => inputRef.current?.click()}
           disabled={uploading}
-          className="flex h-24 w-full flex-col items-center justify-center gap-1 rounded-control border border-dashed border-sl-border bg-sl-surface text-[13px] text-sl-muted transition-colors hover:border-sl-text disabled:opacity-60"
+          className="sl-focus-ring flex h-24 w-full flex-col items-center justify-center gap-1 rounded-control border border-dashed border-sl-border bg-sl-surface text-[13px] text-sl-muted transition-colors hover:border-sl-text disabled:opacity-60"
         >
           {uploading ? (
             <span>Uploading…</span>
@@ -117,10 +117,10 @@ export function ImageUploader({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="…or paste an image URL"
-        className="h-10 w-full rounded-control border border-sl-border bg-white px-3 text-[13.5px] text-sl-text outline-none transition-colors focus:border-sl-text"
+        className="sl-focus-ring h-10 w-full rounded-control border border-sl-border bg-sl-surface px-3 text-[13.5px] text-sl-text outline-none transition-colors focus:border-sl-text"
       />
 
-      {error && <p className="m-0 text-[12px] text-red-600">{error}</p>}
+      {error && <p className="m-0 text-[12px] text-sl-danger">{error}</p>}
     </div>
   )
 }

@@ -43,7 +43,10 @@ export default async function BlogPostPage({
       <div className="sl-container sl-page-top pb-section-end">
         {/* Breadcrumb */}
         <div className="mb-10 flex items-center gap-2 font-mono text-[11px] tracking-[0.1em] text-sl-subtle uppercase">
-          <a href="/blog" className="text-sl-subtle no-underline">
+          <a
+            href="/blog"
+            className="sl-focus-ring rounded-control text-sl-subtle no-underline"
+          >
             Blog
           </a>
           <span>/</span>
@@ -61,7 +64,7 @@ export default async function BlogPostPage({
             <p className="mb-7 text-body text-sl-muted">{post.excerpt}</p>
             <div className="flex items-center gap-2.5">
               <div
-                className="h-[34px] w-[34px] shrink-0 rounded-full"
+                className="h-8.5 w-8.5 shrink-0 rounded-full"
                 style={{
                   background: "linear-gradient(140deg,#c9c6bf,#a8a59d)",
                 }}
@@ -84,7 +87,7 @@ export default async function BlogPostPage({
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.08) 100%)",
+                  "linear-gradient(to bottom, transparent 50%, rgb(var(--sl-dark-rgb) / 0.08) 100%)",
               }}
             />
           </div>
@@ -107,15 +110,18 @@ export default async function BlogPostPage({
             </nav>
 
             {/* Sidebar CTA */}
-            <div className="mt-9 rounded-card border border-white/[0.06] bg-sl-surface-dark px-[18px] py-5">
-              <h3 className="mb-[9px] text-[14.5px] leading-[1.35] font-semibold text-sl-text-inv">
+            <div className="mt-9 rounded-card border border-sl-text-inv/[0.06] bg-sl-surface-dark px-4.5 py-5">
+              <h3 className="mb-2 text-[14.5px] leading-[1.35] font-semibold text-sl-text-inv">
                 Need a fast-moving engineering team?
               </h3>
               <p className="mb-4 text-[12.5px] leading-[1.55] text-sl-subtle-inv">
                 Book a call and we&apos;ll map out a plan tailored to your
                 roadmap.
               </p>
-              <ChatButton href="/contact" />
+              <ChatButton
+                href="/contact"
+                label="&nbsp;&nbsp;Chat with US&nbsp;&nbsp;"
+              />
             </div>
           </aside>
 
@@ -139,7 +145,7 @@ export default async function BlogPostPage({
                   </p>
                 ))}
                 {section.list && (
-                  <ul className="mt-1.5 list-disc pl-[18px]">
+                  <ul className="mt-1.5 list-disc pl-4.5">
                     {section.list.map((item, i) => (
                       <li
                         key={i}
@@ -158,7 +164,7 @@ export default async function BlogPostPage({
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-pill border border-sl-border bg-sl-surface-2 px-[13px] py-1 text-[12px] font-medium text-sl-muted"
+                  className="rounded-pill border border-sl-border bg-sl-surface-2 px-3.5 py-1 text-[12px] font-medium text-sl-muted"
                 >
                   {tag}
                 </span>
@@ -177,14 +183,14 @@ export default async function BlogPostPage({
               <a
                 key={rel.slug}
                 href={`/blog/${rel.slug}`}
-                className={`sl-blog-card-link sl-reveal sl-d${(i % 3) + 1}`}
+                className={`sl-focus-ring sl-blog-card-link sl-reveal sl-d${(i % 3) + 1}`}
               >
                 <article className="sl-blog-card">
                   <div
                     className="h-40"
                     style={coverStyle(rel.coverImage, rel.gradient)}
                   />
-                  <div className="px-[18px] pt-4 pb-5">
+                  <div className="px-4.5 pt-4 pb-5">
                     <span className="sl-mono-label">{rel.category}</span>
                     <h3 className="mt-2 mb-1.5 text-[15px] leading-[1.25] font-semibold text-sl-text">
                       {rel.title}

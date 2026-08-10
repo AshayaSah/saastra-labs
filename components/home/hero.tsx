@@ -12,7 +12,7 @@ export function HeroSection() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 90% at 50% 30%, transparent 50%, rgba(0,0,0,.65) 100%)",
+            "radial-gradient(120% 90% at 50% 30%, transparent 50%, rgb(var(--sl-dark-rgb) / 0.65) 100%)",
         }}
       />
 
@@ -22,7 +22,7 @@ export function HeroSection() {
           {/* Badge pill */}
           <a
             href="#"
-            className="hero-rise hero-rise-1 flex w-fit rounded-full bg-neutral-900 p-1 shadow-lg shadow-black/40"
+            className="sl-focus-ring hero-rise hero-rise-1 flex w-fit rounded-full bg-sl-surface-dark-2 p-1 shadow-lg shadow-sl-dark/40"
           >
             <div className="flex items-center gap-1 sm:gap-2">
               <div className="rounded-full bg-sl-accent px-2 py-1 text-[10px] font-semibold text-sl-accent-ink sm:text-xs">
@@ -53,7 +53,7 @@ export function HeroSection() {
 
         {/* Brand watermark */}
         <div className="relative h-18 sm:h-48 md:h-72">
-          <p className="absolute -top-10 left-1/2 -translate-x-1/2 bg-linear-to-r from-white/10 to-transparent bg-clip-text text-center text-[100px] font-semibold tracking-[-0.04em] text-transparent select-none sm:text-[6rem] md:-top-6 md:mt-10 md:text-[160px] lg:-top-18 lg:text-[300px]">
+          <p className="absolute -top-10 left-1/2 -translate-x-1/2 bg-linear-to-r from-sl-text-inv/10 to-transparent bg-clip-text text-center text-[100px] font-semibold tracking-[-0.04em] text-transparent select-none sm:text-[6rem] md:-top-6 md:mt-10 md:text-[160px] lg:-top-18 lg:text-[300px]">
             Saastra
           </p>
         </div>
