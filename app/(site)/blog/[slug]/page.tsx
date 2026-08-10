@@ -43,7 +43,10 @@ export default async function BlogPostPage({
       <div className="sl-container sl-page-top pb-section-end">
         {/* Breadcrumb */}
         <div className="mb-10 flex items-center gap-2 font-mono text-[11px] tracking-[0.1em] text-sl-subtle uppercase">
-          <a href="/blog" className="sl-focus-ring rounded-control text-sl-subtle no-underline">
+          <a
+            href="/blog"
+            className="sl-focus-ring rounded-control text-sl-subtle no-underline"
+          >
             Blog
           </a>
           <span>/</span>
@@ -115,7 +118,10 @@ export default async function BlogPostPage({
                 Book a call and we&apos;ll map out a plan tailored to your
                 roadmap.
               </p>
-              <ChatButton href="/contact" />
+              <ChatButton
+                href="/contact"
+                label="&nbsp;&nbsp;Chat with US&nbsp;&nbsp;"
+              />
             </div>
           </aside>
 
