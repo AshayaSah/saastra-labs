@@ -30,7 +30,7 @@ export const PRODUCTS: Product[] = [
     badge: "Web app",
     description:
       "A natural-language interface where you describe the app you want — Acebuilder ships production-ready code in minutes.",
-    preview: "linear-gradient(160deg,#eef1f6,#d4ddee)",
+    preview: "linear-gradient(160deg,#F6F3E4,#EBE6DC)",
     href: "#",
     ctaLabel: "Visit",
   },
@@ -40,7 +40,7 @@ export const PRODUCTS: Product[] = [
     badge: "UI Library",
     description:
       "A composable component library and design system — drop-in ready for any modern React or Next.js stack.",
-    preview: "linear-gradient(160deg,#1a1a1a,#343434)",
+    preview: "linear-gradient(160deg,#1E100F,#30050E)",
     href: "#",
     ctaLabel: "Browse components",
     dark: true,
@@ -51,7 +51,7 @@ export const PRODUCTS: Product[] = [
     badge: "Hosting",
     description:
       "One-click deploys, edge caching and zero-config scaling for everything you build — fast and global by default.",
-    preview: "radial-gradient(120% 120% at 30% 20%,#2a1c10,#0b0b0b)",
+    preview: "radial-gradient(120% 120% at 30% 20%,#4D0C12,#1E100F)",
     href: "#",
     ctaLabel: "Deploy now",
     dark: true,
@@ -62,7 +62,7 @@ export const PRODUCTS: Product[] = [
     badge: "Insights",
     description:
       "Privacy-first product analytics with real-time dashboards, funnels and cohort retention out of the box.",
-    preview: "linear-gradient(160deg,#1d3a30,#0c1c17)",
+    preview: "linear-gradient(160deg,#30050E,#1E100F)",
     href: "#",
     ctaLabel: "See it live",
     dark: true,
@@ -77,7 +77,7 @@ export const PROJECTS: ProjectItem[] = [
     meta: "Figma Design · Next.js Development",
     description:
       "A conversion-focused landing page designed to explain a complex AI product in under 10 seconds.",
-    preview: "linear-gradient(155deg,#1c1c1c,#080808)",
+    preview: "linear-gradient(155deg,#1E100F,#30050E)",
     href: "#",
     dark: true,
     colSpan: 4,
@@ -90,7 +90,7 @@ export const PROJECTS: ProjectItem[] = [
     meta: "Product Design · React Native",
     description:
       "A performance-tracking app for athletes, rebuilt around a single glanceable home screen.",
-    preview: "radial-gradient(120% 120% at 30% 20%,#2a1c10,#0b0b0b)",
+    preview: "radial-gradient(120% 120% at 30% 20%,#4D0C12,#1E100F)",
     href: "#",
     dark: true,
     colSpan: 2,
@@ -115,7 +115,7 @@ export const PROJECTS: ProjectItem[] = [
     meta: "Art Direction · Webflow",
     description:
       "An editorial brand site that lets a typography studio show off its own type at full volume.",
-    preview: "repeating-linear-gradient(45deg,#d8cbb8,#d8cbb8 14px,#e0d4c2 14px,#e0d4c2 28px)",
+    preview: "repeating-linear-gradient(45deg,#4D0C12,#4D0C12 14px,#30050E 14px,#30050E 28px)",
     href: "#",
     colSpan: 4,
     rowSpan: 1,

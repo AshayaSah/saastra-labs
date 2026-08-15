@@ -15,7 +15,7 @@ export default function BlogPostLoading() {
           </div>
           <Skeleton className="h-80 rounded-card" />
         </div>
-        <div className="grid grid-cols-[210px_1fr] gap-13">
+        <div className="mx-auto grid w-full max-w-[1180px] grid-cols-[210px_1fr] gap-13">
           <Skeleton className="h-40" />
           <div className="space-y-4">
             <Skeleton className="h-6 w-1/2" />

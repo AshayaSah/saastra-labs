@@ -9,10 +9,10 @@ export default async function BlogPage() {
       {/* ── BLOG LISTING ────────────────────────────────────────── */}
       <div className="sl-container sl-page-top pb-section-end">
         <div className="sl-display">
-          <span className="sl-display-title">Blog</span>
+          <h1 className="sl-display-title">Blog</h1>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           {posts.map((post, i) => (
             <a
               key={post.slug}
@@ -38,7 +38,7 @@ export default async function BlogPage() {
                 <div className="flex flex-1 flex-col px-5.5 pt-5 pb-4.5">
                   <span className="sl-mono-label">{post.category}</span>
 
-                  <h2 className="mt-2.5 mb-2 text-[17px] leading-[1.28] font-semibold tracking-[-0.012em] text-sl-text">
+                  <h2 className="mt-2.5 mb-2 text-[17px] leading-[1.28] font-medium tracking-[-0.012em] text-sl-text">
                     {post.title}
                   </h2>
 

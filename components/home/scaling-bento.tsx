@@ -12,23 +12,23 @@ export function ScalingBento() {
             <div className="relative flex-1 mb-3.5">
               <div
                 className="absolute w-[54px] h-[54px] rounded-tile-lg"
-                style={{ left: 18, top: 6, background: "linear-gradient(140deg,#cfccc4,#a9a69e)" }}
+                style={{ left: 18, top: 6, background: "linear-gradient(140deg,#4D0C12,#30050E)" }}
               />
               <div
                 className="absolute w-[54px] h-[54px] rounded-tile-lg"
-                style={{ left: 78, top: 34, background: "linear-gradient(140deg,#bcc6c2,#929c97)" }}
+                style={{ left: 78, top: 34, background: "linear-gradient(140deg,#4D0C12,#30050E)" }}
               />
               <div
                 className="absolute w-[54px] h-[54px] rounded-tile-lg"
-                style={{ left: 40, top: 74, background: "linear-gradient(140deg,#d2c6b6,#a99c87)" }}
+                style={{ left: 40, top: 74, background: "linear-gradient(140deg,#4D0C12,#30050E)" }}
               />
               <div
                 className="absolute w-[54px] h-[54px] rounded-tile-lg"
-                style={{ left: 118, top: 84, background: "linear-gradient(140deg,#c4c1cc,#9794a2)" }}
+                style={{ left: 118, top: 84, background: "linear-gradient(140deg,#EAE5D4,#F6F3E4)" }}
               />
             </div>
             <div>
-              <h3 className="m-0 mb-1.5 text-[16px] font-semibold">A senior team on demand</h3>
+              <h3 className="m-0 mb-1.5 text-[16px] font-medium">A senior team on demand</h3>
               <p className="m-0 text-[13px] leading-[1.5] text-sl-muted">Designers, engineers and PMs, embedded.</p>
             </div>
           </BentoCard>
@@ -53,7 +53,7 @@ export function ScalingBento() {
             <div className="flex items-center gap-2.5 mt-4.5">
               <div
                 className="w-[34px] h-[34px] rounded-full flex-shrink-0"
-                style={{ background: "linear-gradient(140deg,#444,#222)" }}
+                style={{ background: "linear-gradient(140deg,#30050E,#1E100F)" }}
               />
               <div className="leading-[1.25]">
                 <div className="text-[13px] font-semibold">Jordan Vale</div>

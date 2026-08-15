@@ -12,17 +12,17 @@ import { FAQAccordion } from "@/components/shared/faq-accordion"
 
 export default function HomePage() {
   return (
-    <div className="bg-sl-bg overflow-x-hidden antialiased font-sans">
+    <div className="bg-sl-bg overflow-x-clip antialiased font-sans">
       <HeroSection />
       <LogoMarquee />
       <ServicesBento />
       <ProjectsGrid />
-      <InsightsCarousel />
+      <TestimonialsCarousel />
       <ScalingBento />
       <ComparisonTable />
       <HomePricing />
       <FounderSection />
-      <TestimonialsCarousel />
+      <InsightsCarousel />
       <FAQAccordion />
     </div>
   )

@@ -11,7 +11,7 @@ export async function HomePricing() {
     <section>
       <div className="sl-container sl-section">
         <h2 className="sl-reveal sl-section-heading">
-          Extensive pricing plans
+          Extensive pricing <em>plans</em>
         </h2>
 
         {/* Row 1: Composable + Scale */}
@@ -24,7 +24,7 @@ export async function HomePricing() {
               </span>
               <span className="sl-badge-green">{composable.badge}</span>
             </div>
-            <h3 className="m-0 mb-0.5 text-[19px] font-semibold tracking-[-0.01em]">
+            <h3 className="m-0 mb-0.5 text-[19px] font-medium tracking-[-0.01em]">
               {composable.tagline}
             </h3>
             <p className="mt-0 mb-4.5 text-[13px] text-sl-subtle">
@@ -44,7 +44,7 @@ export async function HomePricing() {
             </a>
             {composable.features.map((f, i) => (
               <div key={i} className="sl-feature-row text-sl-body">
-                <span className="text-sl-green">✓</span>
+                <span className="text-sl-accent">✓</span>
                 {f}
               </div>
             ))}
@@ -54,6 +54,7 @@ export async function HomePricing() {
           <BentoCard
             dark
             className="sl-reveal sl-d2 relative overflow-hidden p-6.5 text-sl-text-inv"
+            style={{ background: "#4D0C12" }}
           >
             <div
               className="pointer-events-none absolute top-[-80px] right-[-40px] h-[240px] w-[240px]"
@@ -66,7 +67,7 @@ export async function HomePricing() {
               <span className="text-[13px] font-semibold">{scale.name}</span>
               <span className="sl-badge-yellow">{scale.badge}</span>
             </div>
-            <h3 className="relative m-0 mb-0.5 text-[19px] font-semibold tracking-[-0.01em]">
+            <h3 className="relative m-0 mb-0.5 text-[19px] font-medium tracking-[-0.01em]">
               {scale.tagline}
             </h3>
             <p className="relative mt-0 mb-4.5 text-[13px] text-sl-muted-inv">
@@ -80,7 +81,7 @@ export async function HomePricing() {
             </div>
             <a
               href="#"
-              className="sl-focus-ring sl-btn relative mb-4.5 block text-center"
+              className="sl-focus-ring relative mb-4.5 block rounded-full bg-sl-text-inv px-4 py-[11px] text-center text-meta font-semibold text-sl-accent no-underline transition-colors hover:bg-sl-surface-2"
             >
               Select plan
             </a>
@@ -89,7 +90,7 @@ export async function HomePricing() {
                 key={i}
                 className="sl-feature-row-dark relative text-sl-muted-inv"
               >
-                <span className="text-sl-accent">✓</span>
+                <span className="text-sl-text-inv">✓</span>
                 {f}
               </div>
             ))}
@@ -105,7 +106,7 @@ export async function HomePricing() {
               </span>
               <span className="sl-badge-green">{multiPage.badge}</span>
             </div>
-            <h3 className="m-0 mb-0.5 text-[19px] font-semibold tracking-[-0.01em]">
+            <h3 className="m-0 mb-0.5 text-[19px] font-medium tracking-[-0.01em]">
               {multiPage.tagline}
             </h3>
             <p className="mt-0 mb-4.5 text-[13px] text-sl-subtle">
@@ -127,7 +128,7 @@ export async function HomePricing() {
                 key={i}
                 className="flex items-center gap-2.5 py-1.5 text-[13px] text-sl-body"
               >
-                <span className="text-sl-green">✓</span>
+                <span className="text-sl-accent">✓</span>
                 {f}
               </div>
             ))}

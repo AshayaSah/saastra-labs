@@ -25,7 +25,7 @@ export const posts: Post[] = [
     date:     "Jun 10, 2025",
     readTime: "5 min read",
     tags:     ["Marketing", "Growth", "Brand"],
-    gradient: "linear-gradient(145deg, #d4c5b0 0%, #bfaa90 100%)",
+    gradient: "linear-gradient(145deg, #4D0C12 0%, #30050E 100%)",
     toc: [
       { id: "the-problem",  label: "The Problem with Traditional Deals" },
       { id: "low-hanging",  label: "Low-Hanging Wins" },
@@ -73,7 +73,7 @@ export const posts: Post[] = [
     date:     "Jun 4, 2025",
     readTime: "7 min read",
     tags:     ["Engineering", "Performance", "Web"],
-    gradient: "linear-gradient(145deg, #b8c5c0 0%, #8fa89f 100%)",
+    gradient: "linear-gradient(145deg, #30050E 0%, #1E100F 100%)",
     toc: [
       { id: "perceived-speed", label: "Perceived Speed Matters" },
       { id: "low-hanging",     label: "Low-Hanging Wins" },
@@ -123,7 +123,7 @@ export const posts: Post[] = [
     date:     "May 28, 2025",
     readTime: "6 min read",
     tags:     ["Product", "Strategy", "Launch"],
-    gradient: "linear-gradient(145deg, #c8b8a8 0%, #b09a84 100%)",
+    gradient: "linear-gradient(145deg, #4D0C12 0%, #30050E 100%)",
     toc: [
       { id: "validate",       label: "Validate Before You Build" },
       { id: "launch-window",  label: "The Launch Window" },
@@ -166,7 +166,7 @@ export const posts: Post[] = [
     date:     "May 20, 2025",
     readTime: "5 min read",
     tags:     ["Team", "Remote", "Culture"],
-    gradient: "linear-gradient(145deg, #c4c8d2 0%, #9aa2b4 100%)",
+    gradient: "linear-gradient(145deg, #1E100F 0%, #30050E 100%)",
     toc: [
       { id: "async-first", label: "Async-First by Default" },
       { id: "rituals",     label: "Rituals That Actually Work" },

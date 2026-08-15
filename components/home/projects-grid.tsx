@@ -1,79 +1,25 @@
-import type { CSSProperties } from "react"
 import { getProjects } from "@/lib/db/queries"
-
-const clamp = (v: number, min: number, max: number) =>
-  Math.max(min, Math.min(max, v || min))
+import { ProjectDeck } from "@/components/home/project-deck"
 
 export async function ProjectsGrid() {
   const PROJECTS = await getProjects()
 
   return (
-    <section className="relative sl-container sl-section">
-      {/* Watermark heading */}
-      <div className="sl-display">
-        <span className="sl-display-title">Projects</span>
-      </div>
+    <section className="relative overflow-x-clip bg-sl-surface">
+      <div className="grid grid-cols-1 md:grid-cols-4">
+        {/* Right column (25%) — maroon, frozen/sticky */}
+        <div className="flex flex-col justify-center bg-sl-accent px-6 py-16 md:sticky md:top-0 md:order-2 md:col-span-1 md:h-dvh md:px-8 lg:px-12">
+          <h2 className="sl-section-heading text-sl-text-inv">Projects</h2>
+          <p className="max-w-md text-sm font-normal text-balance text-sl-muted-inv sm:text-base lg:text-lg">
+            A selection of products, platforms, and brands we have designed and
+            engineered end-to-end — from first sketch to production.
+          </p>
+        </div>
 
-      <div className="sl-projects-grid">
-        {PROJECTS.map((p, i) => {
-          const media = p.image
-            ? { backgroundImage: `url(${p.image})` }
-            : { background: p.preview }
-          const span = {
-            "--col-span": clamp(p.colSpan, 1, 6),
-            "--row-span": clamp(p.rowSpan, 1, 3),
-          } as CSSProperties
-
-          return (
-            <article
-              key={p.id}
-              style={span}
-              className={`sl-project sl-reveal sl-d${(i % 4) + 1} ${
-                p.dark ? "sl-project--strong" : ""
-              }`}
-            >
-              <a
-                href={p.href || "#"}
-                className="sl-project-link"
-                aria-label={`View project: ${p.title}`}
-              >
-                <span className="sl-project-media" style={media} aria-hidden />
-
-                <div className="sl-project-overlay">
-                  <div className="sl-project-top">
-                    {p.tag && <span className="sl-project-tag">{p.tag}</span>}
-                    <h3 className="sl-project-title">{p.title}</h3>
-                    {p.description && (
-                      <p className="sl-project-desc">{p.description}</p>
-                    )}
-                  </div>
-
-                  <div className="sl-project-foot">
-                    <span className="sl-project-cta">
-                      View project
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        fill="none"
-                        aria-hidden
-                      >
-                        <path
-                          d="M3 7h8M7 3l4 4-4 4"
-                          stroke="currentColor"
-                          strokeWidth="1.6"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    {p.meta && <span className="sl-project-meta">{p.meta}</span>}
-                  </div>
-                </div>
-              </a>
-            </article>
-          )
-        })}
+        {/* Left column (75%) — cream, scroll-scrubbed card deck */}
+        <div className="bg-sl-surface md:order-1 md:col-span-3">
+          <ProjectDeck projects={PROJECTS} />
+        </div>
       </div>
     </section>
   )

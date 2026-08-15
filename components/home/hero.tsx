@@ -1,61 +1,62 @@
-import { ChatButton } from "@/components/chat-button"
+import Image from "next/image"
 import { HeroHorizon } from "@/components/home/hero-horizon"
+import { HeroLogo } from "@/components/home/hero-logo"
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-dvh flex-col overflow-hidden bg-sl-dark">
+    <section className="relative flex min-h-dvh flex-col bg-sl-accent">
       {/* Sunrise-over-horizon backdrop with starfield */}
       <HeroHorizon />
+
+      {/* Standalone logo at the top-left, fades out when the navbar appears */}
+      <HeroLogo />
 
       {/* Vignette to keep edges grounded and content legible */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 90% at 50% 30%, transparent 50%, rgb(var(--sl-dark-rgb) / 0.65) 100%)",
+            "radial-gradient(120% 90% at 50% 30%, transparent 50%, rgb(var(--sl-dark-rgb) / 0.06) 100%)",
         }}
       />
 
-      {/* Content column */}
-      <div className="sl-container relative z-10 flex flex-1 flex-col justify-between">
-        <div className="flex flex-1 flex-col justify-center pt-32 md:pt-42 lg:pt-56">
-          {/* Badge pill */}
-          <a
-            href="#"
-            className="sl-focus-ring hero-rise hero-rise-1 flex w-fit rounded-full bg-sl-surface-dark-2 p-1 shadow-lg shadow-sl-dark/40"
-          >
-            <div className="flex items-center gap-1 sm:gap-2">
-              <div className="rounded-full bg-sl-accent px-2 py-1 text-[10px] font-semibold text-sl-accent-ink sm:text-xs">
-                New
-              </div>
-              <div className="rounded-full pr-2 text-[10px] text-sl-text-inv sm:text-xs">
-                Now booking Q3 engineering pods
-              </div>
-            </div>
-          </a>
+      {/* Top/bottom split: copy on top, beige field at the bottom */}
+      <div className="relative z-10 flex flex-1 flex-col">
+        {/* Top: all the copy */}
+        <div
+          data-hero-maroon
+          className="relative flex flex-1 flex-col px-6 pt-16 pb-8 sm:px-8 lg:px-12"
+        >
+          {/* Headline */}
+          <h1 className="hero-rise hero-rise-2 relative z-10 pt-20 text-3xl font-medium tracking-[-0.02em] text-balance text-sl-beige sm:text-4xl md:text-5xl lg:text-6xl">
+            The best
+            <br />
+            <em>design and development</em> studio
+            <br />
+            in South Asia.
+          </h1>
 
-          {/* Headline + subtext */}
-          <div className="mt-6 flex flex-col items-start gap-6 md:mt-10 lg:flex-row lg:gap-10">
-            <h1 className="hero-rise hero-rise-2 text-3xl font-semibold tracking-[-0.04em] text-balance text-sl-text-inv sm:text-4xl md:text-5xl lg:text-7xl">
-              The best design and development studio in South Asia.
-            </h1>
-            <div className="lg:max-w-md">
-              <h2 className="hero-rise hero-rise-3 text-sm font-medium text-balance text-sl-muted-inv sm:text-base lg:text-lg">
+          {/* Subtext at the bottom right */}
+          <div className="relative z-10 mt-auto flex justify-end">
+            <div className="relative z-10 flex max-w-md flex-col items-end text-right">
+              <h2 className="hero-rise hero-rise-3 text-sm font-normal text-balance text-sl-beige/80 sm:text-base lg:text-lg">
                 We design and build solutions that drive results and help your
                 business grow. No fluff. No BS.&nbsp;Just results.
               </h2>
-
-              {/* Animated chat button */}
-              <ChatButton className="hero-rise hero-rise-4 mt-6 md:mt-8" />
             </div>
           </div>
         </div>
 
-        {/* Brand watermark */}
-        <div className="relative h-18 sm:h-48 md:h-72">
-          <p className="absolute -top-10 left-1/2 -translate-x-1/2 bg-linear-to-r from-sl-text-inv/10 to-transparent bg-clip-text text-center text-[100px] font-semibold tracking-[-0.04em] text-transparent select-none sm:text-[6rem] md:-top-6 md:mt-10 md:text-[160px] lg:-top-18 lg:text-[300px]">
-            Saastra
-          </p>
+        {/* Bottom: beige field — one full viewport tall */}
+        <div className="relative h-dvh overflow-hidden bg-sl-surface">
+          <Image
+            src="/image.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover"
+          />
         </div>
       </div>
     </section>

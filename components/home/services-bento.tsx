@@ -13,13 +13,13 @@ export function ServicesBento() {
             <div
               className="flex-1 rounded-tile flex items-center justify-center mb-4"
               style={{
-                background: "repeating-linear-gradient(135deg,#f1efea,#f1efea 11px,#e9e7e1 11px,#e9e7e1 22px)",
+                background: "repeating-linear-gradient(135deg,#F6F3E4,#F6F3E4 11px,#EAE5D4 11px,#EAE5D4 22px)",
               }}
             >
-              <span className="font-mono text-[11px] text-[#9a978f]">design ↔ dev preview</span>
+              <span className="font-mono text-[11px] text-[#4D0C12]">design ↔ dev preview</span>
             </div>
             <div>
-              <h3 className="m-0 mb-1.5 text-[16px] font-semibold">Design and Development</h3>
+              <h3 className="m-0 mb-1.5 text-[16px] font-medium">Design and Development</h3>
               <p className="m-0 text-[13px] leading-[1.5] text-sl-muted">
                 Designers and builders by your side. We take your dream and ship it — from first concept to production.
               </p>
@@ -31,7 +31,7 @@ export function ServicesBento() {
             <div className="flex-1 flex items-center justify-center mb-3.5">
               <div
                 className="w-[120px] h-[120px] rounded-full flex items-center justify-center"
-                style={{ background: "conic-gradient(#0c0c0c 0deg 264deg,#eceae4 264deg 360deg)" }}
+                style={{ background: "conic-gradient(#1E100F 0deg 264deg,#EAE5D4 264deg 360deg)" }}
               >
                 <div className="w-[88px] h-[88px] rounded-full bg-sl-surface flex flex-col items-center justify-center">
                   <span className="text-[22px] font-bold">73%</span>
@@ -40,7 +40,7 @@ export function ServicesBento() {
               </div>
             </div>
             <div>
-              <h3 className="m-0 mb-1.5 text-[16px] font-semibold">Regular updates &amp; progress tracking</h3>
+              <h3 className="m-0 mb-1.5 text-[16px] font-medium">Regular updates &amp; progress tracking</h3>
               <p className="m-0 text-[13px] leading-[1.5] text-sl-muted">Always know where things stand.</p>
             </div>
           </BentoCard>
@@ -50,7 +50,7 @@ export function ServicesBento() {
             <div
               className="flex-1 rounded-tile relative mb-4 overflow-hidden"
               style={{
-                background: `radial-gradient(120% 120% at 30% 20%, #1e1e1e, var(--color-sl-surface-dark))`,
+                background: `radial-gradient(120% 120% at 30% 20%, #1E100F, var(--color-sl-surface-dark))`,
               }}
             >
               <div
@@ -60,12 +60,12 @@ export function ServicesBento() {
                     "radial-gradient(40% 60% at 70% 60%, rgb(var(--sl-glow-rgb) / 0.35), transparent 70%)",
                 }}
               />
-              <span className="absolute left-3.5 top-3 font-mono text-[10px] text-[#7a7a7a]">
+              <span className="absolute left-3.5 top-3 font-mono text-[10px] text-sl-muted-inv">
                 ▲ deployed · 12 regions
               </span>
             </div>
             <div>
-              <h3 className="m-0 mb-1.5 text-[16px] font-semibold">Hosting, Deployment &amp; Maintenance</h3>
+              <h3 className="m-0 mb-1.5 text-[16px] font-medium">Hosting, Deployment &amp; Maintenance</h3>
               <p className="m-0 text-[13px] leading-[1.5] text-sl-muted-inv">We keep it fast, secure and online.</p>
             </div>
           </BentoCard>
@@ -76,15 +76,15 @@ export function ServicesBento() {
           {/* SEO */}
           <BentoCard className="sl-reveal sl-d1 min-h-[200px]">
             <div className="border border-[#ececec] rounded-tile p-3.5 mb-4">
-              <div className="flex items-center gap-2 border border-[#e6e6e6] rounded-full px-3 py-2 mb-3">
-                <span className="text-[#888]">⌕</span>
-                <span className="text-[12px] text-[#888]">saastra labs engineering studio</span>
+              <div className="flex items-center gap-2 border border-sl-border rounded-full px-3 py-2 mb-3">
+                <span className="text-sl-subtle">⌕</span>
+                <span className="text-[12px] text-sl-subtle">saastra labs engineering studio</span>
               </div>
-              <div className="text-[11px] text-[#1a7e1a] mb-0.5">saastralabs.io</div>
-              <div className="text-[13px] text-[#1a3dbf] font-medium">Saastra Labs — Design &amp; Engineering Studio</div>
+              <div className="text-[11px] text-sl-accent mb-0.5">saastralabs.io</div>
+              <div className="text-[13px] text-sl-text font-medium">Saastra Labs — Design &amp; Engineering Studio</div>
             </div>
             <div>
-              <h3 className="m-0 mb-1.5 text-[16px] font-semibold">Get found on Google</h3>
+              <h3 className="m-0 mb-1.5 text-[16px] font-medium">Get found on Google</h3>
               <p className="m-0 text-[13px] leading-[1.5] text-sl-muted">SEO-ready, fast, accessible builds.</p>
             </div>
           </BentoCard>
@@ -92,13 +92,13 @@ export function ServicesBento() {
           {/* Components */}
           <BentoCard className="sl-reveal sl-d2 min-h-[200px]">
             <div className="flex-1 flex gap-2.5 mb-4">
-              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#ffb45a,#ff7a1a)" }} />
-              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#dfe7f5,#aebfe0)" }} />
-              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#1a1a1a,#3a3a3a)" }} />
-              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#cfeede,#7fd0a8)" }} />
+              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#1E100F,#30050E)" }} />
+              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#EAE5D4,#F6F3E4)" }} />
+              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#30050E,#1E100F)" }} />
+              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#4D0C12,#30050E)" }} />
             </div>
             <div>
-              <h3 className="m-0 mb-1.5 text-[16px] font-semibold">Components, dashboards and everything else</h3>
+              <h3 className="m-0 mb-1.5 text-[16px] font-medium">Components, dashboards and everything else</h3>
               <p className="m-0 text-[13px] leading-[1.5] text-sl-muted">A full library of building blocks, ready to ship.</p>
             </div>
           </BentoCard>

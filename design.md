@@ -31,18 +31,18 @@ colors:
   sl-green: "#1f9d57"          # success
   sl-green-light: "#eafaef"    # success surface
 typography:
-  display: { size: "clamp(120px,19vw,232px)", lineHeight: 0.76, letterSpacing: -0.035em, weight: 800 }
+  display: { size: "clamp(76px,19vw,280px)", lineHeight: 0.76, letterSpacing: -0.035em, weight: 800 }
   hero:    { size: "clamp(40px,6vw,62px)",    lineHeight: 1.02, letterSpacing: -0.035em, weight: 600 }
   h1:      { size: "clamp(28px,3.8vw,44px)",  lineHeight: 1.1,  letterSpacing: -0.03em,  weight: 700 }
-  h2:      { size: 30px, lineHeight: 1.15, letterSpacing: -0.025em, weight: 600 }
-  h3:      { size: 19px, lineHeight: 1.3,  letterSpacing: -0.01em,  weight: 600 }
-  h4:      { size: 16px, lineHeight: 1.4,  weight: 600 }
-  body:    { size: 15px, lineHeight: 1.6 }
-  copy:    { size: 13.5px, lineHeight: 1.55 }
-  meta:    { size: 13px, lineHeight: 1.5 }
+  h2:      { size: "clamp(30px,2.5vw,36px)",  lineHeight: 1.15, letterSpacing: -0.025em, weight: 600 }
+  h3:      { size: "clamp(19px,1.6vw,22px)",  lineHeight: 1.3,  letterSpacing: -0.01em,  weight: 600 }
+  h4:      { size: "clamp(16px,1.3vw,18px)",  lineHeight: 1.4,  weight: 600 }
+  body:    { size: "clamp(15px,1.25vw,17px)", lineHeight: 1.6 }
+  copy:    { size: "clamp(13.5px,1.15vw,15.5px)", lineHeight: 1.55 }
+  meta:    { size: "clamp(13px,1.1vw,14.5px)", lineHeight: 1.5 }
   eyebrow: { size: 10px, lineHeight: 1.2, letterSpacing: 0.12em }
 spacing:
-  gutter: 28px       # container side padding
+  gutter: "clamp(20px,2vw,24px)"  # container side padding (fluid, mobile 20px → desktop 24px)
   page-top: 150px    # first block offset below the fixed navbar
   section: 144px     # opens a section (top)
   section-sm: 88px   # tighter section gap (top)
@@ -103,7 +103,7 @@ Spacing is a 4px-based scale. Three values carry the page rhythm and they are th
 
 - **`page-top` (150px)** — first block on an inner page; clears the fixed navbar. Apply `.sl-page-top`.
 - **`section` (144px) / `section-sm` (88px)** top, **`section-end` (96px)** bottom — between-section rhythm. Apply `.sl-section` (or `.sl-section-sm`).
-- **`gutter` (28px)** — container side padding, baked into `.sl-container` (max-width 1100px, centered).
+- **`gutter` (clamp 20→24px)** — fluid container side padding, baked into `.sl-container` (max-width 1560px, centered). Grows with the viewport from the mobile 20px floor to a 24px desktop cap.
 
 A standard page is therefore: `.sl-container` for width, `.sl-page-top` on the first block, `.sl-section` on each following section. Don't reintroduce one-off `pt-[148px]`-style values — change the token if the rhythm needs to move.
 

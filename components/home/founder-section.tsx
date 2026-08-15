@@ -9,19 +9,19 @@ export function FounderSection() {
         }}
       />
       <div className="sl-container sl-section relative">
-        <h2 className="text-h2 text-sl-text-inv m-0 mb-8">SAASTRA&apos;s Team Desk</h2>
+        <h2 className="text-h2 text-sl-text-inv m-0 mb-8">SAASTRA&apos;s <em>Team Desk</em></h2>
         <div className="grid grid-cols-1 gap-8 items-start md:gap-10 md:grid-cols-[300px_1fr]">
           {/* Founder photo placeholder */}
           <div
             className="h-[300px] rounded-card flex items-center justify-center"
             style={{
-              background: "repeating-linear-gradient(45deg,#1a1a1a,#1a1a1a 12px,#161616 12px,#161616 24px)",
+              background: "repeating-linear-gradient(45deg,#1E100F,#1E100F 12px,#30050E 12px,#30050E 24px)",
             }}
           >
-            <span className="font-mono text-[11px] text-[#555]">[ team photo ]</span>
+            <span className="font-mono text-[11px] text-sl-subtle-inv/60">[ team photo ]</span>
           </div>
 
-          <div>
+          <div className="max-w-[720px]">
             <p className="text-[15px] leading-[1.7] text-sl-muted-inv mt-0 mb-4">
               For the last few years, we&apos;ve been helping web applications turn ideas into shipped products. We&apos;ve worked with startups, small businesses, and growing enterprises to design and build their digital presence from Kathmandu, Nepal.
             </p>

@@ -19,7 +19,7 @@ export default async function TeamPage() {
         </div>
 
         {members.length > 0 && (
-          <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {members.map((m, i) => (
               <div
                 key={m.id}
@@ -29,10 +29,10 @@ export default async function TeamPage() {
                   className="mb-4 h-[200px] rounded-tile"
                   style={coverStyle(
                     m.avatar,
-                    "linear-gradient(140deg,#cfccc4,#a9a69e)"
+                    "linear-gradient(140deg,#4D0C12,#30050E)"
                   )}
                 />
-                <h3 className="m-0 text-[16px] font-semibold text-sl-text">
+                <h3 className="m-0 text-[16px] font-medium text-sl-text">
                   {m.name}
                 </h3>
                 <div className="mt-0.5 text-meta text-sl-subtle">{m.role}</div>

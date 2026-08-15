@@ -9,7 +9,7 @@ export default function CareersLoading() {
         <Skeleton className="mb-12 h-5 w-[55%] max-w-[480px]" />
 
         {/* Values */}
-        <div className="grid gap-[14px] sm:grid-cols-3">
+        <div className="grid gap-[14px] sm:grid-cols-3 2xl:grid-cols-4">
           {Array.from({ length: 3 }).map((_, i) => (
             <Skeleton key={i} className="h-[180px] rounded-card" />
           ))}

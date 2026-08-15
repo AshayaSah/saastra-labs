@@ -66,7 +66,7 @@ export default async function BlogPostPage({
               <div
                 className="h-8.5 w-8.5 shrink-0 rounded-full"
                 style={{
-                  background: "linear-gradient(140deg,#c9c6bf,#a8a59d)",
+                  background: "linear-gradient(140deg,#30050E,#1E100F)",
                 }}
               />
               <div className="leading-[1.3]">
@@ -96,8 +96,10 @@ export default async function BlogPostPage({
         {/* Divider */}
         <div className="mb-13 border-t border-sl-border-strong" />
 
-        {/* Body — sidebar + content */}
-        <div className="mb-24 grid grid-cols-1 gap-10 md:grid-cols-[210px_1fr] md:gap-13">
+        {/* Body — sidebar + content. The grid is centered at a reading measure
+            (max-w-[1180px]) and the article is capped at 75ch so long-form
+            prose stays readable even on ultrawide screens. */}
+        <div className="mx-auto mb-24 grid w-full max-w-[1180px] grid-cols-1 gap-10 md:grid-cols-[210px_1fr] md:gap-13">
           {/* Sidebar */}
           <aside className="self-start md:sticky md:top-22">
             <div className="sl-mono-label mb-3.5">On this page</div>
@@ -126,14 +128,14 @@ export default async function BlogPostPage({
           </aside>
 
           {/* Article body */}
-          <article>
+          <article className="max-w-[75ch]">
             {post.sections.map((section, i) => (
               <section
                 key={section.id}
                 id={section.id}
                 className={`sl-reveal sl-d${(i % 3) + 1} mb-11`}
               >
-                <h2 className="mb-3.5 text-[clamp(19px,2vw,23px)] font-bold tracking-[-0.02em] text-sl-text">
+                <h2 className="mb-3.5 text-[clamp(19px,2vw,23px)] font-medium tracking-[-0.02em] text-sl-text">
                   {section.heading}
                 </h2>
                 {section.content.split("\n\n").map((para, i) => (
@@ -175,10 +177,10 @@ export default async function BlogPostPage({
 
         {/* Related posts */}
         <div className="mb-24">
-          <h2 className="mb-7 text-[24px] font-bold tracking-[-0.025em] text-sl-text">
+          <h2 className="mb-7 text-[24px] font-medium tracking-[-0.02em] text-sl-text">
             Related posts
           </h2>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {related.map((rel, i) => (
               <a
                 key={rel.slug}
@@ -192,7 +194,7 @@ export default async function BlogPostPage({
                   />
                   <div className="px-4.5 pt-4 pb-5">
                     <span className="sl-mono-label">{rel.category}</span>
-                    <h3 className="mt-2 mb-1.5 text-[15px] leading-[1.25] font-semibold text-sl-text">
+                    <h3 className="mt-2 mb-1.5 text-[15px] leading-[1.25] font-medium text-sl-text">
                       {rel.title}
                     </h3>
                     <div className="text-[11.5px] text-sl-subtle">

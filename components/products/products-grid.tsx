@@ -11,7 +11,7 @@ export async function ProductsGrid() {
         <span className="sl-display-title">Products</span>
       </div>
 
-      <div className="grid grid-cols-1 gap-[14px] sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-[14px] sm:grid-cols-2 xl:grid-cols-3">
         {PRODUCTS.map((p, i) => (
           <div key={p.id} className={`sl-reveal sl-d${(i % 4) + 1}`}>
             <article className={`sl-prod ${p.dark ? "sl-prod--strong" : ""}`}>

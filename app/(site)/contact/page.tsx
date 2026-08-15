@@ -25,7 +25,7 @@ export default function ContactPage() {
           <div className="sl-reveal pt-2">
             <span className="sl-mono-label mb-3.5 block">Let&apos;s talk</span>
             <h1 className="mb-5 text-h1 text-sl-text">
-              Tell us what you&apos;re building.
+              Tell us what you&apos;re <em>building</em>.
             </h1>
             <p className="mb-9 max-w-[380px] text-body text-sl-muted">
               Whether it&apos;s a brand-new product or a team that needs to ship
