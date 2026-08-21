@@ -1,12 +1,14 @@
 import { getMarquee } from "@/lib/db/queries"
+import { GridGlow } from "@/components/shared/grid-glow"
 
 export async function LogoMarquee() {
   const logos = await getMarquee("logo")
   const marqueeLogos = [...logos, ...logos]
 
   return (
-    <section className="bg-sl-accent pt-16 pb-[49px]">
-      <p className="text-center font-mono text-[10px] tracking-[0.25em] text-sl-text-inv/60 uppercase m-0 mb-6.5">
+    <section className="relative overflow-hidden bg-sl-accent pt-16 pb-[49px]">
+      <GridGlow />
+      <p className="relative text-center font-mono text-[10px] tracking-[0.25em] text-sl-text-inv/60 uppercase m-0 mb-6.5">
         Trusted by fast-moving teams at
       </p>
       <div

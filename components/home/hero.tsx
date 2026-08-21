@@ -4,7 +4,7 @@ import { HeroLogo } from "@/components/home/hero-logo"
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-dvh flex-col bg-sl-accent">
+    <section className="relative flex min-h-dvh flex-col bg-sl-dark">
       {/* Sunrise-over-horizon backdrop with starfield */}
       <HeroHorizon />
 
@@ -20,7 +20,7 @@ export function HeroSection() {
         }}
       />
 
-      {/* Top/bottom split: copy on top, beige field at the bottom */}
+      {/* Top/bottom split: copy on top, light field at the bottom */}
       <div className="relative z-10 flex flex-1 flex-col">
         {/* Top: all the copy */}
         <div
@@ -47,7 +47,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Bottom: beige field — one full viewport tall */}
+        {/* Bottom: light field — one full viewport tall */}
         <div className="relative h-dvh overflow-hidden bg-sl-surface">
           <Image
             src="/image.jpg"

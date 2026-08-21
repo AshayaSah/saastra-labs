@@ -88,7 +88,7 @@ export const RESOURCES: ResourceMeta[] = [
       { name: "rowSpan", label: "Height — rows (1–3)", type: "number", placeholder: "2" },
       { name: "dark", label: "Stronger overlay", type: "boolean" },
       { name: "image", label: "Image (shown on the card)", type: "image", full: true },
-      { name: "preview", label: "Fallback gradient (CSS)", type: "text", full: true, placeholder: "linear-gradient(160deg,#1d3a30,#0c1c17)" },
+      { name: "preview", label: "Fallback gradient (CSS)", type: "text", full: true, placeholder: "linear-gradient(160deg,#1c2021,#323733)" },
       { name: "description", label: "Description", type: "textarea" },
     ],
   },

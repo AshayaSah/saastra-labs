@@ -10,7 +10,7 @@ export function TestimonialsCarouselView({ items }: { items: TestimonialRow[] })
   )
 
   return (
-    <section className="overflow-hidden pt-section pb-8">
+    <section className="overflow-hidden pt-16 pb-8">
       <h2 className="sl-reveal sl-section-heading sl-container">
         What <em>people</em> have been saying
       </h2>
@@ -28,25 +28,25 @@ export function TestimonialsCarouselView({ items }: { items: TestimonialRow[] })
         {items.map((t, i) => (
           <div
             key={i}
-            className="flex min-h-[220px] flex-[0_0_min(390px,86vw)] flex-col justify-between rounded-card border border-sl-border-dark bg-sl-accent p-6 text-sl-text-inv"
+            className="flex h-[480px] flex-[0_0_min(420px,86vw)] flex-col justify-between rounded-card border border-sl-border-dark bg-sl-accent p-6 text-sl-text-inv sm:h-[440px] lg:h-[480px]"
             style={{ scrollSnapAlign: "start" }}
           >
             <div>
-              <div className="mb-4 text-[16px] font-medium font-display text-sl-text-inv">
+<div className="mb-4 text-[19px] font-medium font-display text-sl-text-inv">
                 {t.company}
               </div>
-              <p className="m-0 text-[14px] leading-[1.6] text-sl-muted-inv">
+              <p className="m-0 text-[16.5px] leading-[1.6] text-sl-muted-inv">
                 {t.quote}
               </p>
             </div>
             <div className="mt-5 flex items-center gap-2.5">
               <div
                 className="h-8.5 w-8.5 flex-shrink-0 rounded-full"
-                style={coverStyle(t.avatar, "linear-gradient(140deg,#F6F3E4,#EAE5D4)")}
+                style={coverStyle(t.avatar, "linear-gradient(140deg,#f1eee5,#e7e3d7)")}
               />
               <div className="leading-[1.25]">
-                <div className="text-[13px] font-semibold">{t.name}</div>
-                <div className="text-[11.5px] text-sl-subtle-inv">{t.role}</div>
+                <div className="text-[14.5px] font-semibold">{t.name}</div>
+                <div className="text-[12.5px] text-sl-subtle-inv">{t.role}</div>
               </div>
             </div>
           </div>

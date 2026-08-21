@@ -56,7 +56,7 @@ export async function PricingCards() {
         <BentoCard
           dark
           className="sl-reveal sl-d2 relative overflow-hidden p-6.5 text-sl-text-inv"
-          style={{ background: "#4D0C12" }}
+          style={{ background: "#1c2021" }}
         >
           <div
             className="pointer-events-none absolute top-[-80px] right-[-40px] h-[240px] w-[240px]"

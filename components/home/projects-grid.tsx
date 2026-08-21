@@ -1,26 +1,37 @@
 import { getProjects } from "@/lib/db/queries"
 import { ProjectDeck } from "@/components/home/project-deck"
+import { GridGlow } from "@/components/shared/grid-glow"
+import { ChatButton } from "@/components/chat-button"
 
 export async function ProjectsGrid() {
   const PROJECTS = await getProjects()
 
   return (
-    <section className="relative overflow-x-clip bg-sl-surface">
-      <div className="grid grid-cols-1 md:grid-cols-4">
-        {/* Right column (25%) — maroon, frozen/sticky */}
-        <div className="flex flex-col justify-center bg-sl-accent px-6 py-16 md:sticky md:top-0 md:order-2 md:col-span-1 md:h-dvh md:px-8 lg:px-12">
-          <h2 className="sl-section-heading text-sl-text-inv">Projects</h2>
-          <p className="max-w-md text-sm font-normal text-balance text-sl-muted-inv sm:text-base lg:text-lg">
-            A selection of products, platforms, and brands we have designed and
-            engineered end-to-end — from first sketch to production.
-          </p>
-        </div>
-
-        {/* Left column (75%) — cream, scroll-scrubbed card deck */}
-        <div className="bg-sl-surface md:order-1 md:col-span-3">
-          <ProjectDeck projects={PROJECTS} />
+    <section className="relative overflow-x-clip bg-sl-accent">
+      <GridGlow />
+      {/* Heading — on the same solid accent as the deck */}
+      <div className="relative px-4 pt-16 pb-10 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-[1560px]">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+            <div>
+              <h2 className="sl-section-heading text-sl-text-inv">Projects</h2>
+              <p className="whitespace-nowrap sl-section-lead-inv">
+                A selection of products, platforms, and brands we have designed
+                and engineered end-to-end — from first sketch to production.
+              </p>
+            </div>
+            <ChatButton
+              href="/work"
+              label="Read more"
+              logo={false}
+              className="self-start"
+            />
+          </div>
         </div>
       </div>
+
+      {/* Deck — cream cards on the solid accent field */}
+      <ProjectDeck projects={PROJECTS} />
     </section>
   )
 }

@@ -12,19 +12,19 @@ export function ScalingBento() {
             <div className="relative flex-1 mb-3.5">
               <div
                 className="absolute w-[54px] h-[54px] rounded-tile-lg"
-                style={{ left: 18, top: 6, background: "linear-gradient(140deg,#4D0C12,#30050E)" }}
+                style={{ left: 18, top: 6, background: "linear-gradient(140deg,#323733,#1c2021)" }}
               />
               <div
                 className="absolute w-[54px] h-[54px] rounded-tile-lg"
-                style={{ left: 78, top: 34, background: "linear-gradient(140deg,#4D0C12,#30050E)" }}
+                style={{ left: 78, top: 34, background: "linear-gradient(140deg,#323733,#1c2021)" }}
               />
               <div
                 className="absolute w-[54px] h-[54px] rounded-tile-lg"
-                style={{ left: 40, top: 74, background: "linear-gradient(140deg,#4D0C12,#30050E)" }}
+                style={{ left: 40, top: 74, background: "linear-gradient(140deg,#323733,#1c2021)" }}
               />
               <div
                 className="absolute w-[54px] h-[54px] rounded-tile-lg"
-                style={{ left: 118, top: 84, background: "linear-gradient(140deg,#EAE5D4,#F6F3E4)" }}
+                style={{ left: 118, top: 84, background: "linear-gradient(140deg,#e7e3d7,#f1eee5)" }}
               />
             </div>
             <div>
@@ -53,7 +53,7 @@ export function ScalingBento() {
             <div className="flex items-center gap-2.5 mt-4.5">
               <div
                 className="w-[34px] h-[34px] rounded-full flex-shrink-0"
-                style={{ background: "linear-gradient(140deg,#30050E,#1E100F)" }}
+                style={{ background: "linear-gradient(140deg,#1c2021,#323733)" }}
               />
               <div className="leading-[1.25]">
                 <div className="text-[13px] font-semibold">Jordan Vale</div>

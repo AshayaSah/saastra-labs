@@ -49,7 +49,7 @@ export default async function AboutPage() {
               </div>
               <div className="sl-reveal sl-d1">
                 <h2 className="mb-3.5 text-h2 text-sl-text">{s.heading}</h2>
-                <p className="max-w-[640px] text-body whitespace-pre-line text-sl-muted">
+                <p className="max-w-[640px] whitespace-pre-line sl-section-lead">
                   {s.body}
                 </p>
               </div>

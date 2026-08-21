@@ -27,7 +27,7 @@ export default function ContactPage() {
             <h1 className="mb-5 text-h1 text-sl-text">
               Tell us what you&apos;re <em>building</em>.
             </h1>
-            <p className="mb-9 max-w-[380px] text-body text-sl-muted">
+            <p className="mb-9 max-w-[380px] sl-section-lead">
               Whether it&apos;s a brand-new product or a team that needs to ship
               faster, send us the details and we&apos;ll map out the next step
               together.

@@ -16,12 +16,15 @@ export function ChatButton({
   href = "/contact",
   className = "",
   variant = "cream",
+  logo = true,
 }: {
   label?: string
   href?: string
   className?: string
-  /** "cream" — warm cream fill for dark surfaces; "bordeaux" — deep bordeaux fill for light surfaces. */
+  /** "cream" — ivory fill for dark surfaces; "bordeaux" — charcoal fill for light surfaces. */
   variant?: "cream" | "bordeaux"
+  /** When false, keeps the dot-matrix arrow glyph instead of morphing into the logo. */
+  logo?: boolean
 }) {
   const dark = variant === "bordeaux"
 
@@ -30,20 +33,24 @@ export function ChatButton({
       href={href}
       className={cn(
         "sl-focus-ring group relative flex w-fit cursor-pointer items-center gap-2 rounded-full py-2 pr-4 pl-11 tracking-tight no-underline transition-colors duration-300",
-        dark
+          dark
           ? "border border-sl-border-dark bg-sl-accent text-sl-text-inv hover:bg-sl-dark"
           : "border border-sl-border bg-sl-text-inv text-sl-text hover:bg-sl-surface-2",
         className,
       )}
     >
-      {/* Morphing box: dot-matrix that slides + flips into the logo */}
+      {/* Morphing box: dot-matrix that swipes + crossfades into the logo */}
       <div
         className={cn(
-          "absolute inset-y-0 left-1 z-[var(--z-fixed)] my-auto flex size-8 flex-col items-center justify-center gap-px rounded-full bg-sl-accent transition-all duration-[400ms] ease-out motion-reduce:transition-none group-hover:left-[calc(100%-2.3rem)] group-hover:rotate-180",
+          "absolute inset-y-0 left-1 z-[var(--z-fixed)] my-auto flex size-8 items-center justify-center rounded-full bg-sl-accent transition-all duration-[400ms] ease-out motion-reduce:transition-none group-hover:left-[calc(100%-2.3rem)]",
           dark ? "group-hover:bg-sl-text-inv" : "group-hover:bg-sl-dark",
         )}
       >
-        <div className="flex flex-col gap-px group-hover:hidden">
+        <div
+          className={`absolute inset-0 flex flex-col items-center justify-center gap-px transition-opacity duration-[400ms] ease-out motion-reduce:transition-none ${
+            logo ? "group-hover:opacity-0" : ""
+          }`}
+        >
           {CHAT_DOTS.map((row, r) => (
             <div key={r} className="flex gap-px">
               {row.map((on, c) => (
@@ -55,13 +62,15 @@ export function ChatButton({
             </div>
           ))}
         </div>
-        <Image
-          src="/logo.png"
-          alt="SAASTRA Logo"
-          width={32}
-          height={32}
-          className="hidden size-8 rotate-180 rounded-full object-cover blur-sm transition-all duration-[400ms] ease-out group-hover:block group-hover:blur-none"
-        />
+        {logo && (
+          <Image
+            src="/logonewbg.png"
+            alt="SAASTRA Logo"
+            width={32}
+            height={32}
+            className="absolute inset-0 m-auto size-8 rounded-full object-cover opacity-0 blur-sm transition-all duration-[400ms] ease-out motion-reduce:transition-none group-hover:opacity-100 group-hover:blur-none"
+          />
+        )}
       </div>
 
       {/* Clip-path reveal bar */}

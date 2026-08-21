@@ -2,21 +2,23 @@
 
 import { useState } from "react"
 import { ChatButton } from "@/components/chat-button"
+import { GridGlow } from "@/components/shared/grid-glow"
 import type { FaqRow } from "@/lib/db/queries"
 
 export function FAQAccordionView({ items }: { items: FaqRow[] }) {
   const [openFaq, setOpenFaq] = useState(0)
 
   return (
-    <section className="bg-sl-accent">
-      <div className="sl-container sl-section">
+    <section className="relative overflow-hidden bg-sl-accent">
+      <GridGlow />
+      <div className="sl-container sl-section relative">
         <div className="grid grid-cols-1 gap-8 items-start md:gap-12 md:grid-cols-[0.9fr_1.2fr]">
           {/* Left: heading + CTA card */}
           <div>
             <h2 className="sl-reveal sl-section-heading mb-3 text-sl-text-inv">
               Frequently <em>asked questions</em>
             </h2>
-            <p className="text-[14px] leading-[1.6] text-sl-text-inv/70 mt-0 mb-6">
+            <p className="sl-section-lead-inv mt-0 mb-6">
               Have more questions? Reach out at{" "}
               <span className="text-sl-text-inv underline">hello@saastralabs.io</span>
               {" "}and we&apos;ll get back to you.

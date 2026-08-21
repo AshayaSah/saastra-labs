@@ -13,10 +13,10 @@ export function ServicesBento() {
             <div
               className="flex-1 rounded-tile flex items-center justify-center mb-4"
               style={{
-                background: "repeating-linear-gradient(135deg,#F6F3E4,#F6F3E4 11px,#EAE5D4 11px,#EAE5D4 22px)",
+                background: "repeating-linear-gradient(135deg,#f1eee5,#f1eee5 11px,#e7e3d7 11px,#e7e3d7 22px)",
               }}
             >
-              <span className="font-mono text-[11px] text-[#4D0C12]">design ↔ dev preview</span>
+              <span className="font-mono text-[11px] text-[#323733]">design ↔ dev preview</span>
             </div>
             <div>
               <h3 className="m-0 mb-1.5 text-[16px] font-medium">Design and Development</h3>
@@ -31,7 +31,7 @@ export function ServicesBento() {
             <div className="flex-1 flex items-center justify-center mb-3.5">
               <div
                 className="w-[120px] h-[120px] rounded-full flex items-center justify-center"
-                style={{ background: "conic-gradient(#1E100F 0deg 264deg,#EAE5D4 264deg 360deg)" }}
+                style={{ background: "conic-gradient(#1c2021 0deg 264deg,#e7e3d7 264deg 360deg)" }}
               >
                 <div className="w-[88px] h-[88px] rounded-full bg-sl-surface flex flex-col items-center justify-center">
                   <span className="text-[22px] font-bold">73%</span>
@@ -50,7 +50,7 @@ export function ServicesBento() {
             <div
               className="flex-1 rounded-tile relative mb-4 overflow-hidden"
               style={{
-                background: `radial-gradient(120% 120% at 30% 20%, #1E100F, var(--color-sl-surface-dark))`,
+                background: `radial-gradient(120% 120% at 30% 20%, #1c2021, var(--color-sl-surface-dark))`,
               }}
             >
               <div
@@ -75,7 +75,7 @@ export function ServicesBento() {
         <div className="grid grid-cols-1 gap-3.5 md:grid-cols-[1.1fr_1.4fr]">
           {/* SEO */}
           <BentoCard className="sl-reveal sl-d1 min-h-[200px]">
-            <div className="border border-[#ececec] rounded-tile p-3.5 mb-4">
+            <div className="border border-[#e0ddd2] rounded-tile p-3.5 mb-4">
               <div className="flex items-center gap-2 border border-sl-border rounded-full px-3 py-2 mb-3">
                 <span className="text-sl-subtle">⌕</span>
                 <span className="text-[12px] text-sl-subtle">saastra labs engineering studio</span>
@@ -92,10 +92,10 @@ export function ServicesBento() {
           {/* Components */}
           <BentoCard className="sl-reveal sl-d2 min-h-[200px]">
             <div className="flex-1 flex gap-2.5 mb-4">
-              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#1E100F,#30050E)" }} />
-              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#EAE5D4,#F6F3E4)" }} />
-              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#30050E,#1E100F)" }} />
-              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#4D0C12,#30050E)" }} />
+              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#1c2021,#323733)" }} />
+              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#e7e3d7,#f1eee5)" }} />
+              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#323733,#1c2021)" }} />
+              <div className="flex-1 rounded-tile" style={{ background: "linear-gradient(160deg,#323733,#1c2021)" }} />
             </div>
             <div>
               <h3 className="m-0 mb-1.5 text-[16px] font-medium">Components, dashboards and everything else</h3>

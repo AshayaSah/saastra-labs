@@ -16,8 +16,8 @@ import type { LenisOptions } from "lenis"
  * Central Lenis configuration.
  *
  * Conservative, premium-agency tuning:
- * - lerp ≈ 0.09 — subtle inertia, never floaty
- * - wheelMultiplier 1 — keeps wheel speed close to native scrolling
+ * - lerp ≈ 0.065 — a touch more inertia, still controlled
+ * - wheelMultiplier 0.95 — slightly heavier wheel response
  * - touch scrolling stays native (Lenis only smooths wheel events by default)
  * - autoRaf/autoToggle — single built-in rAF loop, pauses when the tab is hidden
  * - respectReducedMotion (default true) — Lenis auto-disables smoothing and
@@ -25,8 +25,8 @@ import type { LenisOptions } from "lenis"
  * - stopInertiaOnNavigate — resets inertia on browser navigation (back/forward)
  */
 const LENIS_OPTIONS: LenisOptions = {
-  lerp: 0.09,
-  wheelMultiplier: 1,
+  lerp: 0.065,
+  wheelMultiplier: 0.95,
   smoothWheel: true,
   autoRaf: true,
   autoToggle: true,

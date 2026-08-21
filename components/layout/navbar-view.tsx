@@ -54,21 +54,17 @@ export function NavbarView({
     >
       <nav
         className="pointer-events-auto mx-auto flex max-w-[880px] items-center justify-between rounded-full border border-sl-border-dark pt-[9px] pr-[9px] pb-[9px] shadow-[0_24px_48px_-24px_rgb(var(--sl-dark-rgb)/0.45)] backdrop-blur-[22px]"
-        style={{ background: "rgb(77 12 18 / 1)" }}
+        style={{ background: "rgb(28 32 33 / 0.92)" }}
       >
         <div className="flex w-full items-center justify-between gap-4 pl-4 transition-all duration-300 ease-out motion-reduce:transition-none sm:gap-7 sm:pl-5">
           <Link href="/" className="flex items-center gap-[9px] no-underline">
             <Image
-              src="/logo_new.png"
+              src="/logonewbg.png"
               alt="Saastra Labs"
               width={28}
               height={28}
               priority
-              className="rounded-full"
             />
-            <span className="font-display text-[17px] font-medium tracking-[-0.01em] text-sl-text-inv">
-              Saastra Labs
-            </span>
           </Link>
 
           {/* Desktop links */}
@@ -100,8 +96,8 @@ export function NavbarView({
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
               onClick={() => setMenuOpen((v) => !v)}
-              className="sl-focus-ring flex h-11 w-11 items-center justify-center rounded-xl text-sl-text-inv transition-colors hover:bg-sl-text-inv/[0.08] md:hidden"
-            >
+            className="sl-focus-ring flex h-11 w-11 items-center justify-center rounded-xl text-sl-text-inv transition-colors hover:bg-sl-text-inv/[0.08] md:hidden"
+          >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
                 {menuOpen ? (
                   <path
@@ -129,7 +125,7 @@ export function NavbarView({
         <div
           id="mobile-nav"
           className="pointer-events-auto mx-3 mt-2 overflow-hidden rounded-2xl border border-sl-border-dark p-2 shadow-[0_24px_48px_-24px_rgb(var(--sl-dark-rgb)/0.45)] backdrop-blur-[22px] md:hidden"
-          style={{ background: "rgb(77 12 18 / 0.5)" }}
+          style={{ background: "rgb(28 32 33 / 0.94)" }}
         >
           {links.map((l) => (
             <Link

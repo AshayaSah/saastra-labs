@@ -7,18 +7,18 @@ export async function ComparisonTable() {
   ])
 
   return (
-    <section className="bg-sl-accent">
-      <div className="sl-container sl-section">
-        <h2 className="sl-reveal sl-section-heading text-sl-text-inv">
+    <section className="relative overflow-hidden bg-sl-surface">
+      <div className="sl-container sl-section relative">
+        <h2 className="sl-reveal sl-section-heading text-sl-text">
           Saastra Labs vs <em>traditional</em> service providers
         </h2>
 
         {/* Table — scrolls horizontally on small screens to keep columns aligned */}
         <div className="-mx-gutter overflow-x-auto px-gutter sm:mx-0 sm:px-0">
-        <div className="min-w-[600px] bg-sl-surface border border-sl-border rounded-panel overflow-hidden">
+        <div className="min-w-[600px] bg-white border border-sl-border rounded-panel overflow-hidden">
           {/* Header */}
           <div
-            className="grid bg-sl-surface-2 border-b border-sl-border text-[12.5px] text-sl-muted"
+            className="grid bg-white border-b border-sl-border text-[12.5px] text-sl-muted"
             style={{ gridTemplateColumns: "1fr 1.2fr 1.2fr" }}
           >
             <div className="px-5.5 py-3.5" />

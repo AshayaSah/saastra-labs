@@ -24,15 +24,15 @@ export function ProjectCard({ project }: { project: ProjectRow }) {
       {/* Content card — same project info, clickable, links to the project */}
       <a
         href={href}
-        className="group flex h-28 origin-top flex-none flex-col justify-center gap-1.5 rounded-card bg-sl-accent p-4 shadow-card transition duration-300 ease-out hover:scale-[1.06] hover:shadow-pop sm:p-5"
+        className="group flex h-28 origin-top flex-none flex-col justify-center gap-1.5 rounded-card bg-sl-surface p-4 shadow-card transition duration-300 ease-out hover:scale-[1.06] hover:shadow-pop sm:p-5"
         aria-label={`View project: ${project.title}`}
       >
         {project.tag && (
-          <span className="text-[10px] uppercase tracking-[0.12em] text-sl-muted-inv">
+          <span className="text-[10px] uppercase tracking-[0.12em] text-sl-muted">
             {project.tag}
           </span>
         )}
-        <h3 className="line-clamp-1 text-h3 text-sl-text-inv">{project.title}</h3>
+        <h3 className="line-clamp-1 text-h3 text-sl-text">{project.title}</h3>
       </a>
     </div>
   )

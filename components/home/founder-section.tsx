@@ -1,38 +1,55 @@
+import Image from "next/image"
+import { GridGlow } from "@/components/shared/grid-glow"
+
 export function FounderSection() {
   return (
-    <section className="bg-sl-dark text-sl-text-inv relative overflow-hidden">
-      <div
-        className="absolute pointer-events-none top-[-200px] right-[-100px] h-[500px] w-[600px]"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgb(var(--sl-glow-rgb) / 0.18), transparent 70%)",
-        }}
-      />
-      <div className="sl-container sl-section relative">
-        <h2 className="text-h2 text-sl-text-inv m-0 mb-8">SAASTRA&apos;s <em>Team Desk</em></h2>
-        <div className="grid grid-cols-1 gap-8 items-start md:gap-10 md:grid-cols-[300px_1fr]">
-          {/* Founder photo placeholder */}
+    <section className="relative flex min-h-dvh flex-col overflow-hidden bg-sl-dark text-sl-text-inv">
+      <GridGlow />
+      <div className="sl-container sl-section relative flex flex-1 flex-col">
+        <div className="grid flex-1 grid-cols-1 items-stretch gap-8 md:grid-cols-2 md:gap-10">
           <div
-            className="h-[300px] rounded-card flex items-center justify-center"
+            className="relative min-h-[360px] overflow-hidden rounded-card md:min-h-[520px] md:rounded-l-none md:rounded-r-card"
             style={{
-              background: "repeating-linear-gradient(45deg,#1E100F,#1E100F 12px,#30050E 12px,#30050E 24px)",
+              marginLeft: "calc(var(--spacing-gutter) * -1)",
+              marginTop: "calc(var(--spacing-section) * -1)",
+              marginBottom: "calc(var(--spacing-section-end) * -1)",
             }}
           >
-            <span className="font-mono text-[11px] text-sl-subtle-inv/60">[ team photo ]</span>
+            <Image
+              src="/team.jpg"
+              alt="The Saastra Labs team"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
 
-          <div className="max-w-[720px]">
-            <p className="text-[15px] leading-[1.7] text-sl-muted-inv mt-0 mb-4">
-              For the last few years, we&apos;ve been helping web applications turn ideas into shipped products. We&apos;ve worked with startups, small businesses, and growing enterprises to design and build their digital presence from Kathmandu, Nepal.
+          <div className="flex flex-col justify-center">
+            <h2 className="text-h2 text-sl-text-inv m-0 mb-6">
+              SAASTRA&apos;s <em>Team Desk</em>
+            </h2>
+            <p className="sl-section-lead-inv mt-0 mb-4">
+              For the last few years, we&apos;ve been helping web applications
+              turn ideas into shipped products. We&apos;ve worked with startups,
+              small businesses, and growing enterprises to design and build
+              their digital presence from Kathmandu, Nepal.
             </p>
-            <p className="text-[15px] leading-[1.7] text-sl-muted-inv mt-0 mb-4">
-              At Saastra Labs, we treat every project as if it were our own. We obsess over the details, sweat the edge cases, and deliver work we&apos;re genuinely proud of — fast, and without the usual agency drama.
+            <p className="sl-section-lead-inv mt-0 mb-4">
+              At Saastra Labs, we treat every project as if it were our own. We
+              obsess over the details, sweat the edge cases, and deliver work
+              we&apos;re genuinely proud of â€” fast, and without the usual
+              agency drama.
             </p>
-            <p className="text-[15px] leading-[1.7] text-sl-muted-inv mt-0 mb-[22px]">
-              If you&apos;re looking for a team that moves quickly and cares deeply, we&apos;d love to build with you.
+            <p className="sl-section-lead-inv mt-0 mb-[22px]">
+              If you&apos;re looking for a team that moves quickly and cares
+              deeply, we&apos;d love to build with you.
             </p>
-            <div className="font-mono text-[18px] text-sl-text-inv mb-1 italic">The Saastra Labs Team</div>
-            <div className="text-[12.5px] text-sl-subtle-inv">Engineering &amp; Design · Kathmandu, Nepal</div>
+            <div className="mb-1 font-mono text-[18px] italic text-sl-text-inv">
+              The Saastra Labs Team
+            </div>
+            <div className="text-[12.5px] text-sl-subtle-inv">
+              Engineering &amp; Design Â· Kathmandu, Nepal
+            </div>
           </div>
         </div>
       </div>

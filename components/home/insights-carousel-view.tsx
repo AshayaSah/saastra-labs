@@ -29,7 +29,7 @@ export function InsightsCarouselView({ items }: { items: InsightRow[] }) {
             <div className="mt-4.5 flex items-center gap-2.5">
               <div
                 className="h-8.5 w-8.5 flex-shrink-0 rounded-full"
-                style={coverStyle(t.avatar, "linear-gradient(140deg,#F6F3E4,#EAE5D4)")}
+                style={coverStyle(t.avatar, "linear-gradient(140deg,#f1eee5,#e7e3d7)")}
               />
               <div className="leading-[1.25]">
                 <div className="text-[13px] font-semibold text-sl-text-inv">{t.name}</div>

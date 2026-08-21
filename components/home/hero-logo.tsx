@@ -36,7 +36,7 @@ export function HeroLogo() {
       }`}
     >
       <Image
-        src="/logo_new.png"
+        src="/logonewbg.png"
         alt="Saastra Labs"
         width={72}
         height={72}

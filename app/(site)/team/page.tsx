@@ -29,7 +29,7 @@ export default async function TeamPage() {
                   className="mb-4 h-[200px] rounded-tile"
                   style={coverStyle(
                     m.avatar,
-                    "linear-gradient(140deg,#4D0C12,#30050E)"
+                    "linear-gradient(140deg,#323733,#1c2021)"
                   )}
                 />
                 <h3 className="m-0 text-[16px] font-medium text-sl-text">

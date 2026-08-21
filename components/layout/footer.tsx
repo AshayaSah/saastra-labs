@@ -22,6 +22,7 @@ export async function Footer() {
             "radial-gradient(50% 50% at 50% 50%, rgb(var(--sl-glow-rgb) / 0.05), transparent 70%)",
         }}
       />
+      <div aria-hidden className="hero-grid-lines pointer-events-none" />
 
       <div className="sl-container relative text-center pt-20 sm:pt-28">
         {/* CTA heading */}
@@ -39,7 +40,7 @@ export async function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-[9px] mb-3">
               <Image
-                src="/logo.png"
+                src="/logonewbg.png"
                 alt="Saastra Labs"
                 width={28}
                 height={28}

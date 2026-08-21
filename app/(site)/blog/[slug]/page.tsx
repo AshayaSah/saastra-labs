@@ -66,7 +66,7 @@ export default async function BlogPostPage({
               <div
                 className="h-8.5 w-8.5 shrink-0 rounded-full"
                 style={{
-                  background: "linear-gradient(140deg,#30050E,#1E100F)",
+                  background: "linear-gradient(140deg,#1c2021,#323733)",
                 }}
               />
               <div className="leading-[1.3]">
