@@ -11,14 +11,21 @@ export function ProjectCard({ project }: { project: ProjectRow }) {
       {/* Full-image card — clickable, links to the project */}
       <a
         href={href}
-        className="group block h-[460px] origin-bottom flex-none overflow-hidden rounded-card shadow-card transition duration-300 ease-out hover:scale-[1.06] hover:shadow-pop sm:h-[420px] lg:h-[460px]"
+        className="group relative block h-[460px] origin-bottom flex-none overflow-hidden rounded-card shadow-card transition duration-300 ease-out hover:scale-[1.06] hover:shadow-pop sm:h-[420px] lg:h-[460px]"
         aria-label={`View project: ${project.title}`}
       >
         <span
-          className="block h-full w-full bg-cover bg-center"
+          className="absolute inset-0 block h-full w-full bg-cover bg-center transition duration-300 ease-out group-hover:scale-[1.03]"
           style={media}
           aria-hidden
         />
+        <span className="absolute inset-0 bg-sl-text/0 transition duration-300 ease-out group-hover:bg-sl-text/65" />
+        <span className="absolute inset-0 bg-gradient-to-t from-sl-text/80 via-sl-text/25 to-transparent opacity-0 transition duration-300 ease-out group-hover:opacity-100" />
+        <span className="absolute inset-0 flex items-center justify-center p-5 sm:p-6">
+          <span className="max-w-[28ch] translate-y-2 text-center text-[15px] leading-[1.7] font-medium text-sl-beige opacity-0 transition duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 sm:text-[16px] lg:text-[17px]">
+            {project.description}
+          </span>
+        </span>
       </a>
 
       {/* Content card — same project info, clickable, links to the project */}
