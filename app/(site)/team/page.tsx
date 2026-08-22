@@ -1,3 +1,5 @@
+import { BentoCard } from "@/components/ui/bento-card"
+import { SiteHero } from "@/components/site-hero"
 import { CtaBand } from "@/components/company/cta-band"
 import { getTeamMembers } from "@/lib/db/queries"
 import { coverStyle } from "@/lib/utils"
@@ -13,26 +15,26 @@ export default async function TeamPage() {
 
   return (
     <div className="overflow-x-hidden bg-sl-bg font-sans antialiased">
-      <div className="sl-container sl-page-top pb-section-end">
-        <div className="sl-display">
-          <span className="sl-display-title">Team</span>
-        </div>
+      <SiteHero
+        title={<>Team</>}
+        description={
+          <>
+            The people behind the work, the craft they bring, and the way we
+            collaborate when things need to ship.
+          </>
+        }
+      />
 
+      <div className="sl-container pb-section-end">
         {members.length > 0 && (
-          <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {members.map((m, i) => (
-              <div
-                key={m.id}
-                className={`sl-reveal sl-d${(i % 3) + 1} sl-card`}
-              >
+              <BentoCard key={m.id} className={`sl-reveal sl-d${(i % 3) + 1}`}>
                 <div
                   className="mb-4 h-[200px] rounded-tile"
-                  style={coverStyle(
-                    m.avatar,
-                    "linear-gradient(140deg,#cfccc4,#a9a69e)"
-                  )}
+                  style={coverStyle(m.avatar, "linear-gradient(140deg,#323733,#1c2021)")}
                 />
-                <h3 className="m-0 text-[16px] font-semibold text-sl-text">
+                <h3 className="m-0 text-[16px] font-medium text-sl-text">
                   {m.name}
                 </h3>
                 <div className="mt-0.5 text-meta text-sl-subtle">{m.role}</div>
@@ -41,7 +43,7 @@ export default async function TeamPage() {
                     {m.bio}
                   </p>
                 )}
-              </div>
+              </BentoCard>
             ))}
           </div>
         )}

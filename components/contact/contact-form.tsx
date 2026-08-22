@@ -24,7 +24,7 @@ export function ContactForm() {
   if (state.status === "success") {
     return (
       <div className="sl-card items-start gap-4 p-7">
-        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sl-green-light text-[20px] text-sl-green">
+        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sl-accent/10 text-[20px] text-sl-accent">
           ✓
         </div>
         <h3 className="m-0 text-h3 text-sl-text">Message sent</h3>
@@ -130,7 +130,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="sl-focus-ring mt-1 h-12 rounded-control bg-sl-text text-[14px] font-semibold text-sl-text-inv transition-opacity hover:opacity-90 disabled:opacity-60"
+        className="sl-focus-ring mt-1 h-12 rounded-full bg-sl-accent text-[14px] font-semibold text-sl-cta-ink transition-colors hover:bg-sl-dark disabled:opacity-60"
       >
         {pending ? "Sending…" : "Send message"}
       </button>

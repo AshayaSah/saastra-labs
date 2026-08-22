@@ -1,4 +1,5 @@
 import { ChatButton } from "@/components/chat-button"
+import { GridGlow } from "@/components/shared/grid-glow"
 
 export function CtaBand({
   heading = "Have a project in mind?",
@@ -8,16 +9,19 @@ export function CtaBand({
   text?: string
 }) {
   return (
-    <section className="sl-container sl-section-sm">
-      <div className="sl-reveal rounded-card bg-sl-dark px-8 py-16 text-center sm:px-14">
-        <h2 className="mx-auto mb-3 max-w-[560px] text-h2 text-sl-text-inv">
-          {heading}
-        </h2>
-        <p className="mx-auto mb-8 max-w-[460px] text-body text-sl-muted-inv">
-          {text}
-        </p>
-        <div className="flex justify-center">
-          <ChatButton href="/contact" />
+    <section className="relative overflow-hidden bg-sl-accent">
+      <GridGlow />
+      <div className="sl-container sl-section-sm relative">
+        <div className="sl-reveal rounded-card border border-sl-border bg-sl-surface px-8 py-16 text-center sm:px-14">
+          <h2 className="mx-auto mb-3 max-w-[560px] text-h2 text-sl-text">
+            {heading}
+          </h2>
+          <p className="mx-auto mb-8 max-w-[460px] sl-section-lead">
+            {text}
+          </p>
+          <div className="flex justify-center">
+            <ChatButton href="/contact" variant="bordeaux" />
+          </div>
         </div>
       </div>
     </section>

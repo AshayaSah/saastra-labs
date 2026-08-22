@@ -5,13 +5,8 @@ export async function ProductsGrid() {
   const PRODUCTS = await getProducts()
 
   return (
-    <section className="relative sl-container sl-section">
-      {/* Watermark heading — shared .sl-display primitive */}
-      <div className="sl-display">
-        <span className="sl-display-title">Products</span>
-      </div>
-
-      <div className="grid grid-cols-1 gap-[14px] sm:grid-cols-2">
+    <section className="relative sl-container sl-section-sm">
+      <div className="grid grid-cols-1 gap-[14px] sm:grid-cols-2 xl:grid-cols-3">
         {PRODUCTS.map((p, i) => (
           <div key={p.id} className={`sl-reveal sl-d${(i % 4) + 1}`}>
             <article className={`sl-prod ${p.dark ? "sl-prod--strong" : ""}`}>

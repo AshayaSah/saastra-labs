@@ -1,17 +1,13 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 
+import "lenis/dist/lenis.css"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider"
 import { cn } from "@/lib/utils"
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site"
-
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+import { display } from "@/lib/fonts/display"
+import { inter } from "@/lib/fonts/sans"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -48,10 +44,12 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
+      className={cn("antialiased", display.variable, inter.variable)}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+<body>
+        <ThemeProvider>
+          <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

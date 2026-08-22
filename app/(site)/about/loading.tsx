@@ -16,7 +16,7 @@ export default function AboutLoading() {
         </div>
 
         {/* Values */}
-        <div className="grid gap-[14px] py-16 sm:grid-cols-3">
+        <div className="grid gap-[14px] py-16 sm:grid-cols-3 2xl:grid-cols-4">
           {Array.from({ length: 3 }).map((_, i) => (
             <Skeleton key={i} className="h-[180px] rounded-card" />
           ))}

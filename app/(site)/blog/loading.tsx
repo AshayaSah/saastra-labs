@@ -5,7 +5,7 @@ export default function BlogLoading() {
     <div className="bg-sl-bg">
       <div className="sl-container sl-page-top pb-section-end">
         <Skeleton className="mb-10 h-16 w-64" />
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="sl-blog-card flex h-full flex-col">
               <Skeleton className="h-[190px] rounded-none" />

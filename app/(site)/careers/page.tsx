@@ -1,3 +1,4 @@
+import { SiteHero } from "@/components/site-hero"
 import { BentoCard } from "@/components/ui/bento-card"
 import { getCompanyValues, getJobOpenings } from "@/lib/db/queries"
 
@@ -15,14 +16,20 @@ export default async function CareersPage() {
 
   return (
     <div className="overflow-x-hidden bg-sl-bg font-sans antialiased">
+      <SiteHero
+        title={<>Careers</>}
+        description={
+          <>
+            Open roles, team values, and what it feels like to do the work
+            here if you&apos;re thinking about joining us.
+          </>
+        }
+      />
       <div className="sl-container sl-page-top pb-section-end">
-        <div className="sl-display">
-          <span className="sl-display-title">Careers</span>
-        </div>
         {/* How we work */}
         {values.length > 0 && (
           <div>
-            <div className="grid gap-[14px] sm:grid-cols-3">
+            <div className="grid gap-[14px] sm:grid-cols-3 2xl:grid-cols-4">
               {values.map((v, i) => (
                 <BentoCard
                   key={v.id}
@@ -31,7 +38,7 @@ export default async function CareersPage() {
                   <div className="text-[22px] leading-none text-sl-text">
                     {v.icon}
                   </div>
-                  <h3 className="mt-3.5 mb-1.5 text-[16px] font-semibold text-sl-text">
+                  <h3 className="mt-3.5 mb-1.5 text-[16px] font-medium text-sl-text">
                     {v.title}
                   </h3>
                   <p className="m-0 text-[13.5px] leading-[1.55] text-sl-muted">
@@ -45,7 +52,7 @@ export default async function CareersPage() {
 
         {/* Open roles */}
         <section className="sl-container sl-section-sm">
-          <h2 className="sl-reveal sl-section-heading">Open roles</h2>
+          <h2 className="sl-reveal sl-section-heading"><em>Open</em> roles</h2>
 
           {jobs.length === 0 ? (
             <div className="sl-reveal sl-card items-start">
@@ -71,7 +78,7 @@ export default async function CareersPage() {
                 >
                   <div>
                     <div className="flex flex-wrap items-center gap-2.5">
-                      <h3 className="m-0 text-[17px] font-semibold text-sl-text">
+                      <h3 className="m-0 text-[17px] font-medium text-sl-text">
                         {j.title}
                       </h3>
                       {j.type && (
