@@ -1,3 +1,4 @@
+import { SiteHero } from "@/components/site-hero"
 import { getBlogPosts } from "@/lib/db/queries"
 import { coverStyle } from "@/lib/utils"
 
@@ -6,12 +7,17 @@ export default async function BlogPage() {
 
   return (
     <div className="overflow-x-hidden bg-sl-bg font-sans text-sl-text antialiased">
-      {/* ── BLOG LISTING ────────────────────────────────────────── */}
-      <div className="sl-container sl-page-top pb-section-end">
-        <div className="sl-display">
-          <h1 className="sl-display-title">Blog</h1>
-        </div>
+      <SiteHero
+        title={<>Blog</>}
+        description={
+          <>
+            Notes, updates, and thinking from the studio on design, engineering
+            and building useful digital products.
+          </>
+        }
+      />
 
+      <div className="sl-container sl-page-top pb-section-end">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           {posts.map((post, i) => (
             <a
@@ -20,7 +26,6 @@ export default async function BlogPage() {
               className={`sl-focus-ring sl-blog-card-link sl-reveal sl-d${(i % 3) + 1}`}
             >
               <article className="sl-blog-card flex h-full flex-col">
-                {/* Cover image */}
                 <div
                   className="relative h-[190px]"
                   style={coverStyle(post.coverImage, post.gradient)}
@@ -34,14 +39,11 @@ export default async function BlogPage() {
                   />
                 </div>
 
-                {/* Content */}
                 <div className="flex flex-1 flex-col px-5.5 pt-5 pb-4.5">
                   <span className="sl-mono-label">{post.category}</span>
-
                   <h2 className="mt-2.5 mb-2 text-[17px] leading-[1.28] font-medium tracking-[-0.012em] text-sl-text">
                     {post.title}
                   </h2>
-
                   <p
                     className="mt-0 mb-5 overflow-hidden text-[13.5px] leading-[1.57] text-sl-muted"
                     style={{
@@ -52,8 +54,6 @@ export default async function BlogPage() {
                   >
                     {post.excerpt}
                   </p>
-
-                  {/* Read more + read time */}
                   <div className="mt-auto flex items-center justify-between border-t border-sl-border pt-3.5">
                     <span className="sl-read-more">
                       Read post <span>→</span>

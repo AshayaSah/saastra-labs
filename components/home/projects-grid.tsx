@@ -22,7 +22,7 @@ export async function ProjectsGrid() {
             </div>
             <ChatButton
               href="/work"
-              label="Read more"
+              label="Know more"
               logo={false}
               className="self-start"
             />

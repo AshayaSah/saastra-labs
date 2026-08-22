@@ -1,27 +1,32 @@
 import { ContactForm } from "@/components/contact/contact-form"
+import { SiteHero } from "@/components/site-hero"
 
 export const metadata = {
-  title: "Contact · Saastra Labs",
+  title: "Contact Â· Saastra Labs",
   description: "Tell us about your project and we'll get back within a business day.",
 }
 
 const DETAILS = [
   { label: "Email", value: "hello@saastralabs.io", href: "mailto:hello@saastralabs.io" },
   { label: "Response time", value: "Within one business day" },
-  { label: "Studio", value: "Kathmandu, Nepal · working worldwide" },
+  { label: "Studio", value: "Kathmandu, Nepal Â· working worldwide" },
 ]
 
 export default function ContactPage() {
   return (
     <div className="overflow-x-hidden bg-sl-bg font-sans text-sl-text antialiased">
-      <div className="sl-container sl-page-top pb-section-end">
-        {/* Watermark heading — shared with Products / Pricing / Blog */}
-        <div className="sl-display">
-          <span className="sl-display-title">Contact</span>
-        </div>
+      <SiteHero
+        title={<>Contact</>}
+        description={
+          <>
+            Tell us what you&apos;re building, what you need, and how we can
+            help move it forward.
+          </>
+        }
+      />
 
+      <div className="sl-container pb-section-end">
         <div className="grid grid-cols-1 items-start gap-9 md:grid-cols-[0.9fr_1.1fr] md:gap-13">
-          {/* Left — intro + details */}
           <div className="sl-reveal pt-2">
             <span className="sl-mono-label mb-3.5 block">Let&apos;s talk</span>
             <h1 className="mb-5 text-h1 text-sl-text">
@@ -54,7 +59,6 @@ export default function ContactPage() {
             </dl>
           </div>
 
-          {/* Right — form */}
           <div className="sl-reveal sl-d1">
             <ContactForm />
           </div>

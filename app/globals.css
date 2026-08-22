@@ -42,6 +42,8 @@
   /* ── Brand — Wine Maroon Accent System ──────────────────────────── */
   --color-sl-accent: #323733; /* primary CTA / accent */
   --color-sl-accent-ink: #f1eee5; /* text/icon on accent */
+  --color-sl-cta-bg: #e58e26; /* CTA button fill */
+  --color-sl-cta-ink: #e58e26; /* CTA button text/icon */
   --color-sl-brand: #323733; /* brand mark */
   --color-sl-ring: var(--color-sl-accent); /* focus-ring color */
 
@@ -759,16 +761,16 @@ html {
   color: rgb(var(--sl-text-inv-rgb) / 0.82);
   max-width: 42ch;
 }
-.sl-prod-visit {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: var(--color-sl-accent);
-  color: var(--color-sl-accent-ink);
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 9px 15px;
-  border-radius: var(--radius-pill);
+  .sl-prod-visit {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--color-sl-accent);
+    color: var(--color-sl-cta-ink);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 9px 15px;
+    border-radius: var(--radius-pill);
 }
 .sl-prod-visit svg {
   transition: transform var(--duration-normal) var(--ease-standard);
@@ -873,10 +875,10 @@ html {
 
   /* ── Buttons — pill CTAs ────────────────────────────────────── */
   .sl-btn {
-    @apply inline-block rounded-full bg-sl-accent px-4 py-[11px] text-center text-meta font-semibold text-sl-accent-ink no-underline transition-colors hover:bg-sl-dark;
+    @apply inline-block rounded-full bg-sl-accent px-4 py-[11px] text-center text-meta font-semibold text-sl-cta-ink no-underline transition-colors hover:bg-sl-dark;
   }
   .sl-btn-wide {
-    @apply inline-block rounded-full bg-sl-accent px-[22px] py-[11px] text-center text-meta font-semibold text-sl-accent-ink no-underline transition-colors hover:bg-sl-dark;
+    @apply inline-block rounded-full bg-sl-accent px-[22px] py-[11px] text-center text-meta font-semibold text-sl-cta-ink no-underline transition-colors hover:bg-sl-dark;
   }
 
   /* ── Focus ──────────────────────────────────────────────────── */

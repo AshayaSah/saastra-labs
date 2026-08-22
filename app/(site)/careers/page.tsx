@@ -1,3 +1,4 @@
+import { SiteHero } from "@/components/site-hero"
 import { BentoCard } from "@/components/ui/bento-card"
 import { getCompanyValues, getJobOpenings } from "@/lib/db/queries"
 
@@ -15,10 +16,16 @@ export default async function CareersPage() {
 
   return (
     <div className="overflow-x-hidden bg-sl-bg font-sans antialiased">
+      <SiteHero
+        title={<>Careers</>}
+        description={
+          <>
+            Open roles, team values, and what it feels like to do the work
+            here if you&apos;re thinking about joining us.
+          </>
+        }
+      />
       <div className="sl-container sl-page-top pb-section-end">
-        <div className="sl-display">
-          <span className="sl-display-title">Careers</span>
-        </div>
         {/* How we work */}
         {values.length > 0 && (
           <div>

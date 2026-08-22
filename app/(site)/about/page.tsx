@@ -1,4 +1,5 @@
 import { BentoCard } from "@/components/ui/bento-card"
+import { SiteHero } from "@/components/site-hero"
 import { CtaBand } from "@/components/company/cta-band"
 import { FAQAccordion } from "@/components/shared/faq-accordion"
 import {
@@ -22,11 +23,17 @@ export default async function AboutPage() {
 
   return (
     <div className="overflow-x-hidden bg-sl-bg font-sans antialiased">
-      <div className="sl-container sl-page-top pb-section-end">
-        <div className="sl-display">
-          <h1 className="sl-display-title">About</h1>
-        </div>
-        {/* Stats */}
+      <SiteHero
+        title={<>About</>}
+        description={
+          <>
+            Who we are, how we work, and why we care about products that feel
+            deliberate, sharp and useful.
+          </>
+        }
+      />
+
+      <div className="sl-container pb-section-end">
         {stats.length > 0 && (
           <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4">
             {stats.map((s, i) => (
@@ -40,7 +47,6 @@ export default async function AboutPage() {
           </div>
         )}
 
-        {/* Story blocks */}
         {sections.map((s) => (
           <section key={s.id} className="sl-container sl-section-sm">
             <div className="grid gap-6 sm:grid-cols-[200px_1fr] sm:gap-10">
@@ -57,10 +63,11 @@ export default async function AboutPage() {
           </section>
         ))}
 
-        {/* Values */}
         {values.length > 0 && (
           <section className="sl-container sl-section-sm">
-            <h2 className="sl-reveal sl-section-heading">What we <em>value</em></h2>
+            <h2 className="sl-reveal sl-section-heading">
+              What we <em>value</em>
+            </h2>
             <div className="grid gap-[14px] sm:grid-cols-3 2xl:grid-cols-4">
               {values.map((v, i) => (
                 <BentoCard

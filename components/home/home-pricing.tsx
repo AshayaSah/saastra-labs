@@ -81,7 +81,7 @@ export async function HomePricing() {
             </div>
             <a
               href="#"
-              className="sl-focus-ring relative mb-4.5 block rounded-full bg-sl-text-inv px-4 py-[11px] text-center text-meta font-semibold text-sl-accent no-underline transition-colors hover:bg-sl-surface-2"
+              className="sl-focus-ring relative mb-4.5 block rounded-full bg-sl-cta-bg px-4 py-[11px] text-center text-meta font-semibold text-sl-accent no-underline transition-colors hover:bg-[#cf7f1f]"
             >
               Select plan
             </a>

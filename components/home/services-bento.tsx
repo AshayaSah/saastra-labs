@@ -1,10 +1,14 @@
 import { BentoCard } from "@/components/ui/bento-card"
+import { ChatButton } from "@/components/chat-button"
 
 export function ServicesBento() {
   return (
     <section>
       <div className="sl-container sl-section">
-        <h2 className="sl-reveal sl-section-heading">Replace your Engineering Team</h2>
+        <div className="sl-reveal mb-6 flex items-start justify-between gap-4">
+          <h2 className="sl-section-heading m-0">We build what businesses need next</h2>
+          <ChatButton href="/work" label="Know more" logo={false} className="shrink-0" />
+        </div>
 
         {/* Row 1 */}
         <div className="grid grid-cols-1 gap-3.5 mb-3.5 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.1fr]">

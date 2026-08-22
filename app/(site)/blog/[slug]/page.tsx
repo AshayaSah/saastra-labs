@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { ChatButton } from "@/components/chat-button"
+import { SiteHero } from "@/components/site-hero"
 import { getBlogPost, getRelatedBlogPosts } from "@/lib/db/queries"
 import { coverStyle } from "@/lib/utils"
 
@@ -39,14 +40,11 @@ export default async function BlogPostPage({
 
   return (
     <div className="bg-sl-bg font-sans text-sl-text antialiased">
-      {/* ── ARTICLE AREA ────────────────────────────────────────── */}
-      <div className="sl-container sl-page-top pb-section-end">
-        {/* Breadcrumb */}
+      <SiteHero title={<>{post.title}</>} description={<>{post.excerpt}</>} />
+
+      <div className="sl-container pb-section-end">
         <div className="mb-10 flex items-center gap-2 font-mono text-[11px] tracking-[0.1em] text-sl-subtle uppercase">
-          <a
-            href="/blog"
-            className="sl-focus-ring rounded-control text-sl-subtle no-underline"
-          >
+          <a href="/blog" className="sl-focus-ring rounded-control text-sl-subtle no-underline">
             Blog
           </a>
           <span>/</span>
@@ -55,9 +53,7 @@ export default async function BlogPostPage({
           <span className="text-sl-body">{post.title}</span>
         </div>
 
-        {/* Hero — two columns */}
         <div className="sl-reveal mb-13 grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-13">
-          {/* Left: title + author */}
           <div>
             <span className="sl-mono-label mb-3.5 block">{post.category}</span>
             <h1 className="mb-5.5 text-h1 text-sl-text">{post.title}</h1>
@@ -65,9 +61,7 @@ export default async function BlogPostPage({
             <div className="flex items-center gap-2.5">
               <div
                 className="h-8.5 w-8.5 shrink-0 rounded-full"
-                style={{
-                  background: "linear-gradient(140deg,#1c2021,#323733)",
-                }}
+                style={{ background: "linear-gradient(140deg,#1c2021,#323733)" }}
               />
               <div className="leading-[1.3]">
                 <div className="text-meta font-semibold">{post.author}</div>
@@ -78,7 +72,6 @@ export default async function BlogPostPage({
             </div>
           </div>
 
-          {/* Right: cover image */}
           <div
             className="relative h-80 overflow-hidden rounded-card"
             style={coverStyle(post.coverImage, post.gradient)}
@@ -93,14 +86,9 @@ export default async function BlogPostPage({
           </div>
         </div>
 
-        {/* Divider */}
         <div className="mb-13 border-t border-sl-border-strong" />
 
-        {/* Body — sidebar + content. The grid is centered at a reading measure
-            (max-w-[1180px]) and the article is capped at 75ch so long-form
-            prose stays readable even on ultrawide screens. */}
         <div className="mx-auto mb-24 grid w-full max-w-[1180px] grid-cols-1 gap-10 md:grid-cols-[210px_1fr] md:gap-13">
-          {/* Sidebar */}
           <aside className="self-start md:sticky md:top-22">
             <div className="sl-mono-label mb-3.5">On this page</div>
             <nav>
@@ -111,23 +99,17 @@ export default async function BlogPostPage({
               ))}
             </nav>
 
-            {/* Sidebar CTA */}
             <div className="mt-9 rounded-card border border-sl-text-inv/[0.06] bg-sl-surface-dark px-4.5 py-5">
               <h3 className="mb-2 text-[14.5px] leading-[1.35] font-semibold text-sl-text-inv">
                 Need a fast-moving engineering team?
               </h3>
               <p className="mb-4 text-[12.5px] leading-[1.55] text-sl-subtle-inv">
-                Book a call and we&apos;ll map out a plan tailored to your
-                roadmap.
+                Book a call and we&apos;ll map out a plan tailored to your roadmap.
               </p>
-              <ChatButton
-                href="/contact"
-                label="&nbsp;&nbsp;Chat with US&nbsp;&nbsp;"
-              />
+              <ChatButton href="/contact" label="  Chat with US  " />
             </div>
           </aside>
 
-          {/* Article body */}
           <article className="max-w-[75ch]">
             {post.sections.map((section, i) => (
               <section
@@ -149,10 +131,7 @@ export default async function BlogPostPage({
                 {section.list && (
                   <ul className="mt-1.5 list-disc pl-4.5">
                     {section.list.map((item, i) => (
-                      <li
-                        key={i}
-                        className="mb-1.5 text-body leading-[1.65] text-sl-body"
-                      >
+                      <li key={i} className="mb-1.5 text-body leading-[1.65] text-sl-body">
                         {item}
                       </li>
                     ))}
@@ -161,7 +140,6 @@ export default async function BlogPostPage({
               </section>
             ))}
 
-            {/* Tags */}
             <div className="mt-2 flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
@@ -175,7 +153,6 @@ export default async function BlogPostPage({
           </article>
         </div>
 
-        {/* Related posts */}
         <div className="mb-24">
           <h2 className="mb-7 text-[24px] font-medium tracking-[-0.02em] text-sl-text">
             Related posts
@@ -188,10 +165,7 @@ export default async function BlogPostPage({
                 className={`sl-focus-ring sl-blog-card-link sl-reveal sl-d${(i % 3) + 1}`}
               >
                 <article className="sl-blog-card">
-                  <div
-                    className="h-40"
-                    style={coverStyle(rel.coverImage, rel.gradient)}
-                  />
+                  <div className="h-40" style={coverStyle(rel.coverImage, rel.gradient)} />
                   <div className="px-4.5 pt-4 pb-5">
                     <span className="sl-mono-label">{rel.category}</span>
                     <h3 className="mt-2 mb-1.5 text-[15px] leading-[1.25] font-medium text-sl-text">
